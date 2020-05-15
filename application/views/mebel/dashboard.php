@@ -16,8 +16,7 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Mebel TA 
-                                                Novita</h1>
+                                            <h1>Lumintu Mebel</h1>
                                             <p>bagus</p>
                                             <a href="#" class="btn_2">Beli dong</a>
                                         </div>
