@@ -145,13 +145,13 @@
           <div class="product_slider_img">
             <div id="vertical">
               <div data-thumb="<?php echo base_url('./assets/images/depan/'.$a->gambar); ?>">
-                <img src="<?php echo base_url('./assets/images/depan/'.$a->gambar); ?>" />
+                <img height="450px" width="450px" src="<?php echo base_url('./assets/images/depan/'.$a->gambar); ?>" />
               </div>
               <div data-thumb="<?php echo base_url('./assets/images/samping2/'.$a->gambar2); ?>">
-                <img src="<?php echo base_url('./assets/images/samping2/'.$a->gambar2); ?>" />
+                <img height="450px" width="450px" src="<?php echo base_url('./assets/images/samping2/'.$a->gambar2); ?>" />
               </div>
               <div data-thumb="<?php echo base_url('./assets/images/samping3/'.$a->gambar3); ?>">
-                <img src="<?php echo base_url('./assets/images/samping3/'.$a->gambar3); ?>" />
+                <img height="450px" width="450px" src="<?php echo base_url('./assets/images/samping3/'.$a->gambar3); ?>" />
               </div>
             </div>
           </div>
