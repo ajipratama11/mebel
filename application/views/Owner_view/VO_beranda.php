@@ -77,7 +77,7 @@
                       <i class="mdi mdi-account-location text-info icon-lg"></i>
                     </div>
                     <div class="float-right">
-                      <p class="mb-0 text-right">Total Pegawai</p>
+                      <p class="mb-0 text-right">Jumlah Admin</p>
                       <div class="fluid-container">
                         <h3 class="font-weight-medium text-right mb-0"><?php echo $pegawai; ?></h3>
                       </div>
@@ -98,7 +98,7 @@
                 <div class="card-body">
                   <h3 class="card-title">Daftar pesanan pelanggan 
                     <div style="float: right;margin-right: 30px;">
-                      <form action="<?php echo base_url('Admin_controller/Beranda/cari'); ?>" method="post">
+                      <form action="<?php echo base_url('Owner_controller/Beranda/cari'); ?>" method="post">
                         <input style="height: 25px;" type="text" name="cari" placeholder="#Kode pesan" required="required">
                         <button type="submit" style="height: 25px">Cari</button>
                       </form>
@@ -143,7 +143,7 @@
                           <td>
                               <?php 
                               if ($a->status=='Proses') {
-                                echo '<a onclick="return confirm_alert(this);" href="'.base_url('Admin_controller/Beranda/status/'.$a->id_pesan).'"><button type="button" class="btn">'.$a->status.'</button></a>';
+                                echo '<a onclick="return confirm_alert(this);" href="'.base_url('Owner_controller/Beranda/status/'.$a->id_pesan).'"><button type="button" class="btn">'.$a->status.'</button></a>';
                                 
                               }else if ($a->status=='batal') {
                                 echo '<button type="button" class="btn btn-danger">'.$a->status.'</button>';

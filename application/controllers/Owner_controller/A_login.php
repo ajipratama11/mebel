@@ -7,56 +7,34 @@ class A_login extends CI_Controller{
 		parent::__construct();		
 		$this->load->model('M_login');
 		$this->load->helper(array('url'));
-		if($this->session->userdata('admin') == "222"){
-			redirect('Admin_controller/Beranda','refresh');
-		}else if ($this->session->userdata('owner') == "333") {
-			redirect('Owner_controller/Beranda','refresh');
+		if($this->session->userdata('status') == "admin"){
+			echo "<script>
+                alert('Anda sudah login');
+                window.location.href = '".base_url('Owner_controller/Beranda')."';
+            </script>";//Url tujuan
 		}
- 
 	}
-
 	function index(){
-		$this->load->view('Admin_view/VA_login');
+		$this->load->view('Owner_view/VA_login');
 	}
-
 	function aksi_login(){
 		$username = $this->input->post('email');
 		$password = $this->input->post('password');
 		foreach($this->M_login->iduser($username) as $row){
 			$iduser=$row->id_user;
 			$namauser = $row->nama_user;
-			$level = $row->level_id_level;
 		}
 		$where = array(
 			'email' => $username,
-			'password' => $password,
-			'level_id_level' => 222
-			);
-		$where2 = array(
-			'email' => $username,
-			'password' => $password,
-			'level_id_level' => 333
+			'password' => $password
 			);
 		$cek = $this->M_login->cek_login("user",$where)->num_rows();
-		$cek2 = $this->M_login->cek_login2("user",$where2)->num_rows();
 		if($cek > 0){
 			$data_session = array(
 				'emailadmin' => $username,
 				'iduseradmin' => $iduser,
 				'namaadmin' => $namauser,
-				'admin' => $level,
-				);
- 
-			$this->session->set_userdata($data_session);
- 
-			redirect('Owner_controller/Beranda');
- 
-		}else if ($cek2 > 0) {
-			$data_session = array(
-				'emailowner' => $username,
-				'iduserowner' => $iduser,
-				'namaowner' => $namauser,
-				'owner' => $level,
+				'status' => 'admin',
 				);
  
 			$this->session->set_userdata($data_session);

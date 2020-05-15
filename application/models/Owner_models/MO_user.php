@@ -3,7 +3,7 @@
 class MO_user extends CI_Model {
 
     function tampil_user(){
-      $query = $this->db->query("SELECT * FROM user WHERE level_id_level='222'");
+      $query = $this->db->query("SELECT * FROM user");
       return $query->result();
     }
     function tampil($iduser){
@@ -31,10 +31,10 @@ class MO_user extends CI_Model {
 		  $kodejadi = "10".$kodemax;  
 		  return $kodejadi;
 	}
-	function insert_peg($idpeg,$nama,$email,$telp,$password,$alamat,$kodepos,$level){
-		$query = $this->db->query("INSERT INTO `user`(`id_user`, `password`, `nama_user`, `no_telp`, `alamat`, `kode_pos`, `email`, `level_id_level`) VALUES ('$idpeg','$password','$nama','$telp','$alamat','$kodepos','$email','$level')");
+	function insert_peg($idpeg,$nama,$email,$telp,$password,$alamat,$kodepos){
+		$query = $this->db->query("INSERT INTO `user`(`id_user`, `password`, `nama_user`, `no_telp`, `alamat`, `kode_pos`, `email`) VALUES ('$idpeg','$password','$nama','$telp','$alamat','$kodepos','$email')");
 	}
-	function update_peg($idpeg,$nama,$email,$telp,$password,$alamat,$kodepos,$level){
+	function update_peg($idpeg,$nama,$email,$telp,$password,$alamat,$kodepos){
 		$query = $this->db->query("UPDATE `user` SET `password`='$password',`nama_user`='$nama',`no_telp`='$telp',`alamat`='$alamat',`kode_pos`='$kodepos',`email`='$email' WHERE id_user='$idpeg'");
 	}
    

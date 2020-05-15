@@ -10,8 +10,7 @@ class A_logout extends CI_Controller{
 
 	function index(){
 		// $this->session->sess_destroy();
-		$this->session->unset_userdata('admin');
-		$this->session->unset_userdata('owner');
+		$this->session->unset_userdata('status');
 		redirect(base_url('Owner_controller/A_login'));
 	}
 } 

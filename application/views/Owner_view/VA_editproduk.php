@@ -29,20 +29,19 @@
 }
 </style>
 <!-- partial -->
-      <div class="main-panel">
+<div class="main-panel">
         <div class="content-wrapper">
         <div class="row">
             <div class="container">
-  <div class="row">
-    <div class="col-sm-4 col-sm-offset-1" style="background-color: white;padding:20px;">
-      <h2 class="text-gray">Edit Produk</h2><br>
+	<div class="row">
+		<div class="col-sm-4 col-sm-offset-1" style="background-color: white;padding:20px;">
+			<h2 class="text-gray">Edit Produk</h2><br>
       <?php foreach($produk2 as $c){?> 
-      <form action="<?php echo base_url('Owner_controller/O_produk/update_produk2/'.$c->id_produk); ?>" id="main-contact-form" class="contact-form row" name="contact-form" method="post" enctype="multipart/form-data">
-        <div class="form-group col-md-12">
-          Nama produk :
-          <input type="text" name="nama_produk" class="form-control" required="required" value="<?php echo $c->nama_produk; ?>">
-        </div> 
-        </div>
+			<form action="<?php echo base_url('Owner_controller/O_produk/update_produk2/'.$c->id_produk); ?>" id="main-contact-form" class="contact-form row" name="contact-form" method="post" enctype="multipart/form-data">
+				<div class="form-group col-md-12">
+					Nama produk :
+					<input type="text" name="nama_produk" class="form-control" required="required" value="<?php echo $c->nama_produk; ?>">
+				</div> 
         <?php } ?>
         <?php foreach($kategori as $a){?> 
         <input type="hidden" name="id_kategori" value="<?php echo $a->id_kategori; ?>">
@@ -50,9 +49,15 @@
         <div class="form-group col-md-12">
           Kategori :
           <select name="kategori" class="form-control" required="required">
-            <option></option>
+          <!-- <option disabled>Pilih Pangkat</option>
+          <option <?php if ($gtk->pajago_gtk == '1a') echo "selected" ?> value="1a">Gol. 1A</option>
+            <option></option> -->
             <?php foreach($kategori as $a){?>
-            <?php echo "<option>".$a->nama_kategori."</option>"; ?>
+            <?php
+              if($a->id_kategori == $c->kategori_id_kategori){
+                echo  "<option selected>".$a->nama_kategori."</option>";
+              } 
+              echo "<option>".$a->nama_kategori."</option>"; ?>
             <?php } ?>
           </select>
         </div> 
@@ -66,7 +71,11 @@
           <input type="number" name="harga" min="1" class="form-control" required="required" value="<?php echo $c->harga; ?>">
         </div>
         <div class="form-group col-md-12">
-        </div>  
+          Gambar produk: <br>
+         <img style="margin-bottom: 10px;" height="100px" width="100px" src="<?php echo base_url('./assets/images/'.$c->gambar); ?>"> 
+         <input type="hidden" name="oldfoto"  required="required" value="<?php echo $c->gambar; ?>" style="padding-right:1px;">
+         <input type="file" name="filefoto"  required="required" placeholder="Upload gambar" style="padding-right:1px;">
+        </div>
         <div class="form-group col-md-12">
           Keterangan produk:
           <textarea name="keterangan" required="required" class="form-control" rows="8"><?php echo $c->keterangan; ?></textarea>
@@ -74,13 +83,13 @@
         </div>        
         <div class="form-group col-md-12">
           <input type="submit" name="submit" class="btn btn-primary" value="Submit">
-          <a href="<?php echo base_url('Admin_controller/O_produk'); ?>"><button type="button" value="batal" class="btn btn-primary">Batal</button></a>
+          <a href="<?php echo base_url('Owner_controller/O_produk'); ?>"><button type="button" value="batal" class="btn btn-primary">Batal</button></a>
         </div>
         <?php } ?>
       </form>
     </div>
     <div class="col-sm-8 col-sm-offset-1" style="background-color: white;padding:20px;">
-      <h2 class="text-gray">Daftar Produk</h2><br>
+			<h2 class="text-gray">Daftar Produk</h2><br>
       <button id="myBtn">+ Tambah Stok</button>
       <!-- The Modal -->
       <div id="myModal" class="modal">
@@ -88,13 +97,14 @@
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <form action="<?php echo base_url('Admin_controller/Beranda/tambahstok') ?>" method="post">
+          <form action="<?php echo base_url('Owner_controller/Beranda/tambahstok') ?>" method="post">
             <input type="text" name="id_produk" placeholder="#Id Produk" required="required">
             <input type="number" min="1" name="tambahstok" placeholder="Jumlah stok" required="required">
           <button class="btn btn-primary">Tambah</button>
           </form>
         </div>
-      <div class="table-responsive">
+      </div>
+			<div class="table-responsive">
                     <table class="table table-bordered">
                       <thead>
                         <tr>
@@ -116,56 +126,55 @@
                           <th>
                             Kategori
                           </th>
-                          
+                      
                           <th>
                             Harga
                           </th>
+                       
                           <th>
                             Keterangan
-                          </th>
-                        
+                          </th>                        
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach($produk as $b){?>
+                      	<?php foreach($produk as $b){?>
                         <tr>
                           <td>    
                             <a href="<?php echo base_url('Owner_controller/O_produk/update_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-pencil-box"></i> Edit</a><br><br>
-                            <a onclick="return confirm_alert(this);" href="<?php echo base_url('Owner_controller/O_produk/hapus_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-delete"></i> Hapus</a>
+                            <a onclick="return confirm_alert(this);" href="<?php echo base_url('Produk/hapus_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-delete"></i> Hapus</a>
                           </td>
                           <td class="font-weight-medium">
-                            <a target="_blank" href="<?php echo base_url($b->gambar); ?>"><img src="<?php echo base_url($b->gambar); ?>"></a>
+                          <a target="_blank" href="<?php echo base_url('./assets/images/'.$b->gambar); ?>"><img src="<?php echo base_url('./assets/images/'.$b->gambar); ?>"></a>
                           </td>
                           <td>
-                            <?php echo $b->id_produk; ?>
+                          	<?php echo $b->id_produk; ?>
                           </td>
                           <td>
-                            <?php echo $b->nama_produk; ?>
+                          	<?php echo $b->nama_produk; ?>
                           </td>
                           <td>
                             <?php echo $b->stok; ?>
                           </td>
                           <td>
-                            <?php echo $b->nama_kategori; ?>
+                          	<?php echo $b->nama_kategori; ?>
                           </td>
-
-                          </td>
+                         
                           
                           <td>
-                            Rp <?php $format_indonesia = number_format ($b->harga, 0, ',', '.');
+                          	Rp <?php $format_indonesia = number_format ($b->harga, 0, ',', '.');
                           echo $format_indonesia; ?>
                           </td>
+                       
                           <td>
-                            <?php echo $b->keterangan; ?>
+                          	<?php echo $b->keterangan; ?>
                           </td>
-                          
                         </tr>
                         <?php } ?>
                       </tbody>
                     </table>
                   </div>
-    </div>
-  </div>
+		</div>
+	</div>
 </div>
 </div>
 </div>

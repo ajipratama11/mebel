@@ -7,7 +7,7 @@ class Beranda extends CI_Controller{
 		$this->load->model('Owner_models/MO_transaksi');
 		$this->load->model('Admin_models/MA_transaksi');
 		$this->load->helper(array('url'));
-		if($this->session->userdata('owner') != "333"){
+		if($this->session->userdata('status') != "admin"){
 			echo "<script>
                 alert('Anda harus login terlebih dahulu');
                 window.location.href = '".base_url('Owner_controller/A_login')."';
@@ -19,7 +19,7 @@ class Beranda extends CI_Controller{
 		$data['total'] = $this->MO_transaksi->totalPemasukan();
 		$data['order'] = $this->db->query("SELECT * FROM pesan")->num_rows();
 		$data['user'] = $this->db->query("SELECT * FROM kostumer ")->num_rows();
-		$data['pegawai'] = $this->db->query("SELECT * FROM user WHERE level_id_level='222' ")->num_rows();
+		$data['pegawai'] = $this->db->query("SELECT * FROM user")->num_rows();
 		$data['pesan'] = $this->MO_transaksi->tampil_pesan();
 		$this->load->view('element/Owner/Header_owner',$data);
 		$this->load->view('Owner_view/VO_beranda',$data);
@@ -32,7 +32,8 @@ class Beranda extends CI_Controller{
 		if ($cek>=1) {
 			$data['total'] = $this->MO_transaksi->totalPemasukan();
 			$data['order'] = $this->db->query("SELECT * FROM pesan")->num_rows();
-			$data['user'] = $this->db->query("SELECT * FROM kostumer WHERE level_id_level='111'")->num_rows();
+			$data['user'] = $this->db->query("SELECT * FROM kostumer")->num_rows();
+			$data['pegawai'] = $this->db->query("SELECT * FROM user")->num_rows();
 			$data['pesan'] = $this->MO_transaksi->tampil_pesanid($kodepesan);
 			$this->load->view('element/Owner/Header_owner',$data);
 			$this->load->view('Owner_view/VO_beranda',$data);

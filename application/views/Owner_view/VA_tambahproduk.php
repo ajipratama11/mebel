@@ -44,54 +44,11 @@
         <div class="row">
             <div class="container">
 	<div class="row">
-		<div class="col-sm-4 col-sm-offset-1" style="background-color: white;padding:20px;">
-			<h2 class="text-gray">Tambah Produk</h2><br>
-			<form action="<?php echo base_url('Owner_controller/O_produk/insert_produk'); ?>" id="main-contact-form" class="contact-form row" name="contact-form" method="post" enctype="multipart/form-data">
-				<div class="form-group col-md-12">
-					Nama produk :
-					<input type="text" name="nama_produk" class="form-control" required="required" placeholder="Nama produk anda">
-				</div>
-				<?php foreach($kategori as $a){?> 
-				<input type="hidden" name="id_kategori" value="<?php echo $a->id_kategori; ?>">
-				<?php } ?>
-				<div class="form-group col-md-12">
-					Kategori :
-					<select name="kategori" class="form-control">
-						<?php foreach($kategori as $a){?>
-						<?php echo "<option>".$a->nama_kategori."</option>"; ?>
-						<?php } ?>
-					</select>
-				</div> 
-				<div class="form-group col-md-12">
-					Stok produk:
-					<input onkeypress="return hanyaAngka(event)" maxlength="4" name="stok" min="1" class="form-control" required="required" placeholder="Stok produk">
-				</div> 
-				<div class="form-group col-md-12">
-					Harga produk:
-					<input onkeypress="return hanyaAngka(event)" maxlength="7" name="harga" min="1" class="form-control" required="required" placeholder="Harga produk">
-				</div>
-				<div class="form-group col-md-12">
-					Berat produk (gram):
-					<input type="number" name="berat" min="1" class="form-control" required="required" placeholder="Berat produk">
-        </div> 
-				<div class="form-group col-md-6">
-					Upload gambar :<br><br>
-					<input type="file" name="filefoto"  required="required" placeholder="Upload gambar" style="padding-right:1px;">
-				</div> 
-				<div class="form-group col-md-12">
-					Keterangan produk:
-					<textarea name="keterangan" required="required" class="form-control" rows="8" placeholder="Keterangan produk"></textarea>
-					<!-- <input type="textarea" name="keterangan" class="form-control" required="required" placeholder="Keterangan produk"> -->
-				</div>        
-				<div class="form-group col-md-12">
-					<input type="submit" name="submit" class="btn btn-primary" value="Submit">
-					<a href="<?php echo base_url('Produk'); ?>"><button type="button" value="batal" class="btn btn-primary">Batal</button></a>
-				</div>
-			</form>
-		</div>
-		<div class="col-sm-8 col-sm-offset-1" style="background-color: white;padding:20px;">
+		
+		<div class="col-sm-12 col-sm-offset-1" style="background-color: white;padding:20px;">
 			<h2 class="text-gray">Daftar Produk</h2><br>
-      <button id="myBtn">+ Tambah Stok</button>
+      <button class="btn btn-warning" id="myBtn">+ Tambah Stok</button>
+      <a href="<?php echo base_url('Produk') ?>" class="btn btn-primary" >+ Tambah Produk</a>
       <!-- The Modal -->
       <div id="myModal" class="modal">
 
@@ -132,9 +89,7 @@
                           <th>
                             Harga
                           </th>
-                            <th>
-                            Berat
-                          </th>
+                           
                           <th>
                             Keterangan
                           </th>                     
@@ -144,11 +99,11 @@
                       	<?php foreach($produk as $b){?>
                         <tr>
                           <td>    
-                            <a href="<?php echo base_url('Owner_controller/O_produk/update_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-pencil-box"></i> Edit</a><br><br>
-                            <a onclick="return confirm_alert(this);" href="<?php echo base_url('Owner_controller/O_produk/hapus_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-delete"></i> Hapus</a>
+                            <a href="<?php echo base_url('Produk/update_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-pencil-box"></i> Edit</a><br><br>
+                            <a onclick="return confirm_alert(this);" href="<?php echo base_url('Produk/hapus_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-delete"></i> Hapus</a>
                           </td>
                           <td class="font-weight-medium">
-                          	<a target="_blank" href="<?php echo base_url($b->gambar); ?>"><img src="<?php echo base_url($b->gambar); ?>"></a>
+                          	<a target="_blank" href="<?php echo base_url('./assets/images/depan/'.$b->gambar); ?>"><img src="<?php echo base_url('./assets/images/depan/'.$b->gambar); ?>"></a>
                           </td>
                           <td>
                           	<?php echo $b->id_produk; ?>
@@ -167,9 +122,6 @@
                           <td>
                           	Rp <?php $format_indonesia = number_format ($b->harga, 0, ',', '.');
                           echo $format_indonesia; ?>
-                          </td>
-                          <td>
-                            <?php echo $b->berat; ?> gram
                           </td>
                           <td>
                           	<?php echo $b->keterangan; ?>

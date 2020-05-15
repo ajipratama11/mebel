@@ -26,6 +26,8 @@ class Welcome extends CI_Controller{
 		// $data['produk3'] = $this->M_produk->tampil_produk5();
         $this->load->view('landing/welcome', $data);
 	}
+
+	
 	
 	public function tambah_ke_keranjang() 
 	{

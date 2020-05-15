@@ -136,12 +136,14 @@
     <!-- upcoming_event part start-->
 
     <!-- product_list start-->
+    <?php 
+     foreach($kategori as $a) : ?>
     <section class="product_list section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="section_tittle text-center">
-                        <h2>awesome <span>shop</span></h2>
+                        <h2><?php echo $a->nama_kategori; ?> <span>shop</span></h2>
                     </div>
                 </div>
             </div>
@@ -150,17 +152,22 @@
                     <div class="product_list_slider owl-carousel">
                         <div class="single_product_list_slider">
                             <div class="row align-items-center justify-content-between">
+                            <?php 
+                             $coba = $this->db->query("SELECT * FROM produk JOIN kategori ON produk.kategori_id_kategori=kategori.id_kategori WHERE produk.kategori_id_kategori='$a->id_kategori'")->result();
+                             foreach($coba as $b) : ?>
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="single_product_item">
-                                        <img src="<?= base_url() ?>vendor/mebel/img/product/product_1.png" alt="">
+                                        <img height="250px" width="250px" src="<?php echo base_url('./assets/images/depan/'.$b->gambar); ?>" alt="">
                                         <div class="single_product_text">
-                                            <h4>Quartz Belt Watch</h4>
-                                            <h3>$150.00</h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <h4><?php echo $b->nama_produk ?></h4>
+                                            <h3>Rp. <?php $format_indonesia = number_format ($b->harga, 0, ',', '.');
+                                     echo $format_indonesia; ?>,00-</h3>
+                                            <a href="<?php echo base_url('Dashboard/detailproduk/'.$b->id_produk); ?>" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-sm-6">
+                                <?php endforeach; ?> 
+                                <!-- <div class="col-lg-3 col-sm-6">
                                     <div class="single_product_item">
                                         <img src="<?= base_url() ?>vendor/mebel/img/product/product_2.png" alt="">
                                         <div class="single_product_text">
@@ -229,10 +236,10 @@
                                             <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
-                        <div class="single_product_list_slider">
+                        <!-- <div class="single_product_list_slider">
                             <div class="row align-items-center justify-content-between">
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="single_product_item">
@@ -315,12 +322,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <?php endforeach; ?>
     <!-- product_list part start-->
 
     <!-- awesome_shop start-->

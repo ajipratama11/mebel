@@ -6,16 +6,17 @@ class O_user extends CI_Controller{
 		parent::__construct();		
 		$this->load->model('Owner_models/MO_user');
 		$this->load->helper(array('url'));
-		if($this->session->userdata('owner') != "333"){
+		if($this->session->userdata('status') != "admin"){
 			echo "<script>
                 alert('Anda harus login terlebih dahulu');
-                window.location.href = '".base_url('Admin_controller/A_login')."';
+                window.location.href = '".base_url('Owner_controller/A_login')."';
             </script>";//Url tujuan
 		}
 	}
 
 	function index(){
 		$data['user'] = $this->MO_user->tampil_user();
+		$data['pengguna'] = $this->session->userdata('iduseradmin');
 		$this->load->view('element/Owner/Header_owner');
 		$this->load->view('Owner_view/VO_user',$data);
 		$this->load->view('element/Owner/Footer_owner');
@@ -41,8 +42,7 @@ class O_user extends CI_Controller{
 			$password = $this->input->post('password');
 			$alamat = $this->input->post('alamat');
 			$kodepos = $this->input->post('kodepos');
-			$level = 222;
-			$this->MO_user->insert_peg($idpeg,$nama,$email,$telp,$password,$alamat,$kodepos,$level);
+			$this->MO_user->insert_peg($idpeg,$nama,$email,$telp,$password,$alamat,$kodepos);
 			echo "<script>
                 alert('Tambah pegawai berhasil');
                 window.location.href = '".base_url('Owner_controller/O_user')."';
@@ -64,8 +64,7 @@ class O_user extends CI_Controller{
 			$password = $this->input->post('password');
 			$alamat = $this->input->post('alamat');
 			$kodepos = $this->input->post('kodepos');
-			$level = 222;
-			$this->MO_user->update_peg($idpeg,$nama,$email,$telp,$password,$alamat,$kodepos,$level);
+			$this->MO_user->update_peg($idpeg,$nama,$email,$telp,$password,$alamat,$kodepos);
 			echo "<script>
                 alert('Edit pegawai berhasil');
                 window.location.href = '".base_url('Owner_controller/O_user')."';

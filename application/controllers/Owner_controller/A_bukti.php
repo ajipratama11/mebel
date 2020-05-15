@@ -7,10 +7,10 @@ class A_bukti extends CI_Controller{
 		parent::__construct();		
 		$this->load->model('Admin_models/MA_bukti');
 		$this->load->helper(array('url'));
-		if($this->session->userdata('owner') != "333"){
+		if($this->session->userdata('status') != "admin"){
 			echo "<script>
                 alert('Anda harus login terlebih dahulu');
-                window.location.href = '".base_url('Admin_controller/A_login')."';
+                window.location.href = '".base_url('Owner_controller/A_login')."';
             </script>";//Url tujuan
 		}
 	}

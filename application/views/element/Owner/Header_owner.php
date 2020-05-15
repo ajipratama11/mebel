@@ -50,7 +50,7 @@
           
           <li class="nav-item dropdown d-none d-xl-inline-block">
             <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-              <span class="profile-text">Hai, <?php echo $this->session->userdata("namaowner"); ?>!</span>
+              <span class="profile-text">Hai, <?php echo $this->session->userdata("namaadmin"); ?>!</span>
               <img class="img-xs rounded-circle" src="<?php echo base_url('assets/images/admin.png'); ?>" alt="Profile image">
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
@@ -76,7 +76,7 @@
               <a class="dropdown-item">
                 Check Inbox
               </a> -->
-              <a class="dropdown-item" href="<?php echo base_url('Admin_controller/A_logout') ?>">
+              <a class="dropdown-item" href="<?php echo base_url('Owner_controller/A_logout') ?>">
                 Keluar
               </a>
             </div>
@@ -98,9 +98,9 @@
                   <img src="<?php echo base_url('assets/images/admin.png'); ?>" alt="profile image">
                 </div>
                 <div class="text-wrapper">
-                  <p class="profile-name"><?php echo $this->session->userdata("namaowner"); ?></p>
+                  <p class="profile-name"><?php echo $this->session->userdata("namaadmin"); ?></p>
                   <div>
-                    <small class="designation text-muted">id: <?php echo $this->session->userdata("iduserowner"); ?></small>
+                    <small class="designation text-muted">id: <?php echo $this->session->userdata("iduseradmin"); ?></small>
                     <span class="status-indicator online"></span>
                   </div>
                 </div>
@@ -123,7 +123,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Owner_controller/O_user'); ?>">
               <i class="menu-icon mdi mdi-account-card-details"></i>
-              <span class="menu-title">Pegawai</span>
+              <span class="menu-title">Admin</span>
             </a>
           </li>
           <li class="nav-item">
