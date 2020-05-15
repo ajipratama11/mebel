@@ -5,6 +5,7 @@
     <script src="<?= base_url() ?>vendor/mebel/js/bootstrap.min.js"></script>
     <!-- easing js -->
     <script src="<?= base_url() ?>vendor/mebel/js/jquery.magnific-popup.js"></script>
+    <script src="<?= base_url() ?>vendor/mebel/js/lightslider.min.js"></script>
     <!-- swiper js -->
     <script src="<?= base_url() ?>vendor/mebel/js/swiper.min.js"></script>
     <!-- swiper js -->
@@ -14,12 +15,14 @@
     <script src="<?= base_url() ?>vendor/mebel/js/jquery.nice-select.min.js"></script>
     <!-- slick js -->
     <script src="<?= base_url() ?>vendor/mebel/js/slick.min.js"></script>
+    <script src="<?= base_url() ?>vendor/mebel/js/swiper.jquery.js"></script>
     <script src="<?= base_url() ?>vendor/mebel/js/jquery.counterup.min.js"></script>
     <script src="<?= base_url() ?>vendor/mebel/js/waypoints.min.js"></script>
     <script src="<?= base_url() ?>vendor/mebel/js/contact.js"></script>
     <script src="<?= base_url() ?>vendor/mebel/js/jquery.ajaxchimp.min.js"></script>
     <script src="<?= base_url() ?>vendor/mebel/js/jquery.form.js"></script>
     <script src="<?= base_url() ?>vendor/mebel/js/jquery.validate.min.js"></script>
-    <script src="<?= base_url() ?>vendor/mebel/js/mail-script.js"></script>
-    <!-- custom js -->
-    <script src="<?= base_url() ?>vendor/mebel/js/custom.js"></script>
+    <script src="<?= base_url() ?>vendor/mebel/js/stellar.js"></script>
+  <!-- custom js -->
+  <script src="<?= base_url() ?>vendor/mebel/js/theme.js"></script>
+  <script src="<?= base_url() ?>vendor/mebel/js/custom.js"></script>

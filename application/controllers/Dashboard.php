@@ -43,25 +43,27 @@ class Dashboard extends CI_Controller{
 			'qty'     => $this->input->post('stok'),
 			'price'   => $this->input->post('harga'),
 			'name'    => $this->input->post('nama_produk'),
-			'berat'    => $this->input->post('berat'),
+			'panjang'    => $this->input->post('panjang'),
+			'lebar'    => $this->input->post('lebar'),
+			'tinggi'    => $this->input->post('tinggi'),
 			'idpesan' => $this->M_pesanan->get_idpesan()
 	);
 		$this->cart->insert($data);
-		redirect('Landing');
+		redirect('Dashboard');
 	}
 
 	public function detail_keranjang()
 	{
-		$iduser = $this->session->userdata("iduser");
-		$data['pelanggan'] = $this->M_profil->kostumer($iduser);
-		$this->load->view('landing/keranjang', $data);
+		// $iduser = $this->session->userdata("iduser");
+		// $data['pelanggan'] = $this->M_profil->kostumer($iduser);
+		$this->load->view('mebel/keranjang');
 	}
 
 	public function hapus_keranjang()
 	{
 		// $this->cart->contents(['id']);
 		$this->cart->destroy();
-		redirect('Landing/detail_keranjang');
+		redirect('Dashboard/detail_keranjang');
 	}
 	
 	function getCity($province){		

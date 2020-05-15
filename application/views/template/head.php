@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>vendor/mebel/css/animate.css">
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>vendor/mebel/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>vendor/mebel/css/lightslider.min.css">
     <!-- font awesome CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>vendor/mebel/css/all.css">
     <!-- flaticon CSS -->

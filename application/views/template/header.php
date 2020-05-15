@@ -58,19 +58,23 @@
                         </div>
                         <div class="hearer_icon d-flex">
                             <a id="search_1" href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <a href=""><i class="ti-heart"></i></a>
-                            <div class="dropdown cart">
+                            <!-- <a href=""><i class="ti-heart"></i></a> -->
+                            <i style="margin-left: 10px; margin-top: 2px" class="fas fa-cart-plus"><a >  Keranjang : 
+                            <?php $keranjang = $this->cart->total_items()  ?>
+                                        <?php echo anchor('Landing/detail_keranjang', $keranjang)  ?>
+                                        </a></i>
+                            <!-- <div class="dropdown cart">
                                 <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-cart-plus"></i>
                                 </a>
-                                <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <div class="single_product">
     
                                     </div>
-                                </div> -->
+                                </div> 
                                 
-                            </div>
+                            </div> -->
                         </div>
                     </nav>
                 </div>
