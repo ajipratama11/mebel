@@ -165,7 +165,7 @@
             <ul class="list">
               <li>
                 <a class="active" href="#">
-                  <span>Category</span> : Household</a>
+                  <span>Category</span> : <?php echo $a->nama_kategori ?></a>
               </li>
               <li>
                 <a href="#"> <span>Availibility</span> : In Stock</a>
