@@ -37,7 +37,7 @@ class M_login extends CI_Model{
 		  return $kodejadi;
 	}
 	function tambah_user($iduser,$nama,$pass,$username,$level,$telp){
-		$query = $this->db->query("INSERT INTO `user`(`id_user`, `password`, `nama_user`, `no_telp`, `alamat`, `kode_pos`, `email`, `level_id_level`) VALUES ('$iduser','$pass','$nama','$telp','','','$username','$level')");
+		$query = $this->db->query("INSERT INTO `user`(`id_user`, `password`, `nama_user`, `no_telp`, `alamat`, `kode_pos`, `email`) VALUES ('$iduser','$pass','$nama','$telp','','','$username')");
 	}
 	function ubahpassword($nama,$email,$telp,$password2){
 		$query = $this->db->query("UPDATE `kostumer` SET `password`='$password2' WHERE nama_kostumer='$nama' AND email='$email' AND no_telp='$telp' ");

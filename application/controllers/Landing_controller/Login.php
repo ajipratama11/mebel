@@ -12,6 +12,11 @@ class Login extends CI_Controller{
         $this->load->view('mebel/login');
 
     }
+    public function regis() {
+
+        $this->load->view('mebel/register');
+
+    }
     
 
     // Register user
@@ -31,12 +36,12 @@ class Login extends CI_Controller{
 
         
         if($this->form_validation->run() === FALSE) {
-            $this->load->view('mebel/login');
+            $this->load->view('mebel/register');
         } else {
             if($cek>=1){
                 echo "<script>
                         alert('Email sudah terdaftar');
-                        window.location.href = '".base_url('Landing_controller/Login')."';
+                        window.location.href = '".base_url('Landing_controller/Login/regis')."';
                     </script>";
             }else{
                 $data = [
@@ -51,7 +56,7 @@ class Login extends CI_Controller{
     
                 echo "<script>
                     alert('Register Berhasil');
-                    window.location.href = '".base_url('Landing_controller/Login')."';
+                    window.location.href = '".base_url('Landing_controller/Login/regis')."';
                 </script>";
             }
         }
@@ -155,7 +160,7 @@ class Login extends CI_Controller{
 
         echo "<script>
                 alert('Berhasil logged out!');
-                window.location.href = '".base_url('Landing_controller/Login')."';
+                window.location.href = '".base_url('Dashboard')."';
             </script>";//Url tujuan
 
     }
