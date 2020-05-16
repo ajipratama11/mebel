@@ -23,6 +23,8 @@
     <script src="<?= base_url() ?>vendor/mebel/js/jquery.form.js"></script>
     <script src="<?= base_url() ?>vendor/mebel/js/jquery.validate.min.js"></script>
     <script src="<?= base_url() ?>vendor/mebel/js/stellar.js"></script>
+    <script src="<?= base_url() ?>vendor/mebel/js/mail-script.js"></script>
+    <script src="<?= base_url() ?>vendor/mebel/js/price_rangs.js"></script>
   <!-- custom js -->
   <script src="<?= base_url() ?>vendor/mebel/js/theme.js"></script>
   <script src="<?= base_url() ?>vendor/mebel/js/custom.js"></script>

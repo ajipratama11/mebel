@@ -9,7 +9,7 @@ class Login extends CI_Controller{
     }
     public function index() {
 
-        $this->load->view('landing/loginuser');
+        $this->load->view('mebel/login');
 
     }
     
