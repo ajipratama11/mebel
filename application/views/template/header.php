@@ -40,20 +40,25 @@
                                         <a class="dropdown-item" href="elements.html">elements</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2"
-                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="blog.html"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.html">Single blog</a>
-                                    </div>
-                                </li>
                                 
                                 <li class="nav-item">
                                     <a class="nav-link" href="contact.html">Contact</a>
                                 </li>
+                                <?php if($this->session->userdata('status') == "login"){ ?>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_2"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Hai, Aku <?php echo $this->session->userdata("namauser"); ?>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
+                                        <a class="dropdown-item" href="<?php echo base_url('Logout'); ?>">Logout</a>
+                                    </div>
+                                </li>
+                                <?php }else{ ?>
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="<?php echo base_url('Landing_controller/Login') ?>">Login</a>
+                                </li>
+                                    <?php } ?>  
                             </ul>
                         </div>
                         <div class="hearer_icon d-flex">
@@ -61,7 +66,7 @@
                             <!-- <a href=""><i class="ti-heart"></i></a> -->
                             <i style="margin-left: 10px; margin-top: 2px" class="fas fa-cart-plus"><a >  Keranjang : 
                             <?php $keranjang = $this->cart->total_items()  ?>
-                                        <?php echo anchor('Landing/detail_keranjang', $keranjang)  ?>
+                                        <?php echo anchor('Dashboard/detail_keranjang', $keranjang)  ?>
                                         </a></i>
                             <!-- <div class="dropdown cart">
                                 <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
@@ -75,6 +80,7 @@
                                 </div> 
                                 
                             </div> -->
+                            
                         </div>
                     </nav>
                 </div>

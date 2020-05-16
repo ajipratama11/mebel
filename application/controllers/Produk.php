@@ -7,6 +7,12 @@ class Produk extends CI_Controller {
 		$this->load->model('M_produk');
 		$this->load->library('upload');
 		$this->load->helper(array('url','form'));
+		if($this->session->userdata('status') != "admin"){
+			echo "<script>
+                alert('Anda sudah login');
+                window.location.href = '".base_url('Owner_controller/A_login')."';
+            </script>";//Url tujuan
+		}
 		
 	}
 

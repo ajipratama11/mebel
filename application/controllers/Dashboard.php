@@ -48,15 +48,30 @@ class Dashboard extends CI_Controller{
 			'tinggi'    => $this->input->post('tinggi'),
 			'idpesan' => $this->M_pesanan->get_idpesan()
 	);
-		$this->cart->insert($data);
-		redirect('Dashboard');
+		
+		if($this->session->userdata('status') != "login"){
+			echo "<script>
+				alert('Anda harus login terlebih dahulu');
+				window.location.href = '".base_url('Landing_controller/Login')."';
+			</script>";//Url tujuan
+		}else{
+			$this->cart->insert($data);
+			redirect('Dashboard');
+		}
 	}
 
 	public function detail_keranjang()
 	{
-		// $iduser = $this->session->userdata("iduser");
-		// $data['pelanggan'] = $this->M_profil->kostumer($iduser);
-		$this->load->view('mebel/keranjang');
+		$iduser = $this->session->userdata("iduser");
+		$data['pelanggan'] = $this->M_profil->kostumer($iduser);
+		if($this->session->userdata('status') != "login"){
+			echo "<script>
+				alert('Anda harus login terlebih dahulu');
+				window.location.href = '".base_url('Landing_controller/Login')."';
+			</script>";//Url tujuan
+		}else{
+			$this->load->view('mebel/keranjang', $data);
+		}
 	}
 
 	public function hapus_keranjang()

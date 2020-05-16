@@ -30,8 +30,8 @@ class Login extends CI_Controller{
         $cek = $this->db->query("SELECT * FROM kostumer WHERE email='$email'")->num_rows();
 
         
-        if($this->form_validation->run() === FALSE){
-            $this->load->view('landing/loginuser');
+        if($this->form_validation->run() === FALSE) {
+            $this->load->view('mebel/login');
         } else {
             if($cek>=1){
                 echo "<script>
@@ -44,8 +44,7 @@ class Login extends CI_Controller{
                     'email'             => htmlspecialchars($email, TRUE),
                     'no_telp'           => $telp,
                     'password'          => $password,
-                    'date_created'      => time(),
-                    'id_level_id'       => 111
+                    'date_created'      => time()
                 ];
     
                 $this->db->insert('kostumer', $data);
@@ -111,7 +110,7 @@ class Login extends CI_Controller{
 
 
         if($this->form_validation->run() == FALSE) {
-            $this->load->view('landing/Login');
+            $this->load->view('mebel/Login');
         } else {
             $this->aksi_login();
         }
@@ -123,7 +122,6 @@ class Login extends CI_Controller{
 		foreach($this->M_login->iduser2($username) as $row){
 			$idkostumer=$row->id_kostumer;
 			$namakostumer = $row->nama_kostumer;
-			$level=$row->id_level_id;
 		}
 		$where = array(
 			'email' => $username,
@@ -135,13 +133,12 @@ class Login extends CI_Controller{
 				'email' => $username,
 				'iduser' => $idkostumer,
 				'namauser' => $namakostumer,
-				'level' =>$level,
 				'status' => "login"
 				);
  
 			$this->session->set_userdata($data_session);
  
-			redirect('Landing');
+			redirect('Dashboard');
  
 		}else{
 			echo "<script>

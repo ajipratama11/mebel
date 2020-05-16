@@ -12,7 +12,7 @@ class Logout extends CI_Controller {
 		// $this->session->sess_destroy();
 		$this->session->unset_userdata('status');
 		$this->cart->destroy();
-		redirect(base_url('Welcome'));
+		redirect(base_url('Dashboard'));
 	}
 	
 }
