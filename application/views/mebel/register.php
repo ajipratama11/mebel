@@ -45,11 +45,11 @@
                                         placeholder="Nama">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="password" name="email" 
+                                    <input type="text" class="form-control" id="email" name="email" 
                                         placeholder="Email">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="number" class="form-control" id="password" name="telp" 
+                                    <input type="number" class="form-control" id="telp" name="telp" 
                                         placeholder="No Telp">
                                 </div>
                                 <div class="col-md-12 form-group p_star">
