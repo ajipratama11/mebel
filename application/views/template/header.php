@@ -13,7 +13,7 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.html">Home</a>
+                                    <a class="nav-link" href="<?php echo base_url('Dashboard/index'); ?>"">Home</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
@@ -21,8 +21,10 @@
                                         Shop
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="category.html"> shop category</a>
-                                        <a class="dropdown-item" href="single-product.html">product details</a>
+                                        <a class="dropdown-item" href="single-product.html">Ruang tamu</a>
+                                        <a class="dropdown-item" href="single-product.html">Ruang makan</a>
+                                        <a class="dropdown-item" href="single-product.html">Ruang kerja</a>
+                                        <a class="dropdown-item" href="single-product.html">Ruang tidur</a>
                                         
                                     </div>
                                 </li>
@@ -40,9 +42,21 @@
                                         <a class="dropdown-item" href="elements.html">elements</a>
                                     </div>
                                 </li>
-                                
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="contact.html">Testimonial</a>
+                                </li>
+                             <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Info
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                        <a class="dropdown-item" href="category.html">contact</a>
+                                        <a class="dropdown-item" href="single-product.html">FAQ</a>
+                                        
+                                       
+                                        
+                                    </div>
                                 </li>
                                 <?php if($this->session->userdata('status') == "login"){ ?>
                                 <li class="nav-item dropdown">
