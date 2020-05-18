@@ -155,35 +155,29 @@
           </div>
         </div>
       </div>
-      <?php foreach ($pelanggan as $a) { ?>
+			<!--/register-req-->
+
+      <?php foreach ($pelanggan as $a) {?>
         <div class="billing_details">
-          <div class="row">
-            <div class="col-lg-8">
-              <h3>Billing Details</h3>
+		    	<div class="row">
+          <div class="col-lg-8">
+              <h3>Alamat Pengiriman</h3>
               <form class="row contact_form" action="#" method="post" novalidate="novalidate">
 
                 <div class="col-md-12 form-group">
                   <h5>Nama Penerima : </h5>
                   <input type="text" class="form-control" id="company" name="namapengirim" placeholder="nama Anda" value="<?php echo $a->nama_kostumer ?>" />
                 </div>
-                <div class="col-md-6 form-group p_star">
-                  <h5>Nomor Telpon Penerima : </h5>
-                  <input type="text" class="form-control" id="number" name="number" value="<?php echo $a->no_telp ?>" />
-                </div>
-                <div class="col-md-6 form-group p_star">
-                  <h5>Kode Pos : </h5>
-                  <input type="text" class="form-control" id="email" name="compemailany" />
-                </div>
                 <div class="col-md-12 form-group p_star">
                   <h5>Provinsi Tujuan : </h5>
-                  <select class="country_select" name="propinsi_tujuan" id="propinsi_tujuan">
+                  <select class="form-control" name="propinsi_tujuan" id="propinsi_tujuan">
                     <option value="" selected="" disabled="">Pilih Provinsi</option>
                     <?php $this->load->view('rajaongkir/GetProvince'); ?>
                   </select>
                 </div>
                 <div class="col-md-12 form-group p_star">
                   <h5>Kabupaten/Kota Tujuan : </h5>
-                  <select class="country_select" name="destination" id="destination">
+                  <select class="form-control" name="destination" id="destination">
                     <option value="" selected="" disabled="">Pilih Kota</option>
                   </select>
                 </div>
@@ -203,25 +197,37 @@
                   <h5>Rw : </h5>
                   <input type="text" class="form-control" id="email" name="compemailany" />
                 </div>
-                <!-- Alamat asli jember -->
-                <div style="visibility: hidden;">
-                  <select class="form-control" name="propinsi_asal" id="propinsi_asal" required="required">
-                    <!-- <option value="" selected="" disabled="">Pilih Provinsi</option> -->
-                    <?php $this->load->view('rajaongkir/GetProvince2'); ?>
-                  </select>
-
-                  <select class="form-control" name="origin" id="origin">
-                    <?php $this->load->view('rajaongkir/GetCity'); ?>
-                  </select>
+                <div class="col-md-6 form-group p_star">
+                  <h5>Nomor Telpon Penerima : </h5>
+                  <input type="text" class="form-control" id="number" name="number" value="<?php echo $a->no_telp ?>" />
                 </div>
+                <div class="col-md-6 form-group p_star">
+                  <h5>Kode Pos : </h5>
+                  <input type="text" class="form-control" id="email" name="compemailany" />
+                </div>
+					<!-- <p>Alamat asal default jember</p> -->
+					<div style="visibility: hidden;">
+						<select class="form-control" name="propinsi_asal" id="propinsi_asal" required="required">
+							<!-- <option value="" selected="" disabled="">Pilih Provinsi</option> -->
+							<?php $this->load->view('rajaongkir/GetProvince2'); ?>
+						</select>
 
-            </div>
-
+						<select class="form-control" name="origin" id="origin">
+							<?php $this->load->view('rajaongkir/GetCity'); ?>
+						</select>
           </div>
-        </div>
-      <?php } ?>
-  </section>
-  <!--================End Cart Area =================-->
+          
+				</div>
+			</div>
+    </div>
+  </form>
+  <a class="genric-btn success radius" href="#">Lanjutkan Pesanan</a>
+		</div>
+        <?php } ?>
+        </section>
+		<!--====== FOOTER PART START ======-->
+
+	 <!--================End Cart Area =================-->
 
   <!--::footer_part start::-->
   <?php $this->load->view('template/footer'); ?>
@@ -230,6 +236,7 @@
   <!-- jquery plugins here-->
   <?php $this->load->view('template/foot'); ?>
 </body>
+
 <script>
 	function tampil_data(act) {
 		var w = $('#origin').val();
@@ -264,34 +271,37 @@
 		});
 	};
 </script>
+
+<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/JQuery.min.js"></script>
+
 <script>
-  $(document).ready(function() {
+	$(document).ready(function() {
 
-    $("#propinsi_asal").click(function() {
-      $.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_asal').val(), function(obj) {
-        $('#origin').html(obj);
-      });
+		$("#propinsi_asal").click(function() {
+			$.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_asal').val(), function(obj) {
+				$('#origin').html(obj);
+			});
 
-    });
+		});
 
-    $("#propinsi_tujuan").click(function() {
-      $.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_tujuan').val(), function(obj) {
-        $('#destination').html(obj);
-      });
+		$("#propinsi_tujuan").click(function() {
+			$.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_tujuan').val(), function(obj) {
+				$('#destination').html(obj);
+			});
 
-    });
+		});
 
-    /*
-    $("#cari").click(function(){
-    	$.post("<?php echo base_url(); ?>index.php/rajaongkir/getCost/"+$('#origin').val()+'&dest='+$('#destination').val()+'&berat='+$('#berat').val()+'&courier='+$('#courier').val(),function(obj){
-    		$('#hasil').html(obj);
-    	});
-    });
+		/*
+		$("#cari").click(function(){
+			$.post("<?php echo base_url(); ?>index.php/rajaongkir/getCost/"+$('#origin').val()+'&dest='+$('#destination').val()+'&berat='+$('#berat').val()+'&courier='+$('#courier').val(),function(obj){
+				$('#hasil').html(obj);
+			});
+		});
 
-    */
+		*/
 
 
-  });
+	});
 </script>
 
 </html>

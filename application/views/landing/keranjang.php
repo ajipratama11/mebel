@@ -18,7 +18,7 @@
 	
 			<br><br><br><br>
 			<!-- TABEL -->
-			<table class="table table-bordered table-striped table-hover">
+			<!-- <table class="table table-bordered table-striped table-hover">
 				<tr>
 					<th>No</th>
 					<th>Kode Barang</th>
@@ -53,7 +53,7 @@
 					<!-- <th colspan="4">as</th> -->
 					<th colspan="7">Rp. <?php  $format_indonesia = number_format (($this->cart->total()), 0, ',', '.'); echo $format_indonesia  ?></th>
 				</tr>
-			</table>
+			</table> -->
 
 			<a href="<?php echo base_url('Landing/hapus_keranjang/')  ?>" style="width: 250px;" type="button" class="btn btn-danger">HAPUS BELANJA</a>
 			<a href="<?php echo base_url('Landing'); ?>" style="width: 250px;" type="button" class="btn btn-primary">Tambah Belanja Anda</a>
@@ -108,7 +108,7 @@
 						</select>
 					</div>
 				</div>
-				<div class="col-sm-2">
+				<!-- <div class="col-sm-2">
 				<h4>Total Berat (Gr)</h4>
 					<input type="text" min="1" name="berat" id="berat" class="form-control" disabled value="<?php 
 					if(empty($total_berat)){
@@ -126,7 +126,7 @@
 					</select>
 					<br>
 					<button style="width: 100%;height: 50px;" type="button" onclick="tampil_data('data')" class="btn btn-success">Cek Ongkir</button>
-				</div>
+				</div> -->
 				<div class="col-sm-7">
 					<h4>Daftar harga pengiriman</h4>
 					<div style="border: 1px solid #F0F0E9;height: 300px;">
