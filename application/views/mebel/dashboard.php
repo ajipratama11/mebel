@@ -90,10 +90,8 @@
     <section class="feature_part padding_top">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="section_tittle text-center">
-                        <h2>Best Seller</h2>
-                    </div>
+                <div class="col-lg-1">
+                    
                 </div>
             </div>
             <div class="row align-items-center justify-content-between">

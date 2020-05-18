@@ -18,13 +18,12 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Shop
+                                       Shop
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="single-product.html">Ruang tamu</a>
-                                        <a class="dropdown-item" href="single-product.html">Ruang makan</a>
-                                        <a class="dropdown-item" href="single-product.html">Ruang kerja</a>
-                                        <a class="dropdown-item" href="single-product.html">Ruang tidur</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('Dashboard/kategori')?>">Kategori</a>
+                                       
+                                        
                                         
                                     </div>
                                 </li>
@@ -51,8 +50,8 @@
                                         Info
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="category.html">contact</a>
-                                        <a class="dropdown-item" href="single-product.html">FAQ</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('Dashboard/contact')?>">contact</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('Dashboard/faq')?>">FAQ</a>
                                         
                                        
                                         
