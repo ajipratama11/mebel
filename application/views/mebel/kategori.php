@@ -24,7 +24,8 @@
     <!-- breadcrumb start-->
 
     <!--================Category Product Area =================-->
-    <section class="cat_product_area section_padding">
+    <br>
+    <br>
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
@@ -370,7 +371,7 @@
                 </div>
             </div>
         </div>
-    </section>
+
     <!-- product_list part end-->
 
 

@@ -11,8 +11,8 @@
         <div class="col-lg-8">
           <div class="breadcrumb_iner">
             <div class="breadcrumb_iner_item">
-              <h2>contact us</h2>
-              <p>Home <span>-</span> contact us</p>
+              <h2>FAQ</h2>
+              <p>Home <span>-</span> FAQ</p>
             </div>
           </div>
         </div>
@@ -29,7 +29,7 @@
 
       <div class="row">
         <div class="col-12">
-          <h2 class="contact-title">Get in Touch</h2>
+          <h2 class="contact-title">Pesan</h2>
         </div>
         <div class="col-lg-12">
           <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
