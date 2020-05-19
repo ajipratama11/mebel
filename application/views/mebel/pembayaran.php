@@ -232,7 +232,7 @@ if ($err) {
                                     
                 </li>
               </ul>
-              <form action="<?php echo base_url('Pesanan/insert_pesan') ; ?>" method="post">
+              <form action="#" method="post">
 									<input type="hidden" name="namapengirim" value="<?php echo $namapengirim; ?>">
 									<input type="hidden" name="provinsi" value="<?php echo $destination; ?>">
 									<input type="hidden" name="kota" value="<?php echo $origin; ?>">
