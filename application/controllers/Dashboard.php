@@ -27,7 +27,30 @@ class Dashboard extends CI_Controller{
 		// $data['produk3'] = $this->M_produk->tampil_produk5();
         $this->load->view('mebel/dashboard', $data);
 	}
-
+   public function kategori() {
+        
+       $data['kategori'] = $this->M_produk->tampil_kategori();
+		// $data['produk'] = $this->M_produk->tampil_produk3();
+		// $data['produk2'] = $this->M_produk->tampil_produk4();
+		// $data['produk3'] = $this->M_produk->tampil_produk5();
+        $this->load->view('mebel/kategori', $data);
+	}
+	 public function contact() {
+        
+       $data['kategori'] = $this->M_produk->tampil_kategori();
+		// $data['produk'] = $this->M_produk->tampil_produk3();
+		// $data['produk2'] = $this->M_produk->tampil_produk4();
+		// $data['produk3'] = $this->M_produk->tampil_produk5();
+        $this->load->view('mebel/contact', $data);
+	}
+ public function faq() {
+        
+       $data['kategori'] = $this->M_produk->tampil_kategori();
+		// $data['produk'] = $this->M_produk->tampil_produk3();
+		// $data['produk2'] = $this->M_produk->tampil_produk4();
+		// $data['produk3'] = $this->M_produk->tampil_produk5();
+        $this->load->view('mebel/faq', $data);
+	}
 	public function detailproduk($id_produk){
 		$data['data'] = $this->M_produk->tampil_kategori();
 		$data['produk'] = $this->M_produk->tampil_detailproduk($id_produk);
