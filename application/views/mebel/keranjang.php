@@ -162,7 +162,7 @@
 		    	<div class="row">
           <div class="col-lg-8">
               <h3>Alamat Pengiriman</h3>
-              <form class="row contact_form" action="#" method="post" novalidate="novalidate">
+              <form class="row contact_form" action="<?php echo base_url('Pesanan/pembayaran') ?>" method="post" novalidate="novalidate">
 
                 <div class="col-md-12 form-group">
                   <h5>Nama Penerima : </h5>
@@ -183,27 +183,27 @@
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <h5>Kecamatan : </h5>
-                  <input type="text" class="form-control" id="number" name="number" />
+                  <input type="text" class="form-control" id="number" name="kecamatan" />
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <h5>Desa/Dusun : </h5>
-                  <input type="text" class="form-control" id="email" name="compemailany" />
+                  <input type="text" class="form-control" id="email" name="desa" />
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <h5>Rt : </h5>
-                  <input type="text" class="form-control" id="number" name="number" />
+                  <input type="text" class="form-control" id="number" name="rt" />
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <h5>Rw : </h5>
-                  <input type="text" class="form-control" id="email" name="compemailany" />
+                  <input type="text" class="form-control" id="email" name="rw" />
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <h5>Nomor Telpon Penerima : </h5>
-                  <input type="text" class="form-control" id="number" name="number" value="<?php echo $a->no_telp ?>" />
+                  <input type="text" class="form-control" id="number" name="no_telp" value="<?php echo $a->no_telp ?>" />
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <h5>Kode Pos : </h5>
-                  <input type="text" class="form-control" id="email" name="compemailany" />
+                  <input type="text" class="form-control" id="email" name="kodepos" />
                 </div>
 					<!-- <p>Alamat asal default jember</p> -->
 					<div style="visibility: hidden;">
@@ -216,7 +216,7 @@
 							<?php $this->load->view('rajaongkir/GetCity'); ?>
 						</select>
           </div>
-          
+          <button type="submit" style="width: 300px; height:60px;" class="btn btn-sm btn-success">Selesaikan pesanan</button>
 				</div>
 			</div>
     </div>

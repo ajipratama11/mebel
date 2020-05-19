@@ -6,17 +6,42 @@ class Pesanan extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('M_keranjang');
 		$this->load->helper(array('url'));
-		if($this->session->userdata('status') != "login"){
-			echo "<script>
-                alert('Anda harus login terlebih dahulu');
-                window.location.href = '".base_url('Login')."';
-            </script>";//Url tujuan
-		}
+		// if($this->session->userdata('status') != "login"){
+		// 	echo "<script>
+        //         alert('Anda harus login terlebih dahulu');
+        //         window.location.href = '".base_url('Login')."';
+        //     </script>";//Url tujuan
+		// }
 		
 	}
 
 	public function index(){
 		echo 'Kembali ke keranjang';
+	}
+
+	public function pembayaran(){
+
+		$destination = $this->input->post('propinsi_tujuan');
+		$origin = $this->input->post('destination');
+		$namapengirim = $this->input->post('namapengirim');
+		$kecamatan = $this->input->post('kecamatan');
+		$desa = $this->input->post('desa');
+		$kodepos = $this->input->post('kodepos');
+		$telp = $this->input->post('no_telp');
+		$rt = $this->input->post('rt');
+		$rw = $this->input->post('rw');
+		$data = array('destination' => $destination,
+								'origin' => $origin,	 
+								'namapengirim' => $namapengirim,
+								'kecamatan' => $kecamatan,
+								'desa' => $desa,
+								'kodepos' => $kodepos,
+								'telp' => $telp,
+								'rt' => $rt,
+								'rw' => $rw
+				);
+			
+		$this->load->view('mebel/pembayaran', $data);
 	}
 	public function data(){
 		$kurir = $this->input->post('kurir');
