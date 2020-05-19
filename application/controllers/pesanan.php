@@ -6,12 +6,12 @@ class Pesanan extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('M_keranjang');
 		$this->load->helper(array('url'));
-		// if($this->session->userdata('status') != "login"){
-		// 	echo "<script>
-        //         alert('Anda harus login terlebih dahulu');
-        //         window.location.href = '".base_url('Login')."';
-        //     </script>";//Url tujuan
-		// }
+		if($this->session->userdata('status') != "login"){
+			echo "<script>
+                alert('Anda harus login terlebih dahulu');
+                window.location.href = '".base_url('Landing_controller/Login')."';
+            </script>";//Url tujuan
+		}
 		
 	}
 
@@ -20,7 +20,9 @@ class Pesanan extends CI_Controller {
 	}
 
 	public function pembayaran(){
-
+		foreach ($this->cart->contents() as $item) {
+			$idpesan=$item['idpesan'];
+		}
 		$destination = $this->input->post('propinsi_tujuan');
 		$origin = $this->input->post('destination');
 		$namapengirim = $this->input->post('namapengirim');
@@ -38,7 +40,8 @@ class Pesanan extends CI_Controller {
 								'kodepos' => $kodepos,
 								'telp' => $telp,
 								'rt' => $rt,
-								'rw' => $rw
+								'rw' => $rw,
+								'idpesan' => $idpesan
 				);
 			
 		$this->load->view('mebel/pembayaran', $data);
