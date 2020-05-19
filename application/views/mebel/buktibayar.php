@@ -25,71 +25,70 @@
     <!-- breadcrumb start-->
     <section class="cart_area padding_top">
     <div class="container">
-      <div class="cart_inner">
-      <h3>Silahkan klik <a href="<?php echo base_url('Bukti');?>" class="genric-btn success medium">DISINI</a> untuk upload Bukti Pembayaran</h3>
-        <div class="table-responsive">
-        <table class="table">
-					<thead>
-						<tr class="cart_menu">
-							<td class="image">Kode Pesan</td>
-							<td class="description">Tanggal pesan</td>
-							<td class="price">Pengiriman</td>
-							<td class="quantity">Total</td>
-							<td class="total">Status</td>
-							<td class="total">Aksi</td>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach($pesan as $a){ ?>
-						<tr>
-							<td class="cart_product">
-								<h3 style="padding-left: 7px;"><?php echo $a->id_pesan; ?></h3>
-							</td>
-							<td class="cart_description">
-								<h4><a><?php echo date('d-m-Y H:i:s', strtotime($a->tanggal_pesan)); ?></a></h4>
-							</td>
-							<td class="cart_price">
-								<p><?php echo $a->kabupaten; ?></p>
-							</td>
-							<td class="cart_quantity">
-								<h4>Rp <?php $format_indonesia = number_format ($a->total_pesan, 0, ',', '.');
-                                     echo $format_indonesia; ?></h4>
-							</td>
-							<td class="cart_total">
-								<?php 
-								if ($a->status=='Proses') {
-									echo '<button type="button" class="btn">'.$a->status.'</button>';
-								}elseif ($a->status=='Batal') {
-									echo '<button type="button" class="btn btn-danger">'.$a->status.'</button>';
-								}else{
-									echo '<button type="button" class="btn btn-success">'.$a->status.'</button>';
-								}
-								?>
-								
-								<!-- <button type="button" class="btn"><?php echo $a->status; ?></button> -->
-								<!-- <button type="button" class="btn btn-danger">Danger</button> -->
-							</td>
-							<td class="cart_total">
-							<form target="_blank" action="<?php echo base_url('Transaksi/detail_transaksi/'.$a->id_kirim); ?>" method="post">
-                                <input type="hidden" name="idpesan" value="<?php echo $a->id_pesan;?>">
-                                <input type="hidden" name="harga_kirim" value="<?php echo $a->harga_kirim;?>">
-                                <input type="hidden" name="total_pesan" value="<?php echo $a->total_pesan;?>">
-                                <input type="hidden" name="iduser" value="<?php echo $a->id_kostumer_id;?>">
-                                <input type="hidden" name="kode_pos" value="<?php echo $a->kodepos;?>">
-                                <input type="hidden" name="status" value="<?php echo $a->status; ?>">
-                                <button type="submit" class="btn btn-primary">Lihat detail transaksi</button>
-                            </form><br>
-								<!-- <p><a target="_blank" href="<?php echo base_url('Transaksi/detail_transaksi/'.$a->keranjang_id_keranjang.'/'.$a->id_pesan.'/'.$a->total_pesan.'/'.$a->id_kirim); ?>">Lihat detail transaksi</a></p> -->
-							</td>
-						</tr>
-						<?php } ?>
-					</tbody>
-					<p>*Daftar transaksi pemesanan yang anda lakukan,<br> lakukan pembayaran dalam jangka waktu 24 jam semenjak transaksi anda lakukan.</p>
-				</table>
+<div class="billing_details">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3>Billing Details</h3>
+            <form class="row contact_form" action="<?php echo base_url('Bukti/upload_image'); ?>" method="post" novalidate="novalidate" enctype="multipart/form-data">
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="company" name="kode_pesan" placeholder="Masukkan Kode Pesan Anda" />
+              </div>
+              <div class="col-md-12 form-group">
+                <input type="text" class="form-control" id="company" name="nama" placeholder="Nama Nomor Rekening Anda" />
+              </div>
+              
+              <div class="col-md-12 form-group p_star">
+                <select class="form-control">
+                        <option selected disabled>Silahkan Pilih BANK</option>
+                        <option value="BRI">BRI</option>
+						<option value="BCA">BCA</option>
+						<option value="MANDIRI">BNI</option>
+						<option value="BNI">MANDIRI</option>
+						<option value="BANK JATIM">BANK JATIM</option>
+                </select>
+              </div>
+              <div class="col-md-12 form-group p_star">
+                <input type="file" class="" id="add1" name="filefoto" />
+              </div>
+              <button type="submit" style="margin-left: 15px" class="genric-btn success">Upload</button>             
+            </form>
+          </div   >
+          <div class="col-lg-4">
+            <div class="order_box">
+              <h2>Your Order</h2>
+              
+              <div class="payment_item">
+              <label for="f-option5">Bukti pembayaran merupakan bukti transfer bank transaksi pemesanan yang anda lakukan, caranya :</label>
+                  <div class="check"></div>
+                <p>
+                1. Masukkan kode pesan transaksi anda
+                </p>
+              </div>
+              <div class="payment_item">
+                <p>
+                2. Jangan lupa nama pemilik si nomor rekening
+                </p>
+              </div>
+              <div class="payment_item">
+                <p>
+                3. Bank transfer, misal: BRI, BCA, dan lain sebagainya
+                </p>
+              </div>
+              <div class="payment_item">
+                <p>
+                4. Terakhir scan atau foto bukti transfer yaa...
+                </p>
+              </div>
+             
+             
+                <label for="f-option4">*ukuran file max 1 mb. </label>
+               
+           
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    </section>
+      </section>
 
     <!--================Checkout Area =================-->
     <section class="checkout_area padding_top">

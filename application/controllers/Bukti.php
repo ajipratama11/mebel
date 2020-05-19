@@ -20,7 +20,7 @@ class Bukti extends CI_Controller
 	{
 		$iduser = $this->session->userdata("id");
 		$data['gambar'] = $this->M_bukti->tampil_gambar();
-		$this->load->view('landing/buktibayar', $data);
+		$this->load->view('mebel/buktibayar', $data);
 	}
 
 	function upload_image()
@@ -50,7 +50,7 @@ class Bukti extends CI_Controller
 				$nama_pemilik = $this->input->post('nama');
 				$bank = $this->input->post('bank');
 				$kode = $this->input->post('kode_pesan');
-				$gambar = 'assets/images/' . $gbr['file_name'];
+				$gambar = $gbr['file_name'];
 				$this->M_bukti->simpan_upload($id, $nama_pemilik, $bank, $gambar, $kode);
 				echo "<script>
 	                alert('Upload berhasil, Silahkan tunggu status menjadi terbayar');

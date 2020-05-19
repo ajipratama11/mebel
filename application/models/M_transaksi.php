@@ -2,7 +2,7 @@
  
 class M_transaksi extends CI_Model{
 	function tampil_pesan($iduser){
-		$query = $this->db->query("SELECT * FROM pesan JOIN pengiriman ON pesan.pengiriman_id_kirim=pengiriman.id_kirim WHERE now() AND id_kostumer_id='$iduser' ORDER BY id_pesan DESC");
+		$query = $this->db->query("SELECT * FROM pesan JOIN pengiriman ON pesan.pengiriman_id_kirim=pengiriman.id_kirim WHERE id_kostumer_id='$iduser' ORDER BY id_pesan DESC");
 		return $query->result();
 	}
 	function tampil_keranjang($iduser,$keranjang){
