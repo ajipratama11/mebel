@@ -95,9 +95,9 @@ class Pesanan extends CI_Controller {
 		$kecamatan = $this->input->post('kecamatan');
 		$desa = $this->input->post('desa');
 		$kodepos = $this->input->post('kodepos');
-		$layanan = $this->input->post('layanan');
+		$layanan = $this->input->post('rt');
 		$harga_kirim = $this->input->post('harga_kirim');
-		$kurir = $this->input->post('kurir');
+		$kurir = $this->input->post('rw');
 		$telp = $this->input->post('telp');
 	
 		$this->M_keranjang->insert_kirim($kirim,$provinsi,$kota,$layanan,$harga_kirim,$kurir,$namapengirim,$kecamatan,$desa,$kodepos,$telp);
@@ -110,6 +110,9 @@ class Pesanan extends CI_Controller {
 					{
 						$data_detail = array('jumlah' =>$a['qty'],
 										'total' => $a['subtotal'],
+										'panjang' => $a['panjang'],
+										'lebar' => $a['lebar'],
+										'tinggi' => $a['tinggi'],
 										'produk_id_produk' => $a['id'],
 										'id_kostumer_id' => $iduser,
 										'pesan_id_pesan' => $idpesan);

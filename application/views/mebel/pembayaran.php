@@ -149,9 +149,6 @@
                                             $total_berat = 0;
                                             foreach ($this->cart->contents() as $items) :  ?>
                                                 <tr>
-                                                    <?php $pjg = $items['panjang'] ?>
-                                                    <?php $lbr = $items['lebar'] ?>
-                                                    <?php $tggi = $items['tinggi'] ?>
                                                     <td><?php echo $items['id'] ?></td>
                                                     <td><?php echo $items['name'] ?></td>
 
@@ -209,18 +206,19 @@
                                         $luar = 60000;
                                         $totalpesan = $this->cart->total();
                                         if ($origin == 160) {
+                                            $ongkir = $dalam;
                                             $totalbayar = $totalpesan + $dalam;
                                         } else {
+                                            $ongkir = $luar;
                                             $totalbayar = $totalpesan + $luar;
                                         }
                                         ?>
-                                        <?php if ($origin == 160) { ?>
-                                            <span>Rp.<?php $format_indonesia = number_format($dalam, 0, ',', '.');
+                                       
+                                            <span>Rp.<?php $format_indonesia = number_format($ongkir, 0, ',', '.');
                                                         echo $format_indonesia;  ?>,00-</span>
-                                        <?php } else { ?>
-                                            <span>Rp.<?php $format_indonesia = number_format($luar, 0, ',', '.');
-                                                        echo $format_indonesia;  ?>,00-</span>
-                                        <?php } ?>
+                                       
+                                            
+                                       
                                     </a>
                                 </li>
                                 <li>
@@ -236,18 +234,18 @@
 
                                 </li>
                             </ul>
-                            <form action="#" method="post">
+                            <form action="<?php echo base_url('Pesanan/insert_pesan') ; ?>" method="post">
                                 <input type="hidden" name="namapengirim" value="<?php echo $namapengirim; ?>">
                                 <input type="hidden" name="provinsi" value="<?php echo $destination; ?>">
                                 <input type="hidden" name="kota" value="<?php echo $origin; ?>">
                                 <input type="hidden" name="kecamatan" value="<?php echo $kecamatan; ?>">
                                 <input type="hidden" name="desa" value="<?php echo $desa; ?>">
+                                <input type="hidden" name="rt" value="<?php echo $rt; ?>">
+                                <input type="hidden" name="rw" value="<?php echo $rw; ?>">
                                 <input type="hidden" name="kodepos" value="<?php echo $kodepos; ?>">
-                                <input type="hidden" name="panjang" value="<?php echo $pjg; ?>">
-                                <input type="hidden" name="lebar" value="<?php echo $lbr; ?>">
-                                <input type="hidden" name="tinggi" value="<?php echo $tggi; ?>">
                                 <input type="hidden" name="telp" value="<?php echo $telp; ?>">
                                 <input type="hidden" name="idpesan" value="<?php echo $idpesan; ?>">
+                                <input type="hidden" name="harga_kirim" value="<?php echo $ongkir; ?>">
                                 <input type="hidden" name="total_pesan" value="<?php echo $totalbayar; ?>">
                                 <!-- <input type="hidden" name="idpesanx" value="<?php echo $idpesanx; ?>"> -->
 
