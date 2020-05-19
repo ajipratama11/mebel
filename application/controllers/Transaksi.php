@@ -18,9 +18,9 @@ class Transaksi extends CI_Controller {
 	}
 
 	public function index(){
-		$iduser = $this->session->userdata("iduser");
-		$data['pesan'] = $this->M_transaksi->tampil_pesan($iduser);
-		$this->load->view('landing/checkout',$data);
+		// $iduser = $this->session->userdata("iduser");
+		// $data['pesan'] = $this->M_transaksi->tampil_pesan($iduser);
+		$this->load->view('mebel/transaksi');
 
 	}
 	public function data($data)

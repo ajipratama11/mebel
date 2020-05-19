@@ -167,15 +167,16 @@
                                         <span><?php echo $namapengirim; ?></span>
                                     </a>
                                 </li>
-
+                                <?php $provinsi = $data['rajaongkir']['results']['province'];
+                                    $kab = $data['rajaongkir']['results']['city_name']; ?>
                                 <li>
                                     <a href="#">Provinsi
-                                        <span><?php echo $data['rajaongkir']['results']['province']; ?></span>
+                                        <span><?php echo $provinsi  ?></span>
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">Kabupaten/kota
-                                        <span><?php echo $data['rajaongkir']['results']['city_name']; ?></span>
+                                        <span><?php echo $kab  ?></span>
                                     </a>
                                 </li>
                                 <li>
@@ -236,8 +237,8 @@
                             </ul>
                             <form action="<?php echo base_url('Pesanan/insert_pesan') ; ?>" method="post">
                                 <input type="hidden" name="namapengirim" value="<?php echo $namapengirim; ?>">
-                                <input type="hidden" name="provinsi" value="<?php echo $destination; ?>">
-                                <input type="hidden" name="kota" value="<?php echo $origin; ?>">
+                                <input type="hidden" name="provinsi" value="<?php echo $provinsi; ?>">
+                                <input type="hidden" name="kota" value="<?php echo $kab; ?>">
                                 <input type="hidden" name="kecamatan" value="<?php echo $kecamatan; ?>">
                                 <input type="hidden" name="desa" value="<?php echo $desa; ?>">
                                 <input type="hidden" name="rt" value="<?php echo $rt; ?>">

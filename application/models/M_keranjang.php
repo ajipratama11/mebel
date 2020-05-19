@@ -44,8 +44,8 @@ class M_keranjang extends CI_Model{
 		  $kodejadi = "S0".$kodemax;  
 		  return $kodejadi;
 	}
-	function insert_kirim($kirim,$provinsi,$kota,$layanan,$harga_kirim,$kurir,$namapengirim,$kecamatan,$desa,$kodepos,$telp){
-		$query = $this->db->query("INSERT INTO `pengiriman`(`id_kirim`, `nama_pengirim`, `provinsi`, `kabupaten`, `kecamatan`, `desa`, `jenis_layanan`, `kurir`, `harga_kirim`, `kodepos`, `telp`) VALUES ('$kirim','$namapengirim','$provinsi','$kota','$kecamatan','$desa','$layanan','$kurir','$harga_kirim','$kodepos','$telp')");
+	function insert_kirim($kirim,$provinsi,$kota,$rt,$harga_kirim,$rw,$namapengirim,$kecamatan,$desa,$kodepos,$telp){
+		$query = $this->db->query("INSERT INTO `pengiriman`(`id_kirim`, `nama_pengirim`, `provinsi`, `kabupaten`, `kecamatan`, `desa`, `rt`, `rw`, `harga_kirim`, `kodepos`, `telp`) VALUES ('$kirim','$namapengirim','$provinsi','$kota','$kecamatan','$desa','$rt','$rw','$harga_kirim','$kodepos','$telp')");
 	}
 
 	function hapus_keranjang($id,$idpesan){
