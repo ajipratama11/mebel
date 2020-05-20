@@ -58,6 +58,10 @@ class M_produk extends CI_Model{
 		$query = $this->db->query("SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.kategori_id_kategori WHERE kategori.id_kategori='$idk'");
 		return $query->result();
 	}
+	function katprod2(){
+		$query = $this->db->query("SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.kategori_id_kategori");
+		return $query->result();
+	}
 	function tampil_detailproduk($id_produk){
 		$query = $this->db->query("SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.kategori_id_kategori WHERE id_produk='$id_produk'");
 		return $query->result();

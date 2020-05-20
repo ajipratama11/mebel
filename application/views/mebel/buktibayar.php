@@ -38,13 +38,13 @@
               </div>
               
               <div class="col-md-12 form-group p_star">
-                <select class="form-control">
+                <select name="bank" class="form-control">
                         <option selected disabled>Silahkan Pilih BANK</option>
                         <option value="BRI">BRI</option>
-						<option value="BCA">BCA</option>
-						<option value="MANDIRI">BNI</option>
-						<option value="BNI">MANDIRI</option>
-						<option value="BANK JATIM">BANK JATIM</option>
+					            	<option value="BCA">BCA</option>
+					            	<option value="MANDIRI">BNI</option>
+					          	  <option value="BNI">MANDIRI</option>
+						            <option value="BANK JATIM">BANK JATIM</option>
                 </select>
               </div>
               <div class="col-md-12 form-group p_star">

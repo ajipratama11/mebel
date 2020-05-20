@@ -30,10 +30,16 @@ class Dashboard extends CI_Controller{
    public function kategori() {
         
        $data['kategori'] = $this->M_produk->tampil_kategori();
-		// $data['produk'] = $this->M_produk->tampil_produk3();
-		// $data['produk2'] = $this->M_produk->tampil_produk4();
-		// $data['produk3'] = $this->M_produk->tampil_produk5();
+	   $idk = $this->uri->segment(3);
+	   $data['data'] = $this->M_produk->tampil_kategori();
+	   if($idk != null){
+		$data['produk'] = $this->M_produk->katprod($idk);
         $this->load->view('mebel/kategori', $data);
+	   }else{
+		$data['produk'] = $this->M_produk->katprod2();
+        $this->load->view('mebel/kategori', $data);
+	   }
+	   
 	}
 	 public function contact() {
         

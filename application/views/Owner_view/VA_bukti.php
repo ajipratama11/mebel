@@ -45,7 +45,7 @@
                             <?php echo $a->bank; ?>
                           </td>
                           <td>
-                            <center><a target="_blank" href="<?php echo base_url($a->bukti_pembayaran); ?>"><img src="<?php echo base_url($a->bukti_pembayaran); ?>"></a></center>
+                            <center><a target="_blank" href="<?php echo base_url($a->bukti_pembayaran); ?>"><img src="<?php echo base_url('./assets/images/'.$a->bukti_pembayaran); ?>"></a></center>
                           </td>
                          
                            
