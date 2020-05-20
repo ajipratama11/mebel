@@ -107,11 +107,11 @@
             aria-selected="false">Specification</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+          <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
             aria-selected="false">Comments</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+          <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
             aria-selected="false">Reviews</a>
         </li>
       </ul>
@@ -219,89 +219,44 @@
             </table>
           </div>
         </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           <div class="row">
             <div class="col-lg-6">
-              <div class="comment_list">
+              <div class="comment_list"  >
+              <?php 
+     foreach($komentar as $a) : ?>
                 <div class="review_item">
                   <div class="media">
                     <div class="d-flex">
                       <img src="<?= base_url() ?>vendor/mebel/img/product/single-product/review-1.png" alt="" />
                     </div>
-                    <div class="media-body">
-                      <h4>Blake Ruiz</h4>
-                      <h5>12th Feb, 2017 at 05:56 pm</h5>
-                      <a class="reply_btn" href="#">Reply</a>
+                    <div class="media-body" id="show">
+                      <h4><?php echo $a->nama_kostumer ?></h4>
+                      <h5><?php echo $a->date ?></h5>
                     </div>
                   </div>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo
+                  <?php echo $a->komentar ?>
                   </p>
                 </div>
-                <div class="review_item reply">
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="<?= base_url() ?>vendor/mebel/img/product/single-product/review-2.png" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <h4>Blake Ruiz</h4>
-                      <h5>12th Feb, 2017 at 05:56 pm</h5>
-                      <a class="reply_btn" href="#">Reply</a>
-                    </div>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo
-                  </p>
-                </div>
-                <div class="review_item">
-                  <div class="media">
-                    <div class="d-flex">
-                      <img src="<?= base_url() ?>vendor/mebel/img/product/single-product/review-3.png" alt="" />
-                    </div>
-                    <div class="media-body">
-                      <h4>Blake Ruiz</h4>
-                      <h5>12th Feb, 2017 at 05:56 pm</h5>
-                      <a class="reply_btn" href="#">Reply</a>
-                    </div>
-                  </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo
-                  </p>
-                </div>
+     <?php endforeach; ?>
               </div>
             </div>
             <div class="col-lg-6">
               <div class="review_box">
                 <h4>Post a comment</h4>
-                <form class="row contact_form" action="contact_process.php" method="post" id="contactForm"
+                <form class="row contact_form" action="<?php echo base_url('Dashboard/simpan_komentar') ?>" method="post" id="contactForm"
                   novalidate="novalidate">
-                  <div class="col-md-12">
+                  
                     <div class="form-group">
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name" />
+                    <input type="hidden" class="form-control" id="name" name="id_kostumer_id" value="<?php echo $this->session->userdata("iduser"); ?>" placeholder="Your Full name" />
+                    <input type="hidden" class="form-control" id="email" name="id_produk_id" value="<?php echo $this->uri->segment(3); ?>" placeholder="Email Address" />
+                      <input type="hidden" class="form-control" id="number" name="date" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y H:i:s') ?>" placeholder="Phone Number" />
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" />
-                    </div>
-                  </div>
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <textarea class="form-control" name="message" id="message" rows="1"
+                      <textarea class="form-control" name="komentar" rows="8" 
                         placeholder="Message"></textarea>
                     </div>
                   </div>
@@ -315,7 +270,7 @@
             </div>
           </div>
         </div>
-        <div class="tab-pane fade show active" id="review" role="tabpanel" aria-labelledby="review-tab">
+        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
           <div class="row">
             <div class="col-lg-6">
               <div class="row total_rate">
@@ -571,5 +526,130 @@
     <!-- jquery plugins here-->
     <?php $this->load->view('template/foot'); ?>
 </body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		tampil_data_barang();	//pemanggilan fungsi tampil barang.
+		
+		$('#mydata').dataTable();
+		 
+		//fungsi tampil barang
+		function tampil_data_barang(){
+		    $.ajax({
+		        type  : 'GET',
+		        url   : '<?php echo base_url()?>index.php/Dashboard/data_komentar',
+		        async : true,
+		        dataType : 'json',
+		        success : function(data){
+		            var html = '';
+		            var i;
+		            for(i=0; i<data.length; i++){
+		                html += '<div class="review_item">'+
+		                  		'<div class="media">'+
+		                  		'<div class="d-flex">'+
+		                        '<img src="<?= base_url() ?>vendor/mebel/img/product/single-product/review-1.png" alt="" />'+
+		                        '</div>'+
+		                        '<div class="media-body">'+
+		                        '<h4>'+data[i].nama_kostumer+'</h4>'+
+		                        '<h5>'+'12th Feb, 2017 at 05:56 pm'+'</h5>'+
+		                        '</div>'+
+		                        '</div>'+
+                                '<p>'+' Lorem ipsum dolor sit amet, consectetur adipisicing elit'+'</p>'+
+		                        '</div>';
+		            }
+		            $('#show_data').html(html);
+		        }
+
+		    });
+		}
+
+		//GET UPDATE
+		$('#show_data').on('click','.item_edit',function(){
+            var id=$(this).attr('data');
+            $.ajax({
+                type : "GET",
+                url  : "<?php echo base_url('index.php/barang/get_barang')?>",
+                dataType : "JSON",
+                data : {id:id},
+                success: function(data){
+                	$.each(data,function(barang_kode, barang_nama, barang_harga){
+                    	$('#ModalaEdit').modal('show');
+            			$('[name="kobar_edit"]').val(data.barang_kode);
+            			$('[name="nabar_edit"]').val(data.barang_nama);
+            			$('[name="harga_edit"]').val(data.barang_harga);
+            		});
+                }
+            });
+            return false;
+        });
+
+
+		//GET HAPUS
+		$('#show_data').on('click','.item_hapus',function(){
+            var id=$(this).attr('data');
+            $('#ModalHapus').modal('show');
+            $('[name="kode"]').val(id);
+        });
+
+		//Simpan Barang
+		$('#btn_simpan').on('click',function(){
+            var kobar=$('#kode_barang').val();
+            var nabar=$('#nama_barang').val();
+            var harga=$('#harga').val();
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo base_url('index.php/barang/simpan_barang')?>",
+                dataType : "JSON",
+                data : {kobar:kobar , nabar:nabar, harga:harga},
+                success: function(data){
+                    $('[name="kobar"]').val("");
+                    $('[name="nabar"]').val("");
+                    $('[name="harga"]').val("");
+                    $('#ModalaAdd').modal('hide');
+                    tampil_data_barang();
+                }
+            });
+            return false;
+        });
+
+        //Update Barang
+		$('#btn_update').on('click',function(){
+            var kobar=$('#kode_barang2').val();
+            var nabar=$('#nama_barang2').val();
+            var harga=$('#harga2').val();
+            $.ajax({
+                type : "POST",
+                url  : "<?php echo base_url('index.php/barang/update_barang')?>",
+                dataType : "JSON",
+                data : {kobar:kobar , nabar:nabar, harga:harga},
+                success: function(data){
+                    $('[name="kobar_edit"]').val("");
+                    $('[name="nabar_edit"]').val("");
+                    $('[name="harga_edit"]').val("");
+                    $('#ModalaEdit').modal('hide');
+                    tampil_data_barang();
+                }
+            });
+            return false;
+        });
+
+        //Hapus Barang
+        $('#btn_hapus').on('click',function(){
+            var kode=$('#textkode').val();
+            $.ajax({
+            type : "POST",
+            url  : "<?php echo base_url('index.php/barang/hapus_barang')?>",
+            dataType : "JSON",
+                    data : {kode: kode},
+                    success: function(data){
+                            $('#ModalHapus').modal('hide');
+                            tampil_data_barang();
+                    }
+                });
+                return false;
+            });
+
+	});
+
+</script>
 
 </html>

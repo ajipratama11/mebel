@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller{
 		$this->load->model('M_produk');
 		$this->load->model('M_profil');
 		$this->load->model('M_pesanan');
+		$this->load->model('M_komentar');
 		$this->load->library('upload');
 		$this->load->helper(array('url'));
 		// if($this->session->userdata('status') != "login"){
@@ -60,6 +61,7 @@ class Dashboard extends CI_Controller{
 	public function detailproduk($id_produk){
 		$data['data'] = $this->M_produk->tampil_kategori();
 		$data['produk'] = $this->M_produk->tampil_detailproduk($id_produk);
+		$data['komentar'] = $this->M_komentar->komentar_list($id_produk);
 		$this->load->view('mebel/detailproduk',$data);
 	}
 	
@@ -109,6 +111,32 @@ class Dashboard extends CI_Controller{
 		$this->cart->destroy();
 		redirect('Dashboard/detail_keranjang');
 	}
+
+
+	function data_komentar(){
+		$barang = $this->uri->segment(3);
+        $data=$this->M_komentar->komentar_list($barang);
+        echo json_encode($data);
+    }
+ 
+    function get_komentar(){
+        $kobar=$this->input->get('id');
+        $data=$this->M_komentar->get_komentar_by_kode($kobar);
+        echo json_encode($data);
+    }
+ 
+    function simpan_komentar(){
+		$produk = $this->input->post('id_produk_id');
+        $data = [
+			'id_kostumer_id'     => $this->input->post('id_kostumer_id'),
+			'komentar'             => $this->input->post('komentar'),
+			'id_produk_id'           => $produk,
+			'date'          => $this->input->post('date')
+		];
+
+		$this->db->insert('komentar', $data);
+		redirect('Dashboard/detailproduk/'.$produk);
+    }
 	
 	function getCity($province){		
 

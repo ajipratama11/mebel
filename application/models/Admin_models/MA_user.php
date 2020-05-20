@@ -11,7 +11,6 @@ class MA_user extends CI_Model {
     {
         $this->db->limit($limit, $start);
         $this->db->order_by("id_kostumer", "DESC");
-        $this->db->where("id_level_id","111");
         $query = $this->db->get("kostumer");
         
  
