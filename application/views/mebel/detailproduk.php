@@ -65,16 +65,17 @@
             <p>
             <?php echo $a->keterangan ?>
             </p>
+            <input type="checkbox" id="myCheck" onclick="myFunction()"><span style="margin-left: 10px" >Checklist Jika Ingin Custom Ukuran</span>
             <div class="card_area d-flex justify-content-between align-items-center">
-              Panjang
+              <span id="text4" style="display: none">Panjang</span>
               <input name="id_produk" value="<?php echo $a->id_produk ?>" readonly style="margin-left: 10px; margin-right: 10px" class="form-control" type="hidden" >
               <input name="nama_produk" value="<?php echo $a->nama_produk ?>" readonly style="margin-left: 10px; margin-right: 10px" class="form-control" type="hidden" >
               <input name="harga" value="<?php echo $a->harga ?>" readonly style="margin-left: 10px; margin-right: 10px" class="form-control" type="hidden" >
-              <input name="panjang" value="<?php echo $a->panjang ?>" readonly style="margin-left: 10px; margin-right: 10px" class="form-control" type="text" >
-              Tinggi 
-              <input name="tinggi" value="<?php echo $a->tinggi ?>" readonly style="margin-left: 10px; margin-right: 10px" class="form-control" type="text" >
-              Lebar
-              <input name="lebar" value="<?php echo $a->lebar ?>" readonly style="margin-left: 10px" class="form-control" type="text" >
+              <input id="text" name="panjang" value="<?php echo $a->panjang ?>"  style="margin-left: 10px; margin-right: 10px; display: none" class="form-control" type="text" >
+              <span id="text5" style="display: none">Lebar</span>
+              <input id="text2" name="tinggi" value="<?php echo $a->tinggi ?>"  style="margin-left: 10px; margin-right: 10px; display: none" class="form-control" type="text" >
+              <span id="text6" style="display: none">Tinggi</span>
+              <input id="text3" name="lebar" value="<?php echo $a->lebar ?>"  style="margin-left: 10px; display: none" class="form-control" type="text" >
             </div>
             <div class="card_area d-flex justify-content-between align-items-center">
               <div class="product_count"> 
@@ -526,6 +527,36 @@
     <!-- jquery plugins here-->
     <?php $this->load->view('template/foot'); ?>
 </body>
+<script type="text/javascript">
+function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck");
+  // Get the output text
+  var text = document.getElementById("text");
+  var text2 = document.getElementById("text2");
+  var text3 = document.getElementById("text3");
+  var text4 = document.getElementById("text4");
+  var text5 = document.getElementById("text5");
+  var text6 = document.getElementById("text6");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+    text2.style.display = "block";
+    text3.style.display = "block";
+    text4.style.display = "block";
+    text5.style.display = "block";
+    text6.style.display = "block";
+  } else {
+    text.style.display = "none";
+    text2.style.display = "none";
+    text3.style.display = "none";
+    text4.style.display = "none";
+    text5.style.display = "none";
+    text6.style.display = "none";
+  }
+}
+</script>
 <script type="text/javascript">
 	$(document).ready(function(){
 		tampil_data_barang();	//pemanggilan fungsi tampil barang.
