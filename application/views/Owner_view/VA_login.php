@@ -57,7 +57,7 @@
           <div class="registration">
             <a href="<?php echo base_url(); ?>">Kembali Ke beranda</a><br/>
             <a class="" >
-              Hubungi pihak owner Lumintu Mebel
+              Hubungi pihak owner @bagabag.com
               </a>
           </div>
         </div>
