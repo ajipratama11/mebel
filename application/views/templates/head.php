@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!--====== Title ======-->
-    <title>@BAGBAG</title>
+    <title>LUMINTU</title>
     
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="<?php echo base_url() ?>vendor/images/tas.webp" type="image/webp">

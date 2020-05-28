@@ -45,7 +45,7 @@
             <div class="container">
 	<div class="row">
 		<div class="col-sm-12 col-sm-offset-1" style="background-color: white;padding:20px;">
-            <h2 class="text-gray">Tambah Produk</h2><br>
+            <h2 class="text-gray">Tambah Produk</h2><br><br>
             <?= form_open_multipart('Produk/insert_produk'); ?>
 			
 				<div class="form-group col-md-12">
