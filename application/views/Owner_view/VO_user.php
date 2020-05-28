@@ -4,7 +4,7 @@
             <div class="col-lg-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h2 style="color: #1E7BCB;">Daftar Admin</h2><br>
+                  <h2 style="color: #1E7BCB;">Daftar Pengguna</h2><br>
                   <?php if ($pengguna == 100000) {
                         ?>
                   <a href="<?php echo base_url('Owner_controller/O_user/tambahuser'); ?>"><button class="btn btn-success">Tambah pegawai</button></a>

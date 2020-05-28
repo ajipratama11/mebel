@@ -46,9 +46,9 @@
 	<div class="row">
 		
 		<div class="col-sm-12 col-sm-offset-1" style="background-color: white;padding:20px;">
-			<h2 style="color: #1E7BCB;">Daftar Produk</h2><br>
+			<h2 class="text-gray">Daftar Produk</h2><br>
       <button class="btn btn-warning" id="myBtn">+ Tambah Stok</button>
-      <a href="<?php echo base_url('Produk') ?>" class="btn btn-primary" >+ Tambah Produk</a> 
+      <a href="<?php echo base_url('Produk') ?>" class="btn btn-primary" >+ Tambah Produk</a>
       <!-- The Modal -->
       <div id="myModal" class="modal">
 

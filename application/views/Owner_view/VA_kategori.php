@@ -5,7 +5,7 @@
             <div class="col-lg-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h2 style="color: #1E7BCB;">Tambah Kategori</h2><br>
+                  <h4 style="color: #1E7BCB;">Tambah Kategori</h4><br>
                   <form action="<?php echo base_url('Owner_controller/A_kategori/tambah_kategori'); ?>" id="main-contact-form" class="contact-form row" name="contact-form" method="post" enctype="multipart/form-data">
                     <div class="form-group col-md-12">
                       <input type="text" name="nama_kategori" style="width: 50%;" class="form-control" required="required" placeholder="Nama kategori">

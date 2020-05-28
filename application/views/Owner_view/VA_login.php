@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Login admin Lumintu Mebel</title>
+  <title>Login admin Abagabag.com</title>
 
   <!-- Favicons -->
   <link href="<?php echo base_url('assets/purnamajati.png'); ?>" rel="icon">
@@ -57,7 +57,7 @@
           <div class="registration">
             <a href="<?php echo base_url(); ?>">Kembali Ke beranda</a><br/>
             <a class="" >
-              Hubungi pihak Owner Admin Lumintu
+              Hubungi pihak owner @bagabag.com
               </a>
           </div>
         </div>

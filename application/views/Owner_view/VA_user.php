@@ -8,13 +8,13 @@
             <div class="col-lg-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                 <h2 style="color: #1E7BCB;">Daftar Pengguna</h2><br>
+                  <h4 style="color: #1E7BCB;">Daftar Pengguna</h4><br>
                   <div class="table-responsive">
                     <table class="table table-bordered">
                       <thead>
                         <tr>
                           <th>
-                            Id User
+                            #Id User
                           </th>
                           <th>
                             Nama User
