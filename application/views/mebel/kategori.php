@@ -32,7 +32,7 @@
                     <div class="left_sidebar_area">
                         <aside class="left_widgets p_filter_widgets">
                             <div class="l_w_title">
-                                <h3> Kategori </h3>
+                                <h3><b> Kategori </b></h3>
                             </div>
                             <div class="widgets_inner">
                                 <ul class="list">

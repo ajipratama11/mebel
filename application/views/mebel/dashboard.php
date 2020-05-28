@@ -87,7 +87,7 @@
     <!-- banner part start-->
 
     <!-- feature_part start-->
-    <section class="feature_part padding_top">
+   <br>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-1">
@@ -119,17 +119,9 @@
                         <!-- <img src="<?= base_url() ?>vendor/mebel/img/feature/feature_3.png" alt=""> -->
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-3">
-                    <div class="single_feature_post_text">
-                        <p>Premium Quality</p>
-                        <h3>Latest foam Sofa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                        <!-- <img width="3" src="<?= base_url() ?>vendor/mebel/img/feature/feature_4.png" alt=""> -->
-                    </div>
-                </div>
+               
             </div>
-        </div>
-    </section>
+  
     <!-- upcoming_event part start-->
 
     <!-- product_list start-->
