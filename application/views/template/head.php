@@ -27,4 +27,5 @@
     <link rel="stylesheet" href="<?= base_url() ?>vendor/mebel/css/price_rangs.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>vendor/mebel/css/style.css">
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="17f51125-3b98-4ac2-a42c-92ee9d247faf";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </head>
