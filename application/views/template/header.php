@@ -42,7 +42,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Testimonial</a>
+                                    <a class="nav-link" href="<?php echo base_url('Dashboard/testimonial')?>">Testimonial</a>
                                 </li>
                              <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
