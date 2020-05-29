@@ -243,6 +243,7 @@
      <?php endforeach; ?>
               </div>
             </div>
+            <?php  if($this->session->userdata('status') == "login") { ?>
             <div class="col-lg-6">
               <div class="review_box">
                 <h4>Post a comment</h4>
@@ -268,6 +269,7 @@
                   </div>
                 </form>
               </div>
+            <?php } ?>
             </div>
           </div>
         </div>
