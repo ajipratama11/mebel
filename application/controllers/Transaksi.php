@@ -5,6 +5,7 @@ class Transaksi extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('M_transaksi');
+		$this->load->model('M_produk');
 		$this->load->model('Admin_models/MA_transaksi');
 		$this->load->model('Owner_models/MO_transaksi');
 		$this->load->helper(array('url'));
@@ -18,6 +19,7 @@ class Transaksi extends CI_Controller {
 	}
 
 	public function index(){
+		$data['kategori'] = $this->M_produk->tampil_kategori();
 		$iduser = $this->session->userdata("iduser");
 		$data['pesan'] = $this->M_transaksi->tampil_pesan($iduser);
 		$this->load->view('mebel/transaksi',$data);
@@ -27,6 +29,7 @@ class Transaksi extends CI_Controller {
 	{
 	}
 	public function detail_transaksi(){
+		$data['kategori'] = $this->M_produk->tampil_kategori();
 		$data['status'] = $this->input->post("status");
 		$idkirim = $this->uri->segment(3);
 		$iduser = $this->session->userdata("iduser");

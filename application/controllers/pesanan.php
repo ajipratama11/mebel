@@ -5,6 +5,7 @@ class Pesanan extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('M_keranjang');
+		$this->load->model('M_produk');
 		$this->load->helper(array('url'));
 		if($this->session->userdata('status') != "login"){
 			echo "<script>
@@ -20,6 +21,7 @@ class Pesanan extends CI_Controller {
 	}
 
 	public function pembayaran(){
+		$data['kategori'] = $this->M_produk->tampil_kategori();
 		foreach ($this->cart->contents() as $item) {
 			$idpesan=$item['idpesan'];
 		}
@@ -47,6 +49,7 @@ class Pesanan extends CI_Controller {
 		$this->load->view('mebel/pembayaran', $data);
 	}
 	public function data(){
+		$data['kategori'] = $this->M_produk->tampil_kategori();
 		$kurir = $this->input->post('kurir');
 
 		$iduser = $this->session->userdata("iduser");

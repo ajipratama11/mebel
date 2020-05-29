@@ -26,7 +26,7 @@
     <section class="cart_area padding_top">
         <div class="container">
             <div class="cart_inner">
-                <a style="float: right;" href="<?php echo base_url('Bukti'); ?>" class="btn btn-success">Kembali ke Home / Belanja Lagi</a>
+                <a style="float: right;" href="<?php echo base_url(); ?>" class="btn btn-success">Kembali ke Home / Belanja Lagi</a>
                 <h3>Silahkan klik <a href="<?php echo base_url('Bukti'); ?>" class="genric-btn success medium">DISINI</a> untuk upload Bukti Pembayaran</h3>
                 <div class="table-responsive">
                     <table class="table">

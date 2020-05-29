@@ -68,6 +68,7 @@ class Dashboard extends CI_Controller{
         $this->load->view('mebel/testimonial', $data);
 	}
 	public function detailproduk($id_produk){
+		$data['kategori'] = $this->M_produk->tampil_kategori();
 		$data['data'] = $this->M_produk->tampil_kategori();
 		$data['produk'] = $this->M_produk->tampil_detailproduk($id_produk);
 		$data['komentar'] = $this->M_komentar->komentar_list($id_produk);
@@ -102,6 +103,7 @@ class Dashboard extends CI_Controller{
 
 	public function detail_keranjang()
 	{
+		$data['kategori'] = $this->M_produk->tampil_kategori();
 		$iduser = $this->session->userdata("iduser");
 		$data['pelanggan'] = $this->M_profil->kostumer($iduser);
 		if($this->session->userdata('status') != "login"){

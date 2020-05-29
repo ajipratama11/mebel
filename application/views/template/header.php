@@ -18,10 +18,17 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                       Shop
+                                       Kategori
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                        <a class="dropdown-item" href="<?php echo base_url('Dashboard/kategori')?>">Kategori</a>
+
+                                        <a class="dropdown-item" href="<?php echo base_url('Dashboard/kategori')?>">All</a>
+                                        <?php foreach($kategori as $u){?>
+                                  
+                                    <a class="dropdown-item" href="<?php echo base_url('Dashboard/kategori/'.$u->id_kategori); ?>"><?php echo $u->nama_kategori ; ?></a>
+                                  
+                                    <?php } ?>
+                                        
                                        
                                         
                                         
@@ -30,15 +37,15 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_3"
                                         role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        pages
+                                        Transaksi
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                        <a class="dropdown-item" href="login.html"> login</a>
-                                        <a class="dropdown-item" href="tracking.html">tracking</a>
+                                        <a class="dropdown-item" href="<?php echo base_url('Transaksi'); ?>">Transaksi Anda</a>
+                                        <!-- <a class="dropdown-item" href="tracking.html">tracking</a>
                                         <a class="dropdown-item" href="checkout.html">product checkout</a>
                                         <a class="dropdown-item" href="cart.html">shopping cart</a>
                                         <a class="dropdown-item" href="confirmation.html">confirmation</a>
-                                        <a class="dropdown-item" href="elements.html">elements</a>
+                                        <a class="dropdown-item" href="elements.html">elements</a> -->
                                     </div>
                                 </li>
                                 <li class="nav-item">
