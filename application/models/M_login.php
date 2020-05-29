@@ -18,6 +18,9 @@ class M_login extends CI_Model{
 		$query = $this->db->query("SELECT * FROM kostumer WHERE email='$username'");
 		return $query->result();
 	}
+	function hapusanorderlama(){
+		$query = $this->db->query("DELETE pesan, keranjang, pengiriman FROM pesan JOIN keranjang ON keranjang.pesan_id_pesan=pesan.id_pesan JOIN pengiriman ON pesan.pengiriman_id_kirim=pengiriman.id_kirim WHERE NOW() > pesan.jatuh_tempo ");
+	}
 	function get_iduser(){
           $this->db->select('RIGHT(user.id_user,4) as kode', FALSE);
 		  $this->db->order_by('id_user','DESC');    

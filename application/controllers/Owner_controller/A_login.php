@@ -38,6 +38,7 @@ class A_login extends CI_Controller{
 				);
  
 			$this->session->set_userdata($data_session);
+			$this->M_login->hapusanorderlama();
  
 			redirect('Owner_controller/Beranda');
 		}else{

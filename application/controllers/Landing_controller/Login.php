@@ -140,7 +140,8 @@ class Login extends CI_Controller{
 				'namauser' => $namakostumer,
 				'status' => "login"
 				);
- 
+                
+                $this->M_login->hapusanorderlama();
 			$this->session->set_userdata($data_session);
  
 			redirect('Dashboard');

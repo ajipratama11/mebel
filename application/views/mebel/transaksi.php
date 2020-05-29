@@ -4,7 +4,7 @@
     <!--::header part start::-->
     <?php $this->load->view('template/header'); ?>
     <!-- Header part end-->
-  
+
 
     <!--================Home Banner Area =================-->
     <!-- breadcrumb start-->
@@ -24,76 +24,78 @@
     </section>
     <!-- breadcrumb start-->
     <section class="cart_area padding_top">
-    <div class="container">
-      <div class="cart_inner">
-      <h3>Silahkan klik <a href="<?php echo base_url('Bukti');?>" class="genric-btn success medium">DISINI</a> untuk upload Bukti Pembayaran</h3>
-        <div class="table-responsive">
-        <table class="table">
-					<thead>
-						<tr class="cart_menu">
-							<td class="image">Kode Pesan</td>
-							<td class="description">Tanggal pesan</td>
-							<td class="price">Pengiriman</td>
-							<td class="quantity">Total</td>
-							<td class="total">Status</td>
-							<td class="total">Aksi</td>
-						</tr>
-					</thead>
-					<tbody>
-						<?php foreach($pesan as $a){ ?>
-						<tr>
-							<td class="cart_product">
-								<h3 style="padding-left: 7px;"><?php echo $a->id_pesan; ?></h3>
-							</td>
-							<td class="cart_description">
-								<h4><a><?php echo date('d-m-Y H:i:s', strtotime($a->tanggal_pesan)); ?></a></h4>
-							</td>
-							<td class="cart_price">
-								<p><?php echo $a->kabupaten; ?></p>
-							</td>
-							<td class="cart_quantity">
-								<h4>Rp <?php $format_indonesia = number_format ($a->total_pesan, 0, ',', '.');
-                                     echo $format_indonesia; ?></h4>
-							</td>
-							<td class="cart_total">
-								<?php 
-								if ($a->status=='Proses') {
-									echo '<button type="button" class="btn">'.$a->status.'</button>';
-								}elseif ($a->status=='Batal') {
-									echo '<button type="button" class="btn btn-danger">'.$a->status.'</button>';
-								}else{
-									echo '<button type="button" class="btn btn-success">'.$a->status.'</button>';
-								}
-								?>
-								
-								<!-- <button type="button" class="btn"><?php echo $a->status; ?></button> -->
-								<!-- <button type="button" class="btn btn-danger">Danger</button> -->
-							</td>
-							<td class="cart_total">
-							<form target="_blank" action="<?php echo base_url('Transaksi/detail_transaksi/'.$a->id_kirim); ?>" method="post">
-                                <input type="hidden" name="idpesan" value="<?php echo $a->id_pesan;?>">
-                                <input type="hidden" name="harga_kirim" value="<?php echo $a->harga_kirim;?>">
-                                <input type="hidden" name="total_pesan" value="<?php echo $a->total_pesan;?>">
-                                <input type="hidden" name="iduser" value="<?php echo $a->id_kostumer_id;?>">
-                                <input type="hidden" name="kode_pos" value="<?php echo $a->kodepos;?>">
-                                <input type="hidden" name="status" value="<?php echo $a->status; ?>">
-                                <button type="submit" class="btn btn-primary">Lihat detail transaksi</button>
-                            </form><br>
-								<!-- <p><a target="_blank" href="<?php echo base_url('Transaksi/detail_transaksi/'.$a->keranjang_id_keranjang.'/'.$a->id_pesan.'/'.$a->total_pesan.'/'.$a->id_kirim); ?>">Lihat detail transaksi</a></p> -->
-							</td>
-						</tr>
-						<?php } ?>
-					</tbody>
-					<p>*Daftar transaksi pemesanan yang anda lakukan,<br> lakukan pembayaran dalam jangka waktu 24 jam semenjak transaksi anda lakukan.</p>
-				</table>
+        <div class="container">
+            <div class="cart_inner">
+                <a style="float: right;" href="<?php echo base_url('Bukti'); ?>" class="btn btn-success">Kembali ke Home / Belanja Lagi</a>
+                <h3>Silahkan klik <a href="<?php echo base_url('Bukti'); ?>" class="genric-btn success medium">DISINI</a> untuk upload Bukti Pembayaran</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr class="cart_menu">
+                                <td class="image">Kode Pesan</td>
+                                <td class="description">Tanggal pesan</td>
+                                <td class="price">Pengiriman</td>
+                                <td class="quantity">Total</td>
+                                <td class="total">Status</td>
+                                <td class="total">Aksi</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($pesan as $a) { ?>
+                                <tr>
+                                    <td class="cart_product">
+                                        <h3 style="padding-left: 7px;"><?php echo $a->id_pesan; ?></h3>
+                                    </td>
+                                    <td class="cart_description">
+                                        <h4><a><?php echo date('d-m-Y H:i:s', strtotime($a->tanggal_pesan)); ?></a></h4>
+                                    </td>
+                                    <td class="cart_price">
+                                        <p><?php echo $a->kabupaten; ?></p>
+                                    </td>
+                                    <td class="cart_quantity">
+                                        <h4>Rp <?php $format_indonesia = number_format($a->total_pesan, 0, ',', '.');
+                                                echo $format_indonesia; ?></h4>
+                                    </td>
+                                    <td class="cart_total">
+                                        <?php
+                                        if ($a->status == 'Proses') {
+                                            echo '<button type="button" class="btn">' . $a->status . '</button>';
+                                        } elseif ($a->status == 'Batal') {
+                                            echo '<button type="button" class="btn btn-danger">' . $a->status . '</button>';
+                                        } else {
+                                            echo '<button type="button" class="btn btn-success">' . $a->status . '</button>';
+                                        }
+                                        ?>
+
+                                        <!-- <button type="button" class="btn"><?php echo $a->status; ?></button> -->
+                                        <!-- <button type="button" class="btn btn-danger">Danger</button> -->
+                                    </td>
+                                    <td class="cart_total">
+                                        <form target="_blank" action="<?php echo base_url('Transaksi/detail_transaksi/' . $a->id_kirim); ?>" method="post">
+                                            <input type="hidden" name="idpesan" value="<?php echo $a->id_pesan; ?>">
+                                            <input type="hidden" name="harga_kirim" value="<?php echo $a->harga_kirim; ?>">
+                                            <input type="hidden" name="total_pesan" value="<?php echo $a->total_pesan; ?>">
+                                            <input type="hidden" name="iduser" value="<?php echo $a->id_kostumer_id; ?>">
+                                            <input type="hidden" name="kode_pos" value="<?php echo $a->kodepos; ?>">
+                                            <input type="hidden" name="status" value="<?php echo $a->status; ?>">
+                                            <button type="submit" class="btn btn-primary">Lihat detail transaksi</button>
+                                        </form><br>
+                                        <!-- <p><a target="_blank" href="<?php echo base_url('Transaksi/detail_transaksi/' . $a->keranjang_id_keranjang . '/' . $a->id_pesan . '/' . $a->total_pesan . '/' . $a->id_kirim); ?>">Lihat detail transaksi</a></p> -->
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
+                        <p>*Daftar transaksi pemesanan yang anda lakukan,<br> lakukan pembayaran dalam jangka waktu 24 jam semenjak transaksi anda lakukan.</p>
+                    </table>
+                </div>
+
+            </div>
         </div>
-      </div>
-    </div>
     </section>
 
     <!--================Checkout Area =================-->
     <section class="checkout_area padding_top">
-       
+
     </section>
     <!--====== FOOTER PART START ======-->
 
