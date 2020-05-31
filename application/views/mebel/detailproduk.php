@@ -116,7 +116,7 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
           <p>
- <?php  if($this->session->userdata('status') == "login") { ?>
+
             <div class="col-lg-6">
               <div class="review_box">
                 <h4>Post Testimoni</h4>
@@ -148,7 +148,7 @@
                   </div>
                 </form>
               </div>
-            <?php } ?>
+           
           
           </p>
        
