@@ -120,9 +120,7 @@
             <div class="col-lg-6">
               <div class="review_box">
                 <h4>Post Testimoni</h4>
-                <form class="row contact_form" action="<?php echo base_url('Dashboard/simpan_testimoni') ?>" method="post" id="contactForm"
-                  novalidate="novalidate">
-
+                <form class="row contact_form" action="<?php echo base_url('Dashboard/simpan_testimoni') ?>" method="post" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
                     <div class="form-group">
                     <input type="hidden" class="form-control" id="name" name="id_kostumer_id" value="<?php echo $this->session->userdata("iduser"); ?>" placeholder="Your Full name" />
                     <input type="hidden" class="form-control" id="email" name="id_produk_id" value="<?php echo $this->uri->segment(3); ?>" placeholder="Email Address" />
@@ -135,7 +133,7 @@
                   <div class="col-md-12">
                     <div class="form-group">
 
-                      <input type="file" name="filefoto"  required="required" placeholder="Upload gambar" style="padding-right:1px;">
+                      <input type="file" name="gambar"  required="required" placeholder="Upload gambar" style="padding-right:1px;">
                       <textarea class="form-control" name="keterangan" rows="8" 
                         placeholder="Message"></textarea>
 
