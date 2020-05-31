@@ -116,23 +116,40 @@
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
           <p>
+ <?php  if($this->session->userdata('status') == "login") { ?>
+            <div class="col-lg-6">
+              <div class="review_box">
+                <h4>Post Testimoni</h4>
+                <form class="row contact_form" action="<?php echo base_url('Dashboard/simpan_testimoni') ?>" method="post" id="contactForm"
+                  novalidate="novalidate">
 
-          <div class="form-group col-md-6">
-          <h5> Upload gambar</h5> 
-        
-          <input type="file" name="filefoto"  required="required" placeholder="Upload gambar" style="padding-right:1px;">
-                </div> 
-              <div class="col-6">
-          
-                  <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9"
-                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'"
-                    placeholder='ket..'></textarea>
-               
+                    <div class="form-group">
+                    <input type="hidden" class="form-control" id="name" name="id_kostumer_id" value="<?php echo $this->session->userdata("iduser"); ?>" placeholder="Your Full name" />
+                    <input type="hidden" class="form-control" id="email" name="id_produk_id" value="<?php echo $this->uri->segment(3); ?>" placeholder="Email Address" />
+                      <input type="hidden" class="form-control" id="number" name="date" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y H:i:s') ?>" placeholder="Phone Number" />
+                    </div>
+                  </div>
+
+                    
+                
+                  <div class="col-md-12">
+                    <div class="form-group">
+
+                      <input type="file" name="filefoto"  required="required" placeholder="Upload gambar" style="padding-right:1px;">
+                      <textarea class="form-control" name="keterangan" rows="8" 
+                        placeholder="Message"></textarea>
+
+                    </div>
+                  </div>
+                  <div class="col-md-12 text-right">
+                    <button type="submit" value="submit" class="btn_3">
+                      Submit Now
+                    </button>
+                  </div>
+                </form>
               </div>
-
-              <div class="form-group mt-3">
-              <a href="#" class="btn_3 button-contactForm">Send Testimoni</a>
-            </div>
+            <?php } ?>
+          
           </p>
        
         </div>

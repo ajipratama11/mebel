@@ -148,6 +148,23 @@ class Dashboard extends CI_Controller{
 		$this->db->insert('komentar', $data);
 		redirect('Dashboard/detailproduk/'.$produk);
     }
+    function simpan_testimoni(){
+		$produk = $this->input->post('id_produk_id');
+        $data = [
+			'id_kostumer_id'     => $this->input->post('id_kostumer_id'),
+			'keterangan'             => $this->input->post('keterangan'),
+			'id_produk_id'           => $produk,
+			// 'gambar'				=>$this->post('gambar'),
+			'date'          => $this->input->post('date')
+
+		];
+
+		$this->db->insert('testimoni', $data);
+		redirect('Dashboard/detailproduk/'.$produk);
+    }
+
+    
+
 	
 	function getCity($province){		
 
