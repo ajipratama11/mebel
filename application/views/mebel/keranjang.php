@@ -221,7 +221,6 @@
 			</div>
     </div>
   </form>
-  <a class="genric-btn success radius" href="#">Lanjutkan Pesanan</a>
 		</div>
         <?php } ?>
         </section>
