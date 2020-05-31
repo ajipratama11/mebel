@@ -101,125 +101,59 @@
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
           <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-            aria-selected="true">Description</a>
+            aria-selected="true">Testimoni</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-            aria-selected="false">Specification</a>
-        </li>
+   
         <li class="nav-item">
           <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
             aria-selected="false">Comments</a>
         </li>
-        <li class="nav-item">
+      <!--   <li class="nav-item">
           <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
             aria-selected="false">Reviews</a>
-        </li>
+        </li> -->
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
           <p>
-            Beryl Cook is one of Britain’s most talented and amusing artists
-            .Beryl’s pictures feature women of all shapes and sizes enjoying
-            themselves .Born between the two world wars, Beryl Cook eventually
-            left Kendrick School in Reading at the age of 15, where she went
-            to secretarial school and then into an insurance office. After
-            moving to London and then Hampton, she eventually married her next
-            door neighbour from Reading, John Cook. He was an officer in the
-            Merchant Navy and after he left the sea in 1956, they bought a pub
-            for a year before John took a job in Southern Rhodesia with a
-            motor company. Beryl bought their young son a box of watercolours,
-            and when showing him how to use it, she decided that she herself
-            quite enjoyed painting. John subsequently bought her a child’s
-            painting set for her birthday and it was with this that she
-            produced her first significant work, a half-length portrait of a
-            dark-skinned lady with a vacant expression and large drooping
-            breasts. It was aptly named ‘Hangover’ by Beryl’s husband and
+
+            <div class="col-lg-6">
+              <div class="review_box">
+                <h4>Post Testimoni</h4>
+                <form class="row contact_form" action="<?php echo base_url('Dashboard/simpan_testimoni') ?>" method="post" id="contactForm"
+                  novalidate="novalidate">
+
+                    <div class="form-group">
+                    <input type="hidden" class="form-control" id="name" name="id_kostumer_id" value="<?php echo $this->session->userdata("iduser"); ?>" placeholder="Your Full name" />
+                    <input type="hidden" class="form-control" id="email" name="id_produk_id" value="<?php echo $this->uri->segment(3); ?>" placeholder="Email Address" />
+                      <input type="hidden" class="form-control" id="number" name="date" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y H:i:s') ?>" placeholder="Phone Number" />
+                    </div>
+                  </div>
+
+                    
+                
+                  <div class="col-md-12">
+                    <div class="form-group">
+
+                      <input type="file" name="filefoto"  required="required" placeholder="Upload gambar" style="padding-right:1px;">
+                      <textarea class="form-control" name="keterangan" rows="8" 
+                        placeholder="Message"></textarea>
+
+                    </div>
+                  </div>
+                  <div class="col-md-12 text-right">
+                    <button type="submit" value="submit" class="btn_3">
+                      Submit Now
+                    </button>
+                  </div>
+                </form>
+              </div>
+           
+          
           </p>
-          <p>
-            It is often frustrating to attempt to plan meals that are designed
-            for one. Despite this fact, we are seeing more and more recipe
-            books and Internet websites that are dedicated to the act of
-            cooking for one. Divorce and the death of spouses or grown
-            children leaving for college are all reasons that someone
-            accustomed to cooking for more than one would suddenly need to
-            learn how to adjust all the cooking practices utilized before into
-            a streamlined plan of cooking that is more efficient for one
-            person creating less
-          </p>
+       
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          <div class="table-responsive">
-            <table class="table">
-              <tbody>
-                <tr>
-                  <td>
-                    <h5>Width</h5>
-                  </td>
-                  <td>
-                    <h5>128mm</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Height</h5>
-                  </td>
-                  <td>
-                    <h5>508mm</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Depth</h5>
-                  </td>
-                  <td>
-                    <h5>85mm</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Weight</h5>
-                  </td>
-                  <td>
-                    <h5>52gm</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Quality checking</h5>
-                  </td>
-                  <td>
-                    <h5>yes</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Freshness Duration</h5>
-                  </td>
-                  <td>
-                    <h5>03days</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>When packeting</h5>
-                  </td>
-                  <td>
-                    <h5>Without touch of hand</h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Each Box contains</h5>
-                  </td>
-                  <td>
-                    <h5>60pcs</h5>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+        
         <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           <div class="row">
             <div class="col-lg-6">
