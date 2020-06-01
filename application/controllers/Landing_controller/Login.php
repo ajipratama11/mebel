@@ -5,16 +5,18 @@ class Login extends CI_Controller{
     function __construct(){
         parent::__construct();
         $this->load->model('M_login');
+        $this->load->model('M_produk');
         $this->load->library('form_validation');
     }
     public function index() {
+        $data['kategori'] = $this->M_produk->tampil_kategori();
 
-        $this->load->view('mebel/login');
+        $this->load->view('mebel/login', $data);
 
     }
     public function regis() {
-
-        $this->load->view('mebel/register');
+        $data['kategori'] = $this->M_produk->tampil_kategori();
+        $this->load->view('mebel/register', $data);
 
     }
     

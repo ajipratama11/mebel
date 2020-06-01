@@ -115,8 +115,30 @@
       </ul>
       <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
-          <p>
-
+          <div class="row">
+        <div class="col-lg-6">
+              <div class="comment_list"  >
+              <?php 
+     foreach($testimoni as $a) : ?>
+                <div class="review_item">
+                  <div class="media">
+                    <div style="margin-bottom: 20px;" class="d-flex">
+                      <img  src="<?= base_url() ?>vendor/mebel/img/product/single-product/review-1.png" alt="" />
+                    </div>
+                    <div class="media-body" id="show">
+                      <h4><?php echo $a->nama_kostumer ?></h4>
+                      <h5><?php echo $a->date ?></h5>
+                    </div>
+                  </div>
+                  <img style="width: 400px; height: 250px; " src="<?php echo base_url('./assets/images/'.$a->gambar); ?>" alt="" />
+                  <p>
+                  <?php echo $a->keterangan ?>
+                  </p>
+                </div>
+     <?php endforeach; ?>
+              </div>
+            </div>
+            <?php  if($this->session->userdata('status') == "login") { ?>
             <div class="col-lg-6">
               <div class="review_box">
                 <h4>Post Testimoni</h4>
@@ -127,13 +149,10 @@
                       <input type="hidden" class="form-control" id="number" name="date" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y H:i:s') ?>" placeholder="Phone Number" />
                     </div>
                   </div>
-
-                    
-                
                   <div class="col-md-12">
                     <div class="form-group">
 
-                      <input type="file" name="gambar"  required="required" placeholder="Upload gambar" style="padding-right:1px;">
+                      <input type="file" name="gambar"  required="required" placeholder="Upload gambar" style="padding-right:1px; margin-bottom: 20px;">
                       <textarea class="form-control" name="keterangan" rows="8" 
                         placeholder="Message"></textarea>
 
@@ -146,11 +165,13 @@
                   </div>
                 </form>
               </div>
+            <?php } ?>
            
           
           </p>
        
         </div>
+     </div>
         
         <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
           <div class="row">
@@ -204,6 +225,10 @@
             <?php } ?>
             </div>
           </div>
+
+
+
+          
         </div>
         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
           <div class="row">

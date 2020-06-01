@@ -5,6 +5,10 @@ class M_komentar extends CI_Model{
         $hasil=$this->db->query("SELECT * FROM `komentar` JOIN kostumer ON komentar.id_kostumer_id=kostumer.id_kostumer WHERE komentar.id_produk_id='$id_produk' limit 5");
         return $hasil->result();
     }
+    function testimoni_list($id_produk){
+        $hasil=$this->db->query("SELECT * FROM `testimoni` JOIN kostumer ON testimoni.id_kostumer_id=kostumer.id_kostumer WHERE testimoni.id_produk_id='$id_produk' limit 5");
+        return $hasil->result();
+    }
  
     function simpan_komentar($kobar,$nabar,$harga){
         $hasil=$this->db->query("INSERT INTO tbl_barang (barang_kode,barang_nama,barang_harga)VALUES('$kobar','$nabar','$harga')");

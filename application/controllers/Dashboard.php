@@ -20,8 +20,6 @@
 			// }
 
 		}
-
-
 		public function index()
 		{
 
@@ -79,6 +77,7 @@
 			$data['data'] = $this->M_produk->tampil_kategori();
 			$data['produk'] = $this->M_produk->tampil_detailproduk($id_produk);
 			$data['komentar'] = $this->M_komentar->komentar_list($id_produk);
+			$data['testimoni'] = $this->M_komentar->testimoni_list($id_produk);
 			$this->load->view('mebel/detailproduk', $data);
 		}
 
