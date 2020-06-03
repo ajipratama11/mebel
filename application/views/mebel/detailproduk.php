@@ -130,7 +130,8 @@
                       <h5><?php echo $a->date ?></h5>
                     </div>
                   </div>
-                  <img style="width: 400px; height: 250px; " src="<?php echo base_url('./assets/images/'.$a->gambar); ?>" alt="" />
+                  <a target="_blank" href="<?php echo base_url('./assets/images/'.$a->gambar); ?>"><img style="width: 400px; height: 250px; " src="<?php echo base_url('./assets/images/'.$a->gambar); ?>" alt="" /></a>
+                  
                   <p>
                   <?php echo $a->keterangan ?>
                   </p>

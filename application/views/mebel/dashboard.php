@@ -6,7 +6,7 @@
     <!-- Header part end-->
 
     <!-- banner part start-->
-    <section class="banner_part">
+    <section class="banner_part" id="myNavbar">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
@@ -18,7 +18,7 @@
                                         <div class="banner_text_iner">
                                             <h1>Lumintu Mebel</h1>
                                             <p>bagus</p>
-                                            <a href="#" class="btn_2">Beli dong</a>
+                                            <a href="#section1" class="btn_2">Beli dong</a>
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +35,7 @@
                                                 Sofa</h1>
                                             <p>Incididunt ut labore et dolore magna aliqua quis ipsum
                                                 suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                                            <a href="#section1" class="btn_2">buy now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@
                                                 Sofa</h1>
                                             <p>Incididunt ut labore et dolore magna aliqua quis ipsum
                                                 suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                                            <a href="#section1" class="btn_2">buy now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +127,7 @@
     <!-- product_list start-->
     <?php 
      foreach($kategori as $a) : ?>
-    <section class="product_list section_padding">
+    <section class="product_list section_padding" id="section1">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -404,6 +404,7 @@
             </div>
         </div>
     </section>
+    
     <!--::subscribe_area part end::-->
 
     <!--::footer_part start::-->
@@ -413,5 +414,33 @@
     <!-- jquery plugins here-->
     <?php $this->load->view('template/foot'); ?>
 </body>
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
+</script>
 
 </html>
