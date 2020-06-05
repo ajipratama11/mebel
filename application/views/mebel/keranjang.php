@@ -153,14 +153,25 @@
             <a class="btn_1" href="<?php echo base_url('Dashboard') ?>">Continue Shopping</a>
             <a class="btn_1 checkout_btn_1" href="<?php echo base_url('Dashboard/hapus_keranjang') ?>">Hapus Keranjang</a>
           </div>
+
         </div>
       </div>
-			<!--/register-req-->
+      <h3><input type="checkbox" id="myCheck" onclick="myFunction()"> Masukkan Kode Voucher (Jika ada)</h3>
+      <form style="display: none; margin-left: 4px;" id="text" class="row contact_form">
+        <input type="text" class="form-group" id="company" name="namapengirim">
+        <button class="btn btn-sm btn-success" href="<?php echo base_url('Dashboard') ?>">Check Kode Voucher</button>
+      </form>
+      <div>
+        <div class="alert alert-success" role="alert">
+          Selamat Anda Mendapat potongan 100.000, sesuai dengan S&K yang Berlaku
+        </div>
+      </div>
+      <!--/register-req-->
 
-      <?php foreach ($pelanggan as $a) {?>
-        <div class="billing_details">
-		    	<div class="row">
-          <div class="col-lg-8">
+      <?php foreach ($pelanggan as $a) { ?>
+        <div style="margin-top: 20px;;" class="billing_details">
+          <div class="row">
+            <div class="col-lg-8">
               <h3>Alamat Pengiriman</h3>
               <form class="row contact_form" action="<?php echo base_url('Pesanan/pembayaran') ?>" method="post" novalidate="novalidate">
 
@@ -205,28 +216,28 @@
                   <h5>Kode Pos : </h5>
                   <input type="text" class="form-control" id="email" name="kodepos" />
                 </div>
-					<!-- <p>Alamat asal default jember</p> -->
-					<div style="visibility: hidden;">
-						<select class="form-control" name="propinsi_asal" id="propinsi_asal" required="required">
-							<!-- <option value="" selected="" disabled="">Pilih Provinsi</option> -->
-							<?php $this->load->view('rajaongkir/GetProvince2'); ?>
-						</select>
+                <!-- <p>Alamat asal default jember</p> -->
+                <div style="visibility: hidden;">
+                  <select class="form-control" name="propinsi_asal" id="propinsi_asal" required="required">
+                    <!-- <option value="" selected="" disabled="">Pilih Provinsi</option> -->
+                    <?php $this->load->view('rajaongkir/GetProvince2'); ?>
+                  </select>
 
-						<select class="form-control" name="origin" id="origin">
-							<?php $this->load->view('rajaongkir/GetCity'); ?>
-						</select>
+                  <select class="form-control" name="origin" id="origin">
+                    <?php $this->load->view('rajaongkir/GetCity'); ?>
+                  </select>
+                </div>
+                <button type="submit" style="width: 300px; height:60px;" class="btn btn-lg btn-success">Selesaikan pesanan</button>
+            </div>
           </div>
-          <button type="submit" style="width: 300px; height:60px;" class="btn btn-sm btn-success">Selesaikan pesanan</button>
-				</div>
-			</div>
+        </div>
+        </form>
     </div>
-  </form>
-		</div>
-        <?php } ?>
-        </section>
-		<!--====== FOOTER PART START ======-->
+  <?php } ?>
+  </section>
+  <!--====== FOOTER PART START ======-->
 
-	 <!--================End Cart Area =================-->
+  <!--================End Cart Area =================-->
 
   <!--::footer_part start::-->
   <?php $this->load->view('template/footer'); ?>
@@ -235,72 +246,95 @@
   <!-- jquery plugins here-->
   <?php $this->load->view('template/foot'); ?>
 </body>
+<script type="text/javascript">
+  function myFunction() {
+    // Get the checkbox
+    var checkBox = document.getElementById("myCheck");
+    // Get the output text
+    var text = document.getElementById("text");
+    var text2 = document.getElementById("text2");
+    var text3 = document.getElementById("text3");
+    var text4 = document.getElementById("text4");
+    var text5 = document.getElementById("text5");
+    var text6 = document.getElementById("text6");
+
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true) {
+      text.style.display = "block";
+      text2.style.display = "block";
+    } else {
+      text.style.display = "none";
+      text2.style.display = "none";
+    }
+  }
+</script>
 
 <script>
-	function tampil_data(act) {
-		var w = $('#origin').val();
-		var x = $('#destination').val();
-		var y = $('#berat').val();
-		var z = $('#courier').val();
-		var a = $('#namapengirim').val();
-		var b = $('#kecamatan').val();
-		var c = $('#desa').val();
-		var d = $('#kodepos').val();
-		var e = $('#telp').val();
+  function tampil_data(act) {
+    var w = $('#origin').val();
+    var x = $('#destination').val();
+    var y = $('#berat').val();
+    var z = $('#courier').val();
+    var a = $('#namapengirim').val();
+    var b = $('#kecamatan').val();
+    var c = $('#desa').val();
+    var d = $('#kodepos').val();
+    var e = $('#telp').val();
 
-		$.ajax({
-			url: "../Rajaongkir/getCost",
-			type: "GET",
-			data: {
-				origin: w,
-				destination: x,
-				berat: y,
-				courier: z,
-				namapengirim: a,
-				kecamatan: b,
-				desa: c,
-				kodepos: d,
-				telp: e
-			},
-			success: function(ajaxData) {
-				//$('#tombol_export').show();
-				//$('#hasilReport').show();
-				$("#hasil").html(ajaxData);
-			}
-		});
-	};
+    $.ajax({
+      url: "../Rajaongkir/getCost",
+      type: "GET",
+      data: {
+        origin: w,
+        destination: x,
+        berat: y,
+        courier: z,
+        namapengirim: a,
+        kecamatan: b,
+        desa: c,
+        kodepos: d,
+        telp: e
+      },
+      success: function(ajaxData) {
+        //$('#tombol_export').show();
+        //$('#hasilReport').show();
+        $("#hasil").html(ajaxData);
+      }
+    });
+  };
 </script>
 
 <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/JQuery.min.js"></script>
 
 <script>
-	$(document).ready(function() {
+  $(document).ready(function() {
 
-		$("#propinsi_asal").click(function() {
-			$.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_asal').val(), function(obj) {
-				$('#origin').html(obj);
-			});
+    $("#propinsi_asal").click(function() {
+      $.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_asal').val(), function(obj) {
+        $('#origin').html(obj);
+      });
 
-		});
+    });
 
-		$("#propinsi_tujuan").click(function() {
-			$.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_tujuan').val(), function(obj) {
-				$('#destination').html(obj);
-			});
+    $("#propinsi_tujuan").click(function() {
+      $.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_tujuan').val(), function(obj) {
+        $('#destination').html(obj);
+      });
 
-		});
+    });
 
-		/*
-		$("#cari").click(function(){
-			$.post("<?php echo base_url(); ?>index.php/rajaongkir/getCost/"+$('#origin').val()+'&dest='+$('#destination').val()+'&berat='+$('#berat').val()+'&courier='+$('#courier').val(),function(obj){
-				$('#hasil').html(obj);
-			});
-		});
+    /*
+    $("#cari").click(function(){
+    	$.post("<?php echo base_url(); ?>index.php/rajaongkir/getCost/"+$('#origin').val()+'&dest='+$('#destination').val()+'&berat='+$('#berat').val()+'&courier='+$('#courier').val(),function(obj){
+    		$('#hasil').html(obj);
+    	});
+    });
 
-		*/
+    */
 
 
-	});
+  });
 </script>
+
 
 </html>

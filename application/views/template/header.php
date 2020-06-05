@@ -73,6 +73,7 @@
                                     <a class="nav-link" href="<?php echo base_url('Landing_controller/Login') ?>">Login</a>
                                 </li>
                             <?php } ?>
+                            <?php if ($this->session->userdata('status') == "login") { ?>
                             <li class="nav-item dropdown">
                                     <a style="margin-top: 25px;" type="button" class="dropdown-toggle btn badge-pill btn-danger" id="navbarDropdown_1" data-toggle="dropdown" aria-haspopup="true">
                                         <span class="badge badge-pill badge-light">10</span> Notifications
@@ -87,6 +88,7 @@
                                         <a class="dropdown-item" href="elements.html">elements</a> -->
                                 </div>
                             </li>
+                            <?php } ?>
                         </ul>
                     </div>
                     <div class="hearer_icon d-flex">
