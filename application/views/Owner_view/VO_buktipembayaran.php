@@ -10,6 +10,25 @@
                   <?php foreach($bayar as $a) : ?>
 
                     <h1><?php echo $a->kode_pesan ?></h1>
+
+
+
+
+                      <p>
+                      <tr><th>ID bayar    :   </th>
+                        <td><?php echo $a->id_bayar?></td>
+                      </tr>
+                      </p>
+                    <p>
+                      <tr><th>Nama Pemilik    :    </th>
+                        <td><?php echo $a->nama_pemilik ?></td>
+                      </tr>
+                       </p>
+                       <p>
+                      <tr><th>BANK    :    </th>
+                        <td><?php echo $a->bank ?></td>
+                      </tr>
+                      </p>
                     
                   <?php endforeach; ?>
                   <br><br>
