@@ -38,7 +38,7 @@
         <div class="invoice-col right">
             <strong>Bayar ke</strong>
             <address class="small-text">
-                @bagbag.com<br />
+                @Lumintu.Mebel<br />
                 <br />
                 Alamat : <br />
                 Jl. S.Parman<br>

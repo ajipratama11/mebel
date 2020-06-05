@@ -18,7 +18,7 @@ class Bukti extends CI_Controller
 
 	function index()
 	{
-		$data['kategori'] = $this->M_produk->tampil_kategori();
+		// $data['kategori'] = $this->M_produk->tampil_kategori();
 		$iduser = $this->session->userdata("id");
 		$data['gambar'] = $this->M_bukti->tampil_gambar();
 		$this->load->view('mebel/buktibayar', $data);
