@@ -29,7 +29,8 @@
                         <td><?php echo $a->bank ?></td>
                       </tr>
                       </p>
-                    
+                  
+                    <img style="margin-bottom: 50px;" height="500px" width="500px" src="<?php echo base_url('./assets/images/'.$a->bukti_pembayaran); ?>"> 
                   <?php endforeach; ?>
                   <br><br>
                 
