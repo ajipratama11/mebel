@@ -15,10 +15,11 @@ class A_buktipembayaran extends CI_Controller{
 		}
 	}
 
-	function index(){
-		
+	function index($id_pesan)
+	{
+		$data['bayar'] = $this->MA_bukti->getbukti($id_pesan);
 		$this->load->view('element/Owner/Header_owner');
-		$this->load->view('Owner_view/VO_buktipembayaran');
+		$this->load->view('Owner_view/VO_buktipembayaran',$data);
 		$this->load->view('element/Owner/Footer_owner');
 	}
 
