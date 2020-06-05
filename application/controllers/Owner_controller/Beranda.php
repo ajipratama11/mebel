@@ -74,6 +74,13 @@ class Beranda extends CI_Controller{
 		$data['total2'] = $this->input->post('total_pesan');
 		$this->load->view('V_invoice',$data);
 	}
+		public function buktipembayaran(){
+
+		$this->load->view('element/Owner/Header_owner',$data);
+		$this->load->view('Owner_view/VO_buktipembayaran',$data);
+		$this->load->view('element/Owner/Footer_owner');
+		
+	}
 
 	public function tambahstok(){
 		$id_produk = $this->input->post('id_produk');
