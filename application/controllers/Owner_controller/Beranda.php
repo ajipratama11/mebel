@@ -6,7 +6,7 @@ class Beranda extends CI_Controller{
 		parent::__construct();		
 		$this->load->model('Owner_models/MO_transaksi');
 		$this->load->model('Admin_models/MA_transaksi');
-		$this->load->model('Admin_models/MA_bukti');
+		$this->load->model('M_faq');
 		$this->load->helper(array('url'));
 		if($this->session->userdata('status') != "admin"){
 			echo "<script>
@@ -75,12 +75,12 @@ class Beranda extends CI_Controller{
 		$data['total2'] = $this->input->post('total_pesan');
 		$this->load->view('V_invoice',$data);
 	}
-		public function buktipembayaran($id_pesan){
-			$data['bayar'] = $this->MA_bukti->getbukti($id_pesan);
-		$this->load->view('element/Owner/Header_owner');
-		$this->load->view('Owner_view/VO_buktipembayaran',$data);
-		$this->load->view('element/Owner/Footer_owner');
 		
+	public function faq(){
+		$data['hfaq'] = $this->M_faq->tampil_faq();
+		$this->load->view('element/Owner/Header_owner');
+		$this->load->view('Owner_view/faq',$data);
+		$this->load->view('element/Owner/Footer_owner');
 	}
 
 	public function tambahstok(){
