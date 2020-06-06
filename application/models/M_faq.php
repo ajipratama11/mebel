@@ -7,7 +7,7 @@ class M_faq extends CI_Model {
       return $query->result();
     }
     function tambah_faq(){
-     $query=$this->db->query("INSERT INTO faq ('id_faq','kritik','nama') VALUES ('$id_faq','$kritik','$nama)");
+     $query=$this->db->query("INSERT INTO 'faq' ('id_faq','kritik','nama') VALUES ('$id_faq','$kritik','$nama)");
     return $query;
     }
 }
