@@ -19,19 +19,19 @@
 				</div> 
 				<div class="form-group col-md-3">
 					Tanggal awal:
-					<input type="date" name="tanggal_awal" class="form-control" required="required" placeholder="tanggal awak">
+					<input type="date" name="tgl_akhir" class="form-control" required="required" placeholder="tanggal awak">
 				</div> 
 				<div class="form-group col-md-3">
 					Tanggal Akhir:
-					<input type="date" name="nama_voucher" class="form-control" required="required" placeholder="tanggal akhir">
+					<input type="date" name="tgl_akhir" class="form-control" required="required" placeholder="tanggal akhir">
 				</div> 
 				<div class="form-group col-md-3">
 					Total Voucher:
-					<input onkeypress="return hanyaAngka(event)" maxlength="7" name="harga" min="1" class="form-control" required="required" placeholder="total voucher">
+					<input onkeypress="return hanyaAngka(event)" maxlength="7" name="total_voucher" min="1" class="form-control" required="required" placeholder="total voucher">
 				</div>
                 <div class="form-group col-md-3">
 					Minimum Belanja:
-					<input onkeypress="return hanyaAngka(event)" maxlength="7" name="harga" min="1" class="form-control" required="required" placeholder="minimum belanja">
+					<input onkeypress="return hanyaAngka(event)" maxlength="7" name="minimum_belanja" min="1" class="form-control" required="required" placeholder="minimum belanja">
 				</div>
 				<div class="form-group col-md-12">
 					Keterangan:
