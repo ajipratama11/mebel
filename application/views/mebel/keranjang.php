@@ -168,7 +168,6 @@
         <button class="btn btn-sm btn-success" type="button" onclick="tampil_data('data')">Check Kode Voucher</button>
       </div>
       <div id="hasil">
-        
       </div>
       <!--/register-req-->
 
