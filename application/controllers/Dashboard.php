@@ -10,7 +10,6 @@
 			$this->load->model('M_profil');
 			$this->load->model('M_pesanan');
 			$this->load->model('M_komentar');
-			$this->load->model('M_faq');
 			$this->load->library('upload');
 			$this->load->helper(array('url'));
 			// if($this->session->userdata('status') != "login"){
@@ -55,22 +54,12 @@
 		}
 		public function faq()
 		{
-			$this->load->view('mebel/faq');
-   		
-		}
-			public function tambah_faq()
-		{
-			$id_faq = $this->M_faq->tambah_faq();
-			// $produk = $this->input->post('id_faq');
-			$data = [
-				'id_faq'     => $this->input->post('id_faq'),
-				'kritik'     => $this->input->post('kritik'),
-				'nama'       => $this->input->post('nama')
-			];
 
-			$this->db->insert('faq', $data);
-			redirect('mebel/faq');
-   		
+			$data['kategori'] = $this->M_produk->tampil_kategori();
+			// $data['produk'] = $this->M_produk->tampil_produk3();
+			// $data['produk2'] = $this->M_produk->tampil_produk4();
+			// $data['produk3'] = $this->M_produk->tampil_produk5();
+			$this->load->view('mebel/faq', $data);
 		}
 
 		public function testimonial()
@@ -154,9 +143,9 @@
 					$cek2 = $this->db->query("SELECT * FROM kostumer_voucher WHERE id_voucher='$idvoucher' AND id_kostumer_id='$iduser'")->num_rows();
 					$cek4 = $this->db->query("SELECT * FROM kostumer_voucher WHERE idpesan='$idpesan' AND id_voucher='$idvoucher'")->num_rows();
 					$cek5 = $this->db->query("SELECT * FROM kostumer_voucher WHERE idpesan='$idpesan' AND id_kostumer_id='$iduser'")->num_rows();
-					if($cek2 === 0){
-						if($cek4 === 0){
-							if($cek5 === 0){
+					// if($cek4 === 0){
+						// if($cek4 === 0){
+							if($cek2 === 0){
 								$user_token = [
 									'id_voucher' => $idvoucher,
 									'idpesan' => $idpesan,
@@ -171,16 +160,16 @@
 								anda sudah menggunakan voucher ini yang ke 5'.$idpesan.'
 								   </div>';
 							}
-						}else{
-							echo '<div class="alert alert-success" role="alert">
-							anda sudah menggunakan voucher ini yang ke 4'.$idpesan.'
-							   </div>';
-						}
-					}else{
-						echo '<div class="alert alert-success" role="alert">
-						 anda sudah menggunakan voucher ini yang ke 2'.$idpesan.'
-							</div>';
-					}
+						// }else{
+						// 	echo '<div class="alert alert-success" role="alert">
+						// 	anda sudah menggunakan voucher ini yang ke 4'.$idpesan.'
+						// 	   </div>';
+						// }
+					// }else{
+					// 	echo '<div class="alert alert-success" role="alert">
+					// 	 anda sudah menggunakan voucher ini yang ke 2'.$idpesan.'
+					// 		</div>';
+					// }
 				}else{
 					echo '<div class="alert alert-success" role="alert">
 						 belanja anda kurang, silahkan belanja lagi'.$idpesan.'

@@ -30,12 +30,13 @@ class Pesanan extends CI_Controller {
 		foreach($this->M_keranjang->voucher2($idpesan,$iduser) as $row){
 			$total = $row->total_voucher;
 		}
-		$voucher = $this->db->query("SELECT * FROM voucher JOIN kostumer_voucher ON voucher.id_voucher=kostumer_voucher.id_voucher WHERE kostumer_voucher.idpesan='$idpesan' AND kostumer_voucher.id_kostumer_id='$iduser'")->num_rows();
+		$voucher = $this->db->query("SELECT * FROM voucher JOIN kostumer_voucher ON voucher.id_voucher=kostumer_voucher.id_voucher WHERE kostumer_voucher.idpesan='$idpesan' AND kostumer_voucher.id_kostumer_id='$iduser' ORDER BY voucher.total_voucher DESC LIMIT 1")->num_rows();
 		if($voucher === 1){
 			$diskon = $total;
 		}else{
 			$diskon = 0;
 		}
+		$idvoucher = $this->input->post('idvoucher');
 		$destination = $this->input->post('propinsi_tujuan');
 		$origin = $this->input->post('destination');
 		$namapengirim = $this->input->post('namapengirim');
