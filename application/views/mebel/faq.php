@@ -32,6 +32,7 @@
           <h2 class="contact-title">Pesan</h2>
         </div>
         <div class="col-lg-12">
+          
           <form class="form-contact contact_form" action="<?php echo base_url('Dashboard/tambah_faq'); ?>" method="post" id="contactForm"
             novalidate="novalidate">
             <div class="row">
@@ -52,7 +53,7 @@
              
             </div>
             <div class="form-group mt-3">
-              <a type="<?php echo base_url('Dashboard/tambah_faq'); ?>" name="submit" class="btn_3 button-contactForm">Send Message</a>
+              <input  type="<?php echo base_url('Dashboard/tambah_faq'); ?>" name="submit" class="btn_3 button-contactForm">Send Message >
             </div>
           </form>
         </div>

@@ -6,9 +6,16 @@ class M_faq extends CI_Model {
       $query = $this->db->query("SELECT * FROM faq");
       return $query->result();
     }
-    function tambah_faq(){
-     $query=$this->db->query("INSERT INTO 'faq' ('id_faq','kritik','nama') VALUES ('$id_faq','$kritik','$nama)");
-    return $query;
-    }
+  function save(){
+    $data = array(
+      "id_faq" => $this->input->post('id_faq'),
+      "nama" => $this->input->post('nama'),
+      "kritik" => $this->input->post('kritik')
+      
+    );
+    
+    $this->db->insert('faq', $data); // Untuk mengeksekusi perintah insert data
+  }
+
 }
 ?>
