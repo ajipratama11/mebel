@@ -7,15 +7,7 @@ class M_faq extends CI_Model {
       return $query->result();
     }
   function save(){
-    $data = array(
-      "id_faq" => $this->input->post('id_faq'),
-      "nama" => $this->input->post('nama'),
-      "kritik" => $this->input->post('kritik')
-      
-    );
-    
-    $this->db->insert('faq', $data); // Untuk mengeksekusi perintah insert data
-  }
-
+$query=$this->db->query("INSERT INTO faq (id_faq,nama,kritik)VALUES('$id_faq','$nama','$kritik')");
+        return $query;
 }
 ?>

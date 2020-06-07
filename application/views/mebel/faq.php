@@ -53,7 +53,7 @@
              
             </div>
             <div class="form-group mt-3">
-              <input  type="<?php echo base_url('Dashboard/tambah_faq'); ?>" name="submit" class="btn_3 button-contactForm">Send Message >
+              <a   type="<?php echo base_url('Dashboard/tambah_faq'); ?>" name="submit" class="btn_3 button-contactForm">Send Message </a>
             </div>
           </form>
         </div>

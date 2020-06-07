@@ -61,6 +61,20 @@
 			// $data['produk3'] = $this->M_produk->tampil_produk5();
 			$this->load->view('mebel/faq', $data);
 		}
+			public function tambah_faq()
+		{
+
+		
+			$data = [
+				'id_faq'     => $this->input->post('id_faq'),
+				'nama'             => $this->input->post('nama'),
+				'kritik'          => $this->input->post('kritik')
+			];
+
+			$this->db->insert('faq', $data);
+			redirect('mebel/faq');
+		}
+
 
 		public function testimonial()
 		{
