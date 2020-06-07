@@ -151,7 +151,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('Owner_controller/A_faq'); ?>">
+            <a class="nav-link" href="<?php echo base_url('Owner_controller/Beranda/faq'); ?>">
               <i class="menu-icon mdi mdi-inbox"></i>
               <span class="menu-title">Faq</span>
             </a>

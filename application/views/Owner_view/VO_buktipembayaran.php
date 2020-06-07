@@ -11,7 +11,38 @@
 
                     <h1><?php echo $a->kode_pesan ?></h1>
                     
+
+                    <div class="row">
+  <div class="col-md-6">
+<table class="table">
+
+   
+      <tr><th>ID bayar</th>
+        <td><?php echo $a->id_bayar ?></td>
+      </tr>
+      <tr><th>Nama Pemilik</th>
+        <td><?php echo $a->nama_pemilik ?></td>
+      </tr>
+      <tr><th>BANK</th>
+        <td><?php echo $a->bank ?></td>
+      </tr>
+      
+    </table>  
+
+     <div>
+       <img style="margin-bottom: 50px;" height="700px" width="500px" src="<?php echo base_url('./assets/images/'.$a->bukti_pembayaran); ?>">
+     </div>
+  
+
+
+
+
+
                   <?php endforeach; ?>
                   <br><br>
                 
         <!-- content-wrapper ends -->
+</div>
+</div>
+</div>
+</div>

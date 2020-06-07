@@ -10,6 +10,7 @@
 			$this->load->model('M_profil');
 			$this->load->model('M_pesanan');
 			$this->load->model('M_komentar');
+			$this->load->model('M_faq');
 			$this->load->library('upload');
 			$this->load->helper(array('url'));
 			// if($this->session->userdata('status') != "login"){
@@ -54,12 +55,22 @@
 		}
 		public function faq()
 		{
+			$this->load->view('mebel/faq');
+   		
+		}
+			public function tambah_faq()
+		{
+			$id_faq = $this->M_faq->tambah_faq();
+			// $produk = $this->input->post('id_faq');
+			$data = [
+				'id_faq'     => $this->input->post('id_faq'),
+				'kritik'     => $this->input->post('kritik'),
+				'nama'       => $this->input->post('nama')
+			];
 
-			$data['kategori'] = $this->M_produk->tampil_kategori();
-			// $data['produk'] = $this->M_produk->tampil_produk3();
-			// $data['produk2'] = $this->M_produk->tampil_produk4();
-			// $data['produk3'] = $this->M_produk->tampil_produk5();
-			$this->load->view('mebel/faq', $data);
+			$this->db->insert('faq', $data);
+			redirect('mebel/faq');
+   		
 		}
 
 		public function testimonial()
