@@ -143,15 +143,14 @@
 					$cek2 = $this->db->query("SELECT * FROM kostumer_voucher WHERE id_voucher='$idvoucher' AND id_kostumer_id='$iduser'")->num_rows();
 					$cek4 = $this->db->query("SELECT * FROM kostumer_voucher WHERE idpesan='$idpesan' AND id_voucher='$idvoucher'")->num_rows();
 					$cek5 = $this->db->query("SELECT * FROM kostumer_voucher WHERE idpesan='$idpesan' AND id_kostumer_id='$iduser'")->num_rows();
-					// if($cek4 === 0){
-						// if($cek4 === 0){
-							if($cek2 === 0){
-								$user_token = [
-									'id_voucher' => $idvoucher,
-									'idpesan' => $idpesan,
-									'id_kostumer_id' => $iduser
-								];
-								$this->db->insert('kostumer_voucher', $user_token);
+					// if($cek5 === 1){
+						if($cek2 === 0){
+							$user_token = [
+								'id_voucher' => $idvoucher,
+								'idpesan' => $idpesan,
+								'id_kostumer_id' => $iduser
+							];
+							$this->db->insert('kostumer_voucher', $user_token);
 								echo '<div class="alert alert-success" role="alert">
 								 Ada voucher Sebanyak '.$total.' Untuk Anda
 										</div>';
