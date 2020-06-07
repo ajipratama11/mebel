@@ -156,15 +156,19 @@
 
         </div>
       </div>
+      <?php
+      foreach ($this->cart->contents() as $items) {
+				$idpesan = $items['idpesan'];
+      }
+      $cek2 = $this->db->query("SELECT * FROM kostumer_voucher JOIN voucher ON kostumer_voucher.id_voucher=voucher.id_voucher WHERE kostumer_voucher.id_voucher='1' AND kostumer_voucher.id_kostumer_id=5")->num_rows(); echo $cek2 ?>
       <h3><input type="checkbox" id="myCheck" onclick="myFunction()"> Masukkan Kode Voucher (Jika ada)</h3>
-      <form style="display: none; margin-left: 4px;" id="text" class="row contact_form">
-        <input type="text" class="form-group" id="company" name="namapengirim">
-        <button class="btn btn-sm btn-success" href="<?php echo base_url('Dashboard') ?>">Check Kode Voucher</button>
-      </form>
-      <div>
-        <div class="alert alert-success" role="alert">
-          Selamat Anda Mendapat potongan 100.000, sesuai dengan S&K yang Berlaku
-        </div>
+      <div style="display: none; margin-left: 4px;" id="text" class="row contact_form">
+        <input type="text" class="form-group" id="kodevoucher" name="kodevoucher">
+        <!-- <input type="text" class="form-group" id="totalbelanja" value="<?php $this->cart->total(); ?>" name="totalbelanja"> -->
+        <button class="btn btn-sm btn-success" type="button" onclick="tampil_data('data')">Check Kode Voucher</button>
+      </div>
+      <div id="hasil">
+        
       </div>
       <!--/register-req-->
 
@@ -217,16 +221,7 @@
                   <input type="text" class="form-control" id="email" name="kodepos" />
                 </div>
                 <!-- <p>Alamat asal default jember</p> -->
-                <div style="visibility: hidden;">
-                  <select class="form-control" name="propinsi_asal" id="propinsi_asal" required="required">
-                    <!-- <option value="" selected="" disabled="">Pilih Provinsi</option> -->
-                    <?php $this->load->view('rajaongkir/GetProvince2'); ?>
-                  </select>
-
-                  <select class="form-control" name="origin" id="origin">
-                    <?php $this->load->view('rajaongkir/GetCity'); ?>
-                  </select>
-                </div>
+                
                 <button type="submit" style="width: 300px; height:60px;" class="btn btn-lg btn-success">Selesaikan pesanan</button>
             </div>
           </div>
@@ -271,29 +266,13 @@
 
 <script>
   function tampil_data(act) {
-    var w = $('#origin').val();
-    var x = $('#destination').val();
-    var y = $('#berat').val();
-    var z = $('#courier').val();
-    var a = $('#namapengirim').val();
-    var b = $('#kecamatan').val();
-    var c = $('#desa').val();
-    var d = $('#kodepos').val();
-    var e = $('#telp').val();
+    var w = $('#kodevoucher').val();
 
     $.ajax({
-      url: "../Rajaongkir/getCost",
+      url: "../Dashboard/voucher",
       type: "GET",
       data: {
-        origin: w,
-        destination: x,
-        berat: y,
-        courier: z,
-        namapengirim: a,
-        kecamatan: b,
-        desa: c,
-        kodepos: d,
-        telp: e
+        kodevoucher: w
       },
       success: function(ajaxData) {
         //$('#tombol_export').show();

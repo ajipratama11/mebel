@@ -21,9 +21,20 @@ class Pesanan extends CI_Controller {
 	}
 
 	public function pembayaran(){
+		$iduser =  $this->session->userdata("iduser");
 		$data['kategori'] = $this->M_produk->tampil_kategori();
 		foreach ($this->cart->contents() as $item) {
 			$idpesan=$item['idpesan'];
+		}
+		//jika idpesan sudah ada, maka set diskon 0. jika belum ada maka set diskon dari db
+		foreach($this->M_keranjang->voucher2($idpesan,$iduser) as $row){
+			$total = $row->total_voucher;
+		}
+		$voucher = $this->db->query("SELECT * FROM voucher JOIN kostumer_voucher ON voucher.id_voucher=kostumer_voucher.id_voucher WHERE kostumer_voucher.idpesan='$idpesan' AND kostumer_voucher.id_kostumer_id='$iduser'")->num_rows();
+		if($voucher === 1){
+			$diskon = $total;
+		}else{
+			$diskon = 0;
 		}
 		$destination = $this->input->post('propinsi_tujuan');
 		$origin = $this->input->post('destination');
@@ -43,6 +54,7 @@ class Pesanan extends CI_Controller {
 								'telp' => $telp,
 								'rt' => $rt,
 								'rw' => $rw,
+								'diskon' => $diskon,
 								'idpesan' => $idpesan
 				);
 			
@@ -130,4 +142,3 @@ class Pesanan extends CI_Controller {
 		redirect('Transaksi');
 	}
 }
-?>

@@ -69,6 +69,10 @@ class M_keranjang extends CI_Model{
 	{
 		$this->db->insert('keranjang', $data_detail);
 	}
+	function voucher2($idpesan,$iduser){
+		$query = $this->db->query("SELECT voucher.*, kostumer_voucher.* FROM voucher JOIN kostumer_voucher ON voucher.id_voucher=kostumer_voucher.id_voucher WHERE kostumer_voucher.idpesan='$idpesan' AND kostumer_voucher.id_kostumer_id='$iduser'");
+		return $query->result();
+	}
 
 }
 ?>

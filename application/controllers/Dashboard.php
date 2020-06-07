@@ -122,6 +122,68 @@
 			}
 		}
 
+		public function voucher(){
+			$iduser =  $this->session->userdata("iduser");
+			$kodevoucher =  $this->input->get('kodevoucher');
+			$totalbelanja =  $this->cart->total();
+			$date = date('Y-m-d');
+			foreach ($this->cart->contents() as $items) {
+				$idpesan = $items['idpesan'];
+			}
+			foreach($this->M_profil->voucher($kodevoucher) as $row){
+				$idvoucher= $row->id_voucher;
+				$total = $row->total_voucher;
+			}
+			$cek1 = $this->db->query("SELECT * FROM voucher WHERE kode_voucher='$kodevoucher' AND '$date' BETWEEN tgl_awal AND tgl_akhir")->num_rows();
+			$cek3 = $this->db->query("SELECT * FROM voucher WHERE kode_voucher='$kodevoucher' AND minimum_belanja<='$totalbelanja' AND '$date' BETWEEN tgl_awal AND tgl_akhir")->num_rows();
+			
+
+			if($cek1 === 1) {
+				if($cek3 === 1){
+					$cek2 = $this->db->query("SELECT * FROM kostumer_voucher WHERE id_voucher='$idvoucher' AND id_kostumer_id='$iduser'")->num_rows();
+					$cek4 = $this->db->query("SELECT * FROM kostumer_voucher WHERE idpesan='$idpesan' AND id_voucher='$idvoucher'")->num_rows();
+					$cek5 = $this->db->query("SELECT * FROM kostumer_voucher WHERE idpesan='$idpesan' AND id_kostumer_id='$iduser'")->num_rows();
+					if($cek2 === 0){
+						if($cek4 === 0){
+							if($cek5 === 0){
+								$user_token = [
+									'id_voucher' => $idvoucher,
+									'idpesan' => $idpesan,
+									'id_kostumer_id' => $iduser
+								];
+								$this->db->insert('kostumer_voucher', $user_token);
+								echo '<div class="alert alert-success" role="alert">
+								 Ada voucher Sebanyak '.$total.' Untuk Anda
+										</div>';
+							}else{
+								echo '<div class="alert alert-success" role="alert">
+								anda sudah menggunakan voucher ini yang ke 5'.$idpesan.'
+								   </div>';
+							}
+						}else{
+							echo '<div class="alert alert-success" role="alert">
+							anda sudah menggunakan voucher ini yang ke 4'.$idpesan.'
+							   </div>';
+						}
+					}else{
+						echo '<div class="alert alert-success" role="alert">
+						 anda sudah menggunakan voucher ini yang ke 2'.$idpesan.'
+							</div>';
+					}
+				}else{
+					echo '<div class="alert alert-success" role="alert">
+						 belanja anda kurang, silahkan belanja lagi'.$idpesan.'
+							</div>';
+				}
+			}else{
+				echo '<div class="alert alert-success" role="alert">
+				 kode voucher salah atau sudah expired
+					</div>';
+			}
+			
+
+		}
+
 		public function hapus_keranjang()
 		{
 			// $this->cart->contents(['id']);

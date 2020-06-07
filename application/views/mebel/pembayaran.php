@@ -223,16 +223,37 @@
                                     </a>
                                 </li>
                                 <li>
+                                <a href="#">Total Bayar
+
+                                       
+                                            <span>Rp.<?php $format_indonesia = number_format($totalbayar, 0, ',', '.');
+                                                echo $format_indonesia;  ?>,00-</span>
+                                       
+                                            
+                                       
+                                    </a>
+                                </li>
+                                <li>
+                                <a href="#">Diskon
+
+                                       
+                                            <span>Rp.<?php $format_indonesia = number_format($diskon, 0, ',', '.');
+                                                echo $format_indonesia;  ?>,00-</span>
+                                       
+                                            
+                                       
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="#">
+                                        <?php $finalbayar = $totalbayar-$diskon; ?>
                                         <h2>Total Bayar</h2>
-                                        <h2>Rp.<?php $format_indonesia = number_format($totalbayar, 0, ',', '.');
+                                        <h2>Rp.<?php $format_indonesia = number_format($finalbayar, 0, ',', '.');
                                                 echo $format_indonesia;  ?>,00-</h2>
                                     </a>
                                 </li>
                                 <li>
-                                <li>
-
-
+                                <li
                                 </li>
                             </ul>
                             <form action="<?php echo base_url('Pesanan/insert_pesan') ; ?>" method="post">
@@ -247,7 +268,7 @@
                                 <input type="hidden" name="telp" value="<?php echo $telp; ?>">
                                 <input type="hidden" name="idpesan" value="<?php echo $idpesan; ?>">
                                 <input type="hidden" name="harga_kirim" value="<?php echo $ongkir; ?>">
-                                <input type="hidden" name="total_pesan" value="<?php echo $totalbayar; ?>">
+                                <input type="hidden" name="total_pesan" value="<?php echo $finalbayar; ?>">
                                 <!-- <input type="hidden" name="idpesanx" value="<?php echo $idpesanx; ?>"> -->
 
                                 <button type="submit" class="btn_3" href="#">Proceed to Paypal</button>
