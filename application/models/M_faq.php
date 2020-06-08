@@ -10,4 +10,5 @@ class M_faq extends CI_Model {
 $query=$this->db->query("INSERT INTO faq (id_faq,nama,kritik)VALUES('$id_faq','$nama','$kritik')");
         return $query;
 }
+}
 ?>

@@ -30,10 +30,10 @@
                             <?php echo $f->id_faq; ?>
                           </td>
                           <td>
-                            <?php echo $f->kritik; ?>
+                            <?php echo $f->nama; ?>
                           </td>
                           <td>
-                            <?php echo $f->nama; ?>
+                            <?php echo $f->kritik; ?>
                           </td>
                      
                            
