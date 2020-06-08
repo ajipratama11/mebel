@@ -145,6 +145,7 @@
 			foreach($this->M_profil->voucher($kodevoucher) as $row){
 				$idvoucher= $row->id_voucher;
 				$total = $row->total_voucher;
+				$nama = $row->nama_voucher;
 			}
 			$cek1 = $this->db->query("SELECT * FROM voucher WHERE kode_voucher='$kodevoucher' AND '$date' BETWEEN tgl_awal AND tgl_akhir")->num_rows();
 			$cek3 = $this->db->query("SELECT * FROM voucher WHERE kode_voucher='$kodevoucher' AND minimum_belanja<='$totalbelanja' AND '$date' BETWEEN tgl_awal AND tgl_akhir")->num_rows();
@@ -168,7 +169,7 @@
 										</div>';
 							}else{
 								echo '<div class="alert alert-success" role="alert">
-								anda sudah menggunakan voucher ini yang ke 5'.$idpesan.'
+								Anda sudah pernah reedem voucher '.$nama.' 
 								   </div>';
 							}
 						// }else{
@@ -183,7 +184,7 @@
 					// }
 				}else{
 					echo '<div class="alert alert-success" role="alert">
-						 belanja anda kurang, silahkan belanja lagi'.$idpesan.'
+						 belanja anda kurang, silahkan belanja lagi untuk mendapatkan potongan harga
 							</div>';
 				}
 			}else{
