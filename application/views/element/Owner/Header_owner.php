@@ -165,7 +165,7 @@
            <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Owner_controller/A_voucher'); ?>">
               <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Testimonial</span>
+              <span class="menu-title">Voucher</span>
             </a>
           </li>
       </nav>
