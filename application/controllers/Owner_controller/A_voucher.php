@@ -31,6 +31,12 @@ class A_voucher extends CI_Controller
 		$this->load->view('Owner_view/VA_voucher');
 		$this->load->view('element/Owner/Footer_owner');
 	}
+	public function editvoucher($id_voucher){
+		$data['voucher2'] = $this->M_voucher->tampilvoucher2($id_voucher); 
+		$this->load->view('element/Owner/Header_owner');
+		$this->load->view('Owner_view/editvoucher',$data);
+		$this->load->view('element/Owner/Footer_owner');
+	}
 
 	public function tambahvoucher()
 	{
@@ -44,6 +50,23 @@ class A_voucher extends CI_Controller
 		$this->M_voucher->tambahvoucher($kodevoucher, $namavoucher, $tglawal, $tglakhir, $totalvoucher, $minimumbelanja, $keterangan);
 		echo "<script>
 	                alert('Tambah berhasil');
+	                window.location.href = '" . base_url('Owner_controller/A_voucher') . "';
+	            </script>"; //Url tujuan
+	}
+	public function ubahvoucher()
+	{
+
+		$idvoucher = $this->input->post('id_voucher');
+		$kodevoucher = $this->input->post('kode_voucher');
+		$namavoucher = $this->input->post('nama_voucher');
+		$tglawal = $this->input->post('tgl_awal');
+		$tglakhir = $this->input->post('tgl_akhir');
+		$totalvoucher = $this->input->post('total_voucher');
+		$minimumbelanja = $this->input->post('minimum_belanja');
+		$keterangan = $this->input->post('keterangan');
+		$this->M_voucher->updatevoucher($kodevoucher, $namavoucher, $tglawal, $tglakhir, $totalvoucher, $minimumbelanja, $keterangan,$idvoucher);
+		echo "<script>
+	                alert('Edit berhasil');
 	                window.location.href = '" . base_url('Owner_controller/A_voucher') . "';
 	            </script>"; //Url tujuan
 	}

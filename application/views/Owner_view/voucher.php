@@ -53,7 +53,7 @@
                           </td>
                           <td>
                             <a href="<?= base_url('Owner_controller/A_voucher/hapusvoucher/'.$f->id_voucher); ?>" class="btn btn-danger">Hapus</a>
-                            <a class="btn btn-warning">Edit</a>
+                            <a href="<?= base_url('Owner_controller/A_voucher/editvoucher/'.$f->id_voucher); ?>" class="btn btn-warning">Edit</a>
                           </td>
                      
                            
