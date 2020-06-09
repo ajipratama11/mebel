@@ -56,7 +56,7 @@ class A_voucher extends CI_Controller
 	public function ubahvoucher()
 	{
 
-		$idvoucher = $this->input->post('id_voucher');
+		$idvoucher = $this->uri->segment(4);
 		$kodevoucher = $this->input->post('kode_voucher');
 		$namavoucher = $this->input->post('nama_voucher');
 		$tglawal = $this->input->post('tgl_awal');
@@ -64,7 +64,7 @@ class A_voucher extends CI_Controller
 		$totalvoucher = $this->input->post('total_voucher');
 		$minimumbelanja = $this->input->post('minimum_belanja');
 		$keterangan = $this->input->post('keterangan');
-		$this->M_voucher->updatevoucher($kodevoucher, $namavoucher, $tglawal, $tglakhir, $totalvoucher, $minimumbelanja, $keterangan,$idvoucher);
+		$this->M_voucher->ubahvoucher($kodevoucher, $namavoucher, $tglawal, $tglakhir, $totalvoucher, $minimumbelanja, $keterangan,$idvoucher);
 		echo "<script>
 	                alert('Edit berhasil');
 	                window.location.href = '" . base_url('Owner_controller/A_voucher') . "';

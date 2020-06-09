@@ -10,7 +10,7 @@
 			<form action="<?= base_url('Owner_controller/A_voucher/ubahvoucher'); ?>" method="post">
 				<div class="form-group col-md-12">
                     Kode Voucher :
-					<input type="hidden" name="id_voucher" value="<?= $a->id_voucher; ?>" class="form-control" required="required" placeholder="kode">
+					<input type="text" name="id_voucher" value="<?= $this->uri->segment(4) ?>" class="form-control" required="required" placeholder="kode">
 					<input type="text" name="kode_voucher" value="<?= $a->kode_voucher; ?>" class="form-control" required="required" placeholder="kode">
 				</div>
 				
@@ -40,7 +40,7 @@
 				
 				</div>        
 				<div class="form-group col-md-12">
-					<button type="submit" name="submit" class="btn btn-primary">
+					<button type="submit" name="submit" class="btn btn-primary">SImpan</button>
 					<a href="##"><button type="button" value="batal" class="btn btn-primary">Batal</button></a>
 				</div>
 				</form>
