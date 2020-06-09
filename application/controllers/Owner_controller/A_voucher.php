@@ -53,22 +53,16 @@ class A_voucher extends CI_Controller
 	                window.location.href = '" . base_url('Owner_controller/A_voucher') . "';
 	            </script>"; //Url tujuan
 	}
-	public function ubahvoucher()
+	public function ubahvoucher($id_voucher)
 	{
 
-		$idvoucher = $this->uri->segment(4);
-		$kodevoucher = $this->input->post('kode_voucher');
-		$namavoucher = $this->input->post('nama_voucher');
-		$tglawal = $this->input->post('tgl_awal');
-		$tglakhir = $this->input->post('tgl_akhir');
-		$totalvoucher = $this->input->post('total_voucher');
-		$minimumbelanja = $this->input->post('minimum_belanja');
-		$keterangan = $this->input->post('keterangan');
-		$this->M_voucher->ubahvoucher($kodevoucher, $namavoucher, $tglawal, $tglakhir, $totalvoucher, $minimumbelanja, $keterangan,$idvoucher);
-		echo "<script>
-	                alert('Edit berhasil');
-	                window.location.href = '" . base_url('Owner_controller/A_voucher') . "';
-	            </script>"; //Url tujuan
+		if ($this->input->post('submit')) {
+            $this->M_voucher->updatevoucher($id_voucher);
+            echo "<script>
+	                alert('Edit produk berhasil');	
+	                window.location.href = '".base_url('Owner_controller/A_voucher')."';
+				</script>";//Url tujuan
+        }
 	}
 
 	public function hapusvoucher($id_voucher)
