@@ -225,7 +225,8 @@
 				'id_kostumer_id'     => $this->input->post('id_kostumer_id'),
 				'komentar'             => $this->input->post('komentar'),
 				'id_produk_id'           => $produk,
-				'date'          => $this->input->post('date')
+				'date'          => $this->input->post('date'),	
+				'komen_status'          => 1
 			];
 
 			$this->db->insert('komentar', $data);

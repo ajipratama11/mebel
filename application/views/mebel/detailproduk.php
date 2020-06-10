@@ -188,13 +188,33 @@
                     <div class="media-body" id="show">
                       <h4><?php echo $a->nama_kostumer ?></h4>
                       <h5><?php echo $a->date ?></h5>
+                      <button class="reply_btn" onclick="document.getElementById('<?php echo $utama->komen_id?>').style.display='block'">Reply</button>
                     </div>
                   </div>
                   <p>
                   <?php echo $a->komentar ?>
                   </p>
                 </div>
-     <?php endforeach; ?>
+                <?php
+                $komen_id=$a->id_komentar;
+                $query= $this->db->query("SELECT * FROM komentar WHERE komen_status='$komen_id'")->result();
+                 foreach($query as $balas) : ?>
+                <div class="review_item reply">
+                  <div class="media">
+                    <div class="d-flex">
+                      <img src="<?= base_url() ?>vendor/mebel/img/product/single-product/review-2.png" alt="" />
+                    </div>
+                    <div class="media-body">
+                      <h4>Admin Lumintu Mebel</h4>
+                      <h5><?php echo $balas->date; ?></h5>
+                    </div>
+                  </div>
+                  <p>
+                    <?php echo $balas->komentar ?>
+                  </p>
+                </div>
+          <?php endforeach; ?>
+        <?php endforeach; ?>
               </div>
             </div>
             <?php  if($this->session->userdata('status') == "login") { ?>
