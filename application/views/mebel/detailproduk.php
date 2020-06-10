@@ -188,7 +188,7 @@
                     <div class="media-body" id="show">
                       <h4><?php echo $a->nama_kostumer ?></h4>
                       <h5><?php echo $a->date ?></h5>
-                      <button class="reply_btn" onclick="document.getElementById('<?php echo $a->id_komentar ?>').style.display='block'">Reply</button>
+                      <a class="reply_btn" data-toggle="modal" data-target="#modal-edit<?= $a->id_komentar; ?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">Reply</a>
                     </div>
                   </div>
                   <p>
@@ -215,6 +215,42 @@
                 </div>
           <?php endforeach; ?>
         <?php endforeach; ?>
+        <?php $no=0; foreach($komentar as $row): $no++; ?>
+                <div class="row">
+                 <div id="modal-edit<?=$row->id_komentar;?>" class="modal fade">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Ekskul</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                           
+                            <div class="modal-body">
+                                <form action="<?php echo base_url('Akun/editAkun/'.$row->id_komentar); ?>" method="post" enctype="multipart/form-data">
+                                    
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-4  control-label col-form-label">Username</label>
+                                        <div class="col-sm-8">
+                                        <input type="hidden" style="border-radius: 10px;" name="id_login" class="form-control" id="id_login" value="<?php echo $row->id_komentar; ?>" placeholder="Nama Penanggung Jawab" required>
+                                        <input type="hidden" style="border-radius: 10px;" name="id_gtk" class="form-control" id="id_gtk" value="<?php echo $row->komentar;  ?>" placeholder="Nama Penanggung Jawab" required>
+                                            <input type="text" style="border-radius: 10px;" name="username" class="form-control" id="username" value="<?php echo $row->komentar;  ?>" placeholder="Nama Penanggung Jawab" required>
+                                        </div>
+                                    </div>
+                                  
+                                   
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <?php endforeach; ?>
               </div>
             </div>
             <?php  if($this->session->userdata('status') == "login") { ?>
