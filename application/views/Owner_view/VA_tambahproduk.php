@@ -92,6 +92,9 @@
                            
                           <th>
                             Keterangan
+                          </th>  
+                            <th>
+                            aksi
                           </th>                     
                         </tr>
                       </thead>
@@ -126,12 +129,24 @@
                           <td>
                           	<?php echo $b->keterangan; ?>
                           </td>
-                          
+                              <td>    
+                        <center>
+                           <a href="<?php echo base_url('Owner_controller/O_komentar'); ?>"><button type="button" class="btn btn-primary"><i class="menu-icon mdi mdi-pen"></i>Komentar</button></a>
+                        </center>
+                          </td>
+                         
                         </tr>
                         <?php } ?>
                       </tbody>
                     </table>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
 		</div>
 	</div>
 </div>
