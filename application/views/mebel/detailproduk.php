@@ -188,7 +188,7 @@
                     <div class="media-body" id="show">
                       <h4><?php echo $a->nama_kostumer ?></h4>
                       <h5><?php echo $a->date ?></h5>
-                      <button class="reply_btn" onclick="document.getElementById('<?php echo $utama->komen_id?>').style.display='block'">Reply</button>
+                      <button class="reply_btn" onclick="document.getElementById('<?php echo $a->id_komentar ?>').style.display='block'">Reply</button>
                     </div>
                   </div>
                   <p>
