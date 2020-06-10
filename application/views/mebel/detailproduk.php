@@ -188,7 +188,7 @@
                     <div class="media-body" id="show">
                       <h4><?php echo $a->nama_kostumer ?></h4>
                       <h5><?php echo $a->date ?></h5>
-                      <a class="reply_btn" data-toggle="modal" data-target="#modal-edit<?= $a->id_komentar; ?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">Reply</a>
+                      <a class="reply_btn" data-toggle="modal" data-target="#modal-edit<?= $a->id_komentar; ?>" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit">Balas Komentar</a>
                     </div>
                   </div>
                   <p>
@@ -197,7 +197,7 @@
                 </div>
                 <?php
                 $komen_id=$a->id_komentar;
-                $query= $this->db->query("SELECT * FROM komentar WHERE komen_status='$komen_id'")->result();
+                $query= $this->db->query("SELECT * FROM komentar JOIN kostumer ON komentar.id_kostumer_id=kostumer.id_kostumer WHERE komen_status='$komen_id'")->result();
                  foreach($query as $balas) : ?>
                 <div class="review_item reply">
                   <div class="media">
@@ -205,7 +205,7 @@
                       <img src="<?= base_url() ?>vendor/mebel/img/product/single-product/review-2.png" alt="" />
                     </div>
                     <div class="media-body">
-                      <h4>Admin Lumintu Mebel</h4>
+                      <h4><?php echo $balas->nama_kostumer; ?></h4>
                       <h5><?php echo $balas->date; ?></h5>
                     </div>
                   </div>
@@ -221,21 +221,23 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalCenterTitle">Edit Ekskul</h5>
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Balas Komentar</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                            
                             <div class="modal-body">
-                                <form action="<?php echo base_url('Akun/editAkun/'.$row->id_komentar); ?>" method="post" enctype="multipart/form-data">
+                                <form action="<?php echo base_url('Dashboard/simpan_komentar') ?>" method="post" enctype="multipart/form-data">
                                     
                                     <div class="form-group row">
-                                        <label for="fname" class="col-sm-4  control-label col-form-label">Username</label>
-                                        <div class="col-sm-8">
-                                        <input type="hidden" style="border-radius: 10px;" name="id_login" class="form-control" id="id_login" value="<?php echo $row->id_komentar; ?>" placeholder="Nama Penanggung Jawab" required>
-                                        <input type="hidden" style="border-radius: 10px;" name="id_gtk" class="form-control" id="id_gtk" value="<?php echo $row->komentar;  ?>" placeholder="Nama Penanggung Jawab" required>
-                                            <input type="text" style="border-radius: 10px;" name="username" class="form-control" id="username" value="<?php echo $row->komentar;  ?>" placeholder="Nama Penanggung Jawab" required>
+                                        <div class="col-sm-12">
+                                        <input type="hidden" style="border-radius: 10px;" name="komen_status" class="form-control" id="id_login" value="<?php echo $row->id_komentar; ?>" placeholder="Nama Penanggung Jawab" required>
+                                        <input type="hidden" style="border-radius: 10px;" name="id_produk_id" class="form-control" id="id_gtk" value="<?php echo $row->id_produk_id;  ?>" placeholder="Nama Penanggung Jawab" required>
+                                        <input type="hidden" style="border-radius: 10px;" name="id_kostumer_id" class="form-control" id="id_gtk" value="<?php echo $this->session->userdata("iduser"); ?>" placeholder="Nama Penanggung Jawab" required>
+                                        <input type="hidden" style="border-radius: 10px;" name="date" class="form-control" id="id_gtk" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y H:i:s') ?>" placeholder="Nama Penanggung Jawab" required>
+                                            
+                                            <textarea  name="komentar" class="form-control"></textarea>
                                         </div>
                                     </div>
                                   
@@ -243,7 +245,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="submit" value="submit" class="btn btn-primary">Save changes</button>
                             </div>
                             </form>
                         </div>
@@ -264,6 +266,7 @@
                     <input type="hidden" class="form-control" id="name" name="id_kostumer_id" value="<?php echo $this->session->userdata("iduser"); ?>" placeholder="Your Full name" />
                     <input type="hidden" class="form-control" id="email" name="id_produk_id" value="<?php echo $this->uri->segment(3); ?>" placeholder="Email Address" />
                       <input type="hidden" class="form-control" id="number" name="date" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y H:i:s') ?>" placeholder="Phone Number" />
+                      <input type="hidden" class="form-control" id="number" name="komen_status" value="0" placeholder="Phone Number" />
                     </div>
                   </div>
                   <div class="col-md-12">
