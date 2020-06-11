@@ -131,7 +131,7 @@
                           </td>
                               <td>    
                         <center>
-                           <a href="<?php echo base_url('Owner_controller/O_komentar'); ?>"><button type="button" class="btn btn-primary"><i class="menu-icon mdi mdi-pen"></i>Komentar</button></a>
+                           <a href="<?php echo base_url('Produk/AdminKomentar/'.$b->id_produk); ?>"><button type="button" class="btn btn-primary"><i class="menu-icon mdi mdi-pen"></i>Komentar</button></a>
                         </center>
                           </td>
                          

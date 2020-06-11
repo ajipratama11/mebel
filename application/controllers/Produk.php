@@ -5,6 +5,7 @@ class Produk extends CI_Controller {
 	function __construct(){
 		parent::__construct();		
 		$this->load->model('M_produk');
+		$this->load->model('M_komentar');
 		$this->load->library('upload');
 		$this->load->helper(array('url','form'));
 		if($this->session->userdata('status') != "admin"){
@@ -99,6 +100,13 @@ class Produk extends CI_Controller {
 		// $data['produk'] = $this->M_keranjang->tampil_barang();
 		$this->load->view('element/Owner/Header_owner');
 		$this->load->view('Owner_view/editproduk',$data);
+		$this->load->view('element/Owner/Footer_owner');
+	}
+
+	public function AdminKomentar($id_produk){
+		$data['komentar'] = $this->M_komentar->komentar_list($id_produk);
+		$this->load->view('element/Owner/Header_owner');
+		$this->load->view('Owner_view/komentar',$data);
 		$this->load->view('element/Owner/Footer_owner');
 	}
 
