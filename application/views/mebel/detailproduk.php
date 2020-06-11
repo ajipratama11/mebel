@@ -197,7 +197,8 @@
                 </div>
                 <?php
                 $komen_id=$a->id_komentar;
-                $query= $this->db->query("SELECT * FROM komentar JOIN kostumer ON komentar.id_kostumer_id=kostumer.id_kostumer WHERE komen_status='$komen_id'")->result();
+                $query= $this->db->query("SELECT * FROM komentar  WHERE komen_status='$komen_id'")->result();
+               
                  foreach($query as $balas) : ?>
                 <div class="review_item reply">
                   <div class="media">
@@ -205,7 +206,18 @@
                       <img src="<?= base_url() ?>vendor/mebel/img/product/single-product/review-2.png" alt="" />
                     </div>
                     <div class="media-body">
-                      <h4><?php echo $balas->nama_kostumer; ?></h4>
+                      <h4><?php 
+                      $id=$balas->id_kostumer_id; 
+                      $query2= $this->db->query("SELECT * FROM kostumer  WHERE id_kostumer='$id'")->num_rows();
+                      $query3= $this->db->query("SELECT * FROM kostumer  WHERE id_kostumer='$id'")->result();
+                      if($query2 === 0){
+                          echo "Admin Lumintu Mebel";
+                      }else{
+                        foreach($query3 as $a){
+                          echo $a->nama_kostumer;
+                        }
+                      }
+                       ?></h4>
                       <h5><?php echo $balas->date; ?></h5>
                     </div>
                   </div>

@@ -53,7 +53,8 @@
                 </div>
                 <?php
                 $komen_id=$a->id_komentar;
-                $query= $this->db->query("SELECT * FROM komentar JOIN kostumer ON komentar.id_kostumer_id=kostumer.id_kostumer WHERE komen_status='$komen_id'")->result();
+                $query= $this->db->query("SELECT * FROM komentar  WHERE komen_status='$komen_id'")->result();
+               
                  foreach($query as $balas) : ?>
                 <div class="review_item reply">
                   <div class="media">
@@ -62,12 +63,16 @@
                     </div>
                     <div class="media-body">
                       <h4><?php 
-                      if($balas->id_kostumer_id === null){
-                        echo "Admin Lumintu";
+                      $id=$balas->id_kostumer_id; 
+                      $query2= $this->db->query("SELECT * FROM kostumer  WHERE id_kostumer='$id'")->num_rows();
+                      $query3= $this->db->query("SELECT * FROM kostumer  WHERE id_kostumer='$id'")->result();
+                      if($query2 === 0){
+                          echo "Admin Lumintu Mebel";
                       }else{
-                        echo $balas->nama_kostumer;
+                        foreach($query3 as $a){
+                          echo $a->nama_kostumer;
+                        }
                       }
-                      
                        ?></h4>
                       <h5><?php echo $balas->date; ?></h5>
                     </div>
@@ -97,7 +102,7 @@
                                         <div class="col-sm-12">
                                         <input type="hidden" style="border-radius: 10px;" name="komen_status" class="form-control" id="id_login" value="<?php echo $row->id_komentar; ?>" placeholder="Nama Penanggung Jawab" required>
                                         <input type="hidden" style="border-radius: 10px;" name="id_produk_id" class="form-control" id="id_gtk" value="<?php echo $row->id_produk_id;  ?>" placeholder="Nama Penanggung Jawab" required>
-                                        <input type="hidden" style="border-radius: 10px;" name="id_kostumer_id" class="form-control" id="id_gtk" value="<?php echo $this->session->userdata("iduser"); ?>" placeholder="Nama Penanggung Jawab" required>
+                                        <input type="hidden" style="border-radius: 10px;" name="id_kostumer_id" class="form-control" id="id_gtk" value="0" placeholder="Nama Penanggung Jawab" required>
                                         <input type="hidden" style="border-radius: 10px;" name="date" class="form-control" id="id_gtk" value="<?php date_default_timezone_set('Asia/Jakarta'); echo date('d-m-Y H:i:s') ?>" placeholder="Nama Penanggung Jawab" required>
                                             
                                             <textarea  name="komentar" class="form-control"></textarea>

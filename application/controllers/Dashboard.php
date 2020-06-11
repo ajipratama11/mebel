@@ -221,8 +221,9 @@
 		function simpan_komentar()
 		{
 			$produk = $this->input->post('id_produk_id');
+			$id =$this->input->post('id_kostumer_id');
 			$data = [
-				'id_kostumer_id'     => $this->input->post('id_kostumer_id'),
+				'id_kostumer_id'     => $id,
 				'komentar'             => $this->input->post('komentar'),
 				'id_produk_id'           => $produk,
 				'date'          => $this->input->post('date'),	
@@ -230,7 +231,11 @@
 			];
 
 			$this->db->insert('komentar', $data);
-			redirect('Dashboard/detailproduk/' . $produk);
+			if($id != 0){
+				redirect('Dashboard/detailproduk/' . $produk);
+			}else{
+				redirect('Produk/AdminKomentar/' . $produk);
+			}
 		}
 		function simpan_testimoni()
 		{
