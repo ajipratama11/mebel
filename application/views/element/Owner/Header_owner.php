@@ -24,7 +24,7 @@
     <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
         <a class="navbar-brand brand-logo" href="<?php echo base_url('Owner_controller/Beranda'); ?>">
-        <img style="width: 139px;height: 39px;" src="<?php echo base_url('assets/images/home/LOGOnew.png'); ?>" alt="logo" />
+       <!--  <img style="width: 139px;height: 39px;" src="<?php echo base_url('assets/images/home/LOGOnew.png'); ?>" alt="logo" /> -->
         </a>
         <a class="navbar-brand brand-logo-mini" href="<?php echo base_url('Owner_controller/Beranda'); ?>">
           <img src="<?php echo base_url('assets/admin/images/logo-mini.svg'); ?>" alt="logo" />
@@ -114,12 +114,7 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('Owner_controller/O_laporan'); ?>">
-              <i class="menu-icon mdi mdi-receipt"></i>
-              <span class="menu-title">Laporan</span>
-            </a>
-          </li>
+        
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Owner_controller/O_user'); ?>">
               <i class="menu-icon mdi mdi-account-card-details"></i>
@@ -129,7 +124,7 @@
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Owner_controller/A_user'); ?>">
               <i class="menu-icon mdi mdi-account"></i>
-              <span class="menu-title">User</span>
+              <span class="menu-title">Customer</span>
             </a>
           </li>
           <li class="nav-item">
@@ -144,10 +139,23 @@
               <span class="menu-title">Kategori</span>
             </a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('Owner_controller/A_testimoni'); ?>">
+              <i class="menu-icon mdi mdi-file-document"></i>
+              <span class="menu-title">Testimonial</span>
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Owner_controller/A_bukti'); ?>">
               <i class="menu-icon mdi mdi-file-document"></i>
               <span class="menu-title">Bukti pembayaran</span>
+            </a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('Owner_controller/O_laporan'); ?>">
+              <i class="menu-icon mdi mdi-receipt"></i>
+              <span class="menu-title">Laporan</span>
             </a>
           </li>
           <li class="nav-item">
@@ -156,12 +164,7 @@
               <span class="menu-title">Faq</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('Owner_controller/A_testimoni'); ?>">
-              <i class="menu-icon mdi mdi-file-document"></i>
-              <span class="menu-title">Testimonial</span>
-            </a>
-          </li>
+         
            <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Owner_controller/A_voucher'); ?>">
               <i class="menu-icon mdi mdi-file-document"></i>

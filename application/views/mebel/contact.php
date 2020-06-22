@@ -74,8 +74,8 @@
        <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-home"></i></span>
             <div class="media-body">
-              <h3>Buttonwood, California.</h3>
-              <p>Rosemead, CA 91770</p>
+              <h3>Jember, Ambulu</h3>
+              <p>Jl. MAnggar No.71 68172</p>
             </div>
           </div>
         </div>
@@ -84,8 +84,8 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-tablet"></i></span>
             <div class="media-body">
-              <h3>00 (440) 9865 562</h3>
-              <p>Mon to Fri 9am to 6pm</p>
+              <h3>(0336) 881174</h3>
+              <p>Buka setiap hari Pukul 08.00</p>
             </div>
           </div>
         </div>
@@ -93,8 +93,8 @@
           <div class="media contact-info">
             <span class="contact-info__icon"><i class="ti-email"></i></span>
             <div class="media-body">
-              <h3>support@colorlib.com</h3>
-              <p>Send us your query anytime!</p>
+              <h3>@LumintuMebel</h3>
+              <p></p>
             </div>
           </div>
         </div>

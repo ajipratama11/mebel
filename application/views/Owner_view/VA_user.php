@@ -25,6 +25,10 @@
                           <th>
                             No telp
                           </th>
+                          <th>
+                            Aksi
+                          </th>
+                       
                        
    
                         </tr>
@@ -46,6 +50,9 @@
                           </td>
                       
                          
+                      <td>
+                        <a onclick="return confirm_alert(this);" href=""><button type="button" class="btn btn-danger"><i class="menu-icon mdi mdi-delete"></i> Hapus</button></a>
+                      </td>
                         </tr>
                         <?php } ?>
                       </tbody>
