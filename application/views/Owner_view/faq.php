@@ -11,13 +11,13 @@
                       <thead>
                         <tr>
                           <th>
-                            #Id Bayar
+                            ID FAQ
                           </th>
                           <th>
-                            <center>#Kode_pesan</center>
+                            <center>Nama Customer</center>
                           </th>
                           <th>
-                            <center>Nama pemilik rekening</center>
+                            <center>Saran/Kritik</center>
                           </th>
                         
                           

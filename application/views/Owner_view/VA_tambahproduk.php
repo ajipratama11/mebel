@@ -66,11 +66,14 @@
                     <table class="table table-bordered">
                       <thead>
                         <tr>
-                          <th>
+                           <th>
                             
+                          </th>     
+                          <th>
+                            Aksi
                           </th> 
                           <th>
-                            #
+                            Gambar
                           </th>
                           <th>
                             Id Produk
@@ -93,14 +96,17 @@
                           <th>
                             Keterangan
                           </th>  
-                            <th>
-                            aksi
-                          </th>                     
+                                           
                         </tr>
                       </thead>
                       <tbody>
                       	<?php foreach($produk as $b){?>
                         <tr>
+                           <td>    
+                        <center>
+                           <a href="<?php echo base_url('Produk/AdminKomentar/'.$b->id_produk); ?>"><button type="button" class="btn btn-primary"><i class="menu-icon mdi mdi-pen"></i>Komentar</button></a>
+                        </center>
+                          </td>
                           <td>    
                             <a href="<?php echo base_url('Produk/update_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-pencil-box"></i> Edit</a><br><br>
                             <a onclick="return confirm_alert(this);" href="<?php echo base_url('Produk/hapus_produk/'.$b->id_produk); ?>"><i class="menu-icon mdi mdi-delete"></i> Hapus</a>
@@ -129,11 +135,7 @@
                           <td>
                           	<?php echo $b->keterangan; ?>
                           </td>
-                              <td>    
-                        <center>
-                           <a href="<?php echo base_url('Produk/AdminKomentar/'.$b->id_produk); ?>"><button type="button" class="btn btn-primary"><i class="menu-icon mdi mdi-pen"></i>Komentar</button></a>
-                        </center>
-                          </td>
+                             
                          
                         </tr>
                         <?php } ?>
