@@ -9,8 +9,8 @@
                 	
                 		<!-- <img src="<?php echo base_url('assets/images/Emarket2.png'); ?>" style="float:right; margin:0 20px 4px 0; width:10%" /> -->
                 		
-                		<h3>Laporan Penjualan<br>Aneka Tas, Bra, dan Pernak-Pernik</h3>
-					  	<p>Jl. S.Parman , Jember</p>
+                		<h3>Laporan Penjualan<br>
+					  	<p>Jl. MAnggar No.71 68172 Jember</p>
 					  	
 					</div>
 					  <hr><br>

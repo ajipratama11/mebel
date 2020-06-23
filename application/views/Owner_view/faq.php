@@ -5,7 +5,7 @@
             <div class="col-lg-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                 <h2 style="color: #1E7BCB;">Bukti Pembayaran</h2><br>
+                 <h2 style="color: #1E7BCB;">FAQ</h2><br>
                   <div class="table-responsive">
                     <table class="table table-bordered">
                       <thead>
