@@ -6,6 +6,7 @@
     <!-- Header part end-->
 
     <!-- banner part start-->
+
     <section class="banner_part" id="myNavbar">
         <div class="container">
             <div class="row align-items-center">
@@ -87,41 +88,47 @@
     <!-- banner part start-->
 
     <!-- feature_part start-->
+
    <br>
+      
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-1">
-                    
+            
+           
+                <div class="col-lg-12">
+                    <div class="best_product_slider owl-carousel">
+                        <div class="single_product_item">
+                            <img src="<?= base_url() ?>vendor/mebel/img/product/product_1.png" alt="">
+                            <div class="single_product_text">
+                                <h4>Quartz Belt Watch</h4>
+                                <h3>$150.00</h3>
+                            </div>
+                        </div>
+                        <div class="single_product_item">
+                            <img src="<?= base_url() ?>vendor/mebel/img/product/product_2.png" alt="">
+                            <div class="single_product_text">
+                                <h4>Quartz Belt Watch</h4>
+                                <h3>$150.00</h3>
+                            </div>
+                        </div>
+                        <div class="single_product_item">
+                            <img src="<?= base_url() ?>vendor/mebel/img/product/product_3.png" alt="">
+                            <div class="single_product_text">
+                                <h4>Quartz Belt Watch</h4>
+                                <h3>$150.00</h3>
+                            </div>
+                        </div>
+                        <div class="single_product_item">
+                            <img src="<?= base_url() ?>vendor/mebel/img/product/product_4.png" alt="">
+                            <div class="single_product_text">
+                                <h4>Quartz Belt Watch</h4>
+                                <h3>$150.00</h3>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </div>
             </div>
-            <div class="row align-items-center justify-content-between">
-                <div class="col-lg-3 col-sm-3">
-                    <div class="single_feature_post_text">
-                        <p>Premium Quality</p>
-                        <h3>Latest foam Sofa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                       <!-- <img src="<?= base_url() ?>vendor/mebel/img/feature/feature_1.png" alt=""> -->
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">
-                    <div class="single_feature_post_text">
-                        <p>Premium Quality</p>
-                        <h3>Latest foam Sofa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                        <!-- <img src="<?= base_url() ?>vendor/mebel/img/feature/feature_2.png" alt=""> -->
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-3">
-                    <div class="single_feature_post_text">
-                        <p>Premium Quality</p>
-                        <h3>Latest foam Sofa</h3>
-                        <a href="#" class="feature_btn">EXPLORE NOW <i class="fas fa-play"></i></a>
-                        <!-- <img src="<?= base_url() ?>vendor/mebel/img/feature/feature_3.png" alt=""> -->
-                    </div>
-                </div>
-               
-            </div>
-  
+       
     <!-- upcoming_event part start-->
 
     <!-- product_list start-->
@@ -253,7 +260,7 @@
     <!-- product_list part start-->
 
     <!-- awesome_shop start-->
-    <section class="our_offer section_padding">
+    <!-- <section class="our_offer section_padding">
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-6">
@@ -284,11 +291,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- awesome_shop part start-->
 
     <!-- product_list part start-->
-    <section class="product_list best_seller section_padding">
+   <!--  <section class="product_list best_seller section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-12">
@@ -339,11 +346,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- product_list part end-->
 
     <!-- subscribe_area part start-->
-    <section class="subscribe_area section_padding">
+   <!--  <section class="subscribe_area section_padding">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
@@ -362,11 +369,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!--::subscribe_area part end::-->
 
     <!-- subscribe_area part start-->
-    <section class="client_logo padding_top">
+<!--     <section class="client_logo padding_top">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-12">
@@ -403,7 +410,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     
     <!--::subscribe_area part end::-->
 

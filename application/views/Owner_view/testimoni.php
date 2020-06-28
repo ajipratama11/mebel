@@ -1,56 +1,61 @@
 <!-- partial -->
-      <div class="main-panel">
+<div class="main-panel">
         <div class="content-wrapper">
         <div class="row">
             <div class="col-lg-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h4 style="color: #1E7BCB;">Bukti Pembayaran</h4><br>
-                  
+                 <h2 style="color: #1E7BCB;">FAQ</h2><br>
                   <div class="table-responsive">
                     <table class="table table-bordered">
                       <thead>
                         <tr>
                           <th>
-                            #Id Bayar
+                            ID FAQ
                           </th>
                           <th>
-                            <center>#Kode_pesan</center>
-                          </th>
-                          <th>
-                            <center>Nama pemilik rekening</center>
-                          </th>
-                          <th>
-                            <center>Bank</center>
+                            <center>Nama Customer</center>
                           </th>
                           <th>
                             <center>Gambar</center>
                           </th>
-                          
+                          <th>
+                            <center>Keterangan</center>
+                          </th>
+                          <th>
+                            <center>Produk</center>
+                          </th>
+                          <th>
+                            <center>Date</center>
+                          </th>
                         </tr>
                       </thead>
                       <tbody>
-                        <?php foreach ($bukti as $a) {?>
+                        <?php foreach ($testi as $t) {?>
                         <tr>
                           <td class="font-weight-medium">
-                            <?php echo $a->id_bayar; ?>
+                            <?php echo $t->id_testimoni; ?>
                           </td>
                           <td>
-                            <?php echo $a->kode_pesan; ?>
+                            <?php echo $t->id_kostumer_id; ?>
                           </td>
                           <td>
-                            <?php echo $a->nama_pemilik; ?>
+                            <a target="_blank" href="<?php echo base_url('./assets/images/depan/'.$t->gambar); ?>"><img src="<?php echo base_url('./assets/images/depan/'.$t->gambar); ?>"></a>
                           </td>
                           <td>
-                            <?php echo $a->bank; ?>
+                            <?php echo $t->keterangan; ?>
                           </td>
                           <td>
-                            <center><a target="_blank" href="<?php echo base_url($a->bukti_pembayaran); ?>"><img src="<?php echo base_url($a->bukti_pembayaran); ?>"></a></center>
+                            <?php echo $t->id_produk_id; ?>
                           </td>
-                         
+                          <td>
+                            <?php echo $t->date; ?>
+                          </td>
+
+
                            
                         <?php } ?>
-                      </tbody>
+                      </tbody> 
                     </table>
                   </div>
                 </div>
