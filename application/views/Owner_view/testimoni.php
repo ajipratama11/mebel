@@ -40,7 +40,7 @@
                             <?php echo $t->id_kostumer_id; ?>
                           </td>
                           <td>
-                            <a target="_blank" href="<?php echo base_url('./assets/images/depan/'.$t->gambar); ?>"><img src="<?php echo base_url('./assets/images/depan/'.$t->gambar); ?>"></a>
+                            <a target="_blank" href="<?php echo base_url('/assets/images/'.$t->gambar); ?>"><img src="<?php echo base_url('/assets/images/'.$t->gambar); ?>"></a>
                           </td>
                           <td>
                             <?php echo $t->keterangan; ?>
