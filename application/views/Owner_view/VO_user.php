@@ -5,10 +5,11 @@
               <div class="card">
                 <div class="card-body">
                   <h2 style="color: #1E7BCB;">Daftar Admin</h2><br>
+
                   <?php if ($pengguna == 100000) {
                         ?>
-                  <a href="<?php echo base_url('Owner_controller/O_user/tambahuser'); ?>"><button class="btn btn-success">Tambah pegawai</button></a>
                   <?php } ?>
+                  <a href="<?php echo base_url('Owner_controller/O_user/tambahuser'); ?>"><button class="btn btn-primary">+ Tambah Admin</button></a>
                   <div class="table-responsive"><br>
                     <table class="table table-bordered">
                       <thead>
@@ -52,7 +53,7 @@
                             <?php echo $a->no_telp; ?>
                           </td>
                           <td>
-                            <center><a href="<?php echo base_url('Owner_controller/O_user/edituser/'.$a->id_user); ?>"><button type="button" class="btn btn-primary"><i class="menu-icon mdi mdi-pen"></i> Edit</button></a>
+                            <center><a href="<?php echo base_url('Owner_controller/O_user/edituser/'.$a->id_user); ?>"><button type="button" class="btn btn-warning"><i class="menu-icon mdi mdi-pen"></i> Edit</button></a>
                               <a onclick="return confirm_alert(this);" href="<?php echo base_url('Owner_controller/O_user/hapus_user/'.$a->id_user); ?>"><button type="button" class="btn btn-danger"><i class="menu-icon mdi mdi-delete"></i> Hapus</button></a>
                             </center>
 

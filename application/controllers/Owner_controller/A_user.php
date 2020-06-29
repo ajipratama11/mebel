@@ -69,9 +69,10 @@ class A_user extends CI_Controller{
 		$this->load->view('element/Owner/Footer_owner');
 	}
 	function hapus_user(){
-		$id_user= $this->uri->segment(4);
-		$this->MA_user->hapus_user($id_user);
+		$id_kostumer= $this->uri->segment(4);
+		$this->MA_user->hapus_user($id_kostumer);
 		redirect('Owner_controller/A_user');
+
 	}
 } 
 ?>

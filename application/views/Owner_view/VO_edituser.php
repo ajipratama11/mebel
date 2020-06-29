@@ -14,7 +14,7 @@
                     <input style="width: 50%;" class="form-control" type="text" name="alamat" value="<?php echo $a->alamat; ?>"><br>
                     <input style="width: 50%;" class="form-control" type="number" name="kodepos" value="<?php echo $a->kode_pos; ?>"><br>  
 
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success">Simpan</button>
                     
                   </form>
                   <?php } ?>
