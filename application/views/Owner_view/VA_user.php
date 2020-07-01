@@ -51,7 +51,7 @@
                       
                          
                       <td>
-                        <a onclick="return confirm_alert(this);" href=""><button type="button" class="btn btn-danger"><i class="menu-icon mdi mdi-delete"></i> Hapus</button></a>
+                        <a onclick="return confirm_alert(this);" href="<?php echo base_url('Owner_controller/A_user/hapus_user/'.$a->id_kostumer); ?>"><button type="button" class="btn btn-danger"><i class="menu-icon mdi mdi-delete"></i> Hapus</button></a>
                       </td>
                         </tr>
                         <?php } ?>
@@ -70,6 +70,11 @@
             </div>
           </div>
 
+<!-- <script type="text/javascript">
+  function confirm_alert(node) {
+      return confirm("Apakah anda yakin ingin menghapus data customer ini?");
+  }
+</script> -->
 
         </div>
         <!-- content-wrapper ends -->
