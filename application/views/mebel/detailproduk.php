@@ -139,7 +139,11 @@
      <?php endforeach; ?>
               </div>
             </div>
-            <?php  if($this->session->userdata('status') == "login") { ?>
+            <?php
+            $id = $this->session->userdata('iduser');
+             $sudahbeli = $this->db->query("SELECT * FROM pesan WHERE id_kostumer_id='$id'")->num_rows(); 
+
+             if($sudahbeli != 0) { ?>
             <div class="col-lg-6">
               <div class="review_box">
                 <h4>Post Testimoni</h4>
@@ -166,10 +170,11 @@
                   </div>
                 </form>
               </div>
-            <?php } ?>
-           
+            <?php }else{ ?>
+              <h3>Anda tidak dapat memberikan testimoni<br>karena Anda Belum Pernah Melakukan Transaksi</h3>
+            <?php }?>
           
-          </p>
+          </h3>
        
         </div>
      </div>

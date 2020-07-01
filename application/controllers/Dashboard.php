@@ -239,18 +239,28 @@
 		}
 		function simpan_testimoni()
 		{
+			$id = $this->input->post('id_kostumer_id');
 			$produk = $this->input->post('id_produk_id');
-			$data = [
-				'id_kostumer_id'     => $this->input->post('id_kostumer_id'),
-				'keterangan'             => $this->input->post('keterangan'),
-				'id_produk_id'           => $produk,
-				'gambar'				=> $this->_uploadImage(),
-				'date'          => $this->input->post('date')
-
-			];
-
-			$this->db->insert('testimoni', $data);
-			redirect('Dashboard/detailproduk/' . $produk);
+			$sudahbeli = $this->db->query("SELECT * FROM pesan WHERE id_kostumer_id='$id'")->num_rows();
+                    if($sudahbeli != 0){
+                      
+                      echo $sudahbeli;
+                    }else{
+						$data = [
+							'id_kostumer_id'     => $id,
+							'keterangan'             => $this->input->post('keterangan'),
+							'id_produk_id'           => $produk,
+							'gambar'				=> $this->_uploadImage(),
+							'date'          => $this->input->post('date')
+						];
+			
+						$this->db->insert('testimoni', $data);
+                    }
+			
+				
+				redirect('Dashboard/detailproduk/' . $produk);
+			
+			
 		}
 
 		private function _uploadImage()
