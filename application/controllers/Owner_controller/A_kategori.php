@@ -42,11 +42,7 @@ class A_kategori extends CI_Controller{
 	function hapus_kategori(){
 		$id_kategori= $this->uri->segment(4);
 		$this->MA_kategori->hapus_kate($id_kategori);
-		// redirect('Owner_controller/A_kategori');
-		echo "<script>
-		alert('Hapus berhasil');
-		window.location.href = '" . base_url('Owner_controller/A_kategori') . "';
-	</script>"; //Url t
+		redirect('Owner_controller/A_kategori');
 	}
 } 
 ?>

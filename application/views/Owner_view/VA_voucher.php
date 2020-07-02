@@ -39,7 +39,7 @@
 				
 				</div>        
 				<div class="form-group col-md-12">
-					<button type="submit" name="submit" class="btn btn-primary">Simpan</button>
+					<button type="submit" name="submit" class="btn btn-primary">
 					<a href="##"><button type="button" value="batal" class="btn btn-primary">Batal</button></a>
 				</div>
 				</form>

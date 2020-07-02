@@ -18,8 +18,8 @@
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
                                             <h1>Lumintu Mebel</h1>
-                                           
-                                            <a href="#section1" class="btn_2">ORDER YUK</a>
+                                            <p>bagus</p>
+                                            <a href="#section1" class="btn_2">Beli dong</a>
                                         </div>
                                     </div>
                                 </div>
