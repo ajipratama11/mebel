@@ -76,11 +76,11 @@
                             <?php if ($this->session->userdata('status') == "login") { ?>
                             <li class="nav-item dropdown">
                                     <a style="margin-top: 25px;" type="button" class="dropdown-toggle btn badge-pill btn-danger" id="navbarDropdown_1" data-toggle="dropdown" aria-haspopup="true">
-                                        <span class="badge badge-pill badge-light">10</span> Notifications
+                                        <span class="badge badge-pill badge-light"></span> Notifications
                                         <span class="sr-only">unread messages</span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                    <a class="dropdown-item" href="<?php echo base_url('Transaksi'); ?>">Transaksi Anda</a>
+                                    <a class="dropdown-item" href="<?php echo base_url('Transaksi'); ?>">Kode Promo</a>
                                     <!-- <a class="dropdown-item" href="tracking.html">tracking</a>
                                         <a class="dropdown-item" href="checkout.html">product checkout</a>
                                         <a class="dropdown-item" href="cart.html">shopping cart</a>
