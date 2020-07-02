@@ -57,7 +57,7 @@ class Login extends CI_Controller{
                 $this->db->insert('kostumer', $data);
     
                 echo "<script>
-                    alert('Register Berhasil');
+                    alert('Buat Akun Baru Berhasil');
                     window.location.href = '".base_url('Landing_controller/Login/regis')."';
                 </script>";
             }

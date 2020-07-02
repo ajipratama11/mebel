@@ -14,7 +14,7 @@
                 <div class="col-lg-8">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
-                            <h2>Producta Checkout</h2>
+                            <h2>Products Checkout</h2>
                             <p>Home <span>-</span> Shop Single</p>
                         </div>
                     </div>

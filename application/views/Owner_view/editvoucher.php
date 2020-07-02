@@ -5,7 +5,7 @@
             <div class="container">
 	<div class="row">
 		<div class="col-sm-12 col-sm-offset-1" style="background-color: white;padding:20px;">
-            <h2 class="text-gray">Voucher</h2><br><br>
+            <h2 class="text-gray">Edit Voucher</h2><br><br>
             <?php foreach($voucher2 as $a) { ?>
 			<form action="<?php echo base_url('Owner_controller/A_voucher/ubahvoucher/'.$a->id_voucher); ?>" method="post" enctype="multipart/form-data">
 				<div class="form-group col-md-12">
@@ -47,6 +47,7 @@
 		</div>
 			<?php } ?>
 	</div>
+</div>
 </div>
 </div>
 </div>

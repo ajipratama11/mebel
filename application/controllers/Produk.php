@@ -66,7 +66,7 @@ class Produk extends CI_Controller {
 				$this->M_produk->tambah_produk($idproduk,$nama_produk,$keterangan,$idkat,$stok,$harga,$gambar,$panjang,$lebar,$tinggi,$gambar2,$gambar3);
 				echo "<script>
 	                alert('Upload berhasil');
-	                window.location.href = '".base_url('Produk')."';
+	                window.location.href = '".base_url('Owner_controller/O_produk')."';
 	            </script>";//Url tujuan
 		// 	}else{
 		// 		echo "<script>
@@ -88,7 +88,7 @@ class Produk extends CI_Controller {
 	function hapus_produk($id_produk){
 	//	$id_produk= $this->uri->segment(3);
 		$this->M_produk->deleteProduk($id_produk);
-		redirect('Produk');
+		redirect('Owner_controller/O_produk');
 	}
 
 	function update_produk(){
