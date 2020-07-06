@@ -6,7 +6,7 @@ class M_komentar extends CI_Model{
         return $hasil->result();
     }
     function testimoni_list($id_produk){
-        $hasil=$this->db->query("SELECT * FROM `testimoni` JOIN kostumer ON testimoni.id_kostumer_id=kostumer.id_kostumer WHERE testimoni.id_produk_id='$id_produk' limit 5");
+        $hasil=$this->db->query("SELECT * FROM `testimoni` JOIN kostumer ON testimoni.id_kostumer_id=kostumer.id_kostumer WHERE testimoni.id_produk_id='$id_produk'");
         return $hasil->result();
     }
  

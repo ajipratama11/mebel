@@ -242,25 +242,26 @@
 			$id = $this->input->post('id_kostumer_id');
 			$produk = $this->input->post('id_produk_id');
 			$sudahbeli = $this->db->query("SELECT * FROM pesan WHERE id_kostumer_id='$id'")->num_rows();
-                    if($sudahbeli != 0){
-                      
-                      echo $sudahbeli;
+                if($sudahbeli<=1){
+						echo "<script>
+                        alert('Anda Belum Berbelanja');
+                        window.location.href = '".base_url('Dashboard/detailproduk/'.$produk)."';
+                    </script>";
                     }else{
 						$data = [
 							'id_kostumer_id'     => $id,
-							'keterangan'             => $this->input->post('keterangan'),
 							'id_produk_id'           => $produk,
 							'gambar'				=> $this->_uploadImage(),
+							'keterangan'             => $this->input->post('keterangan'),
 							'date'          => $this->input->post('date')
 						];
 			
 						$this->db->insert('testimoni', $data);
+						echo "<script>
+                        alert('Berhasil memberikan Testimoni');
+                        window.location.href = '".base_url('Dashboard/detailproduk/'.$produk)."';
+                    </script>";
                     }
-			
-				
-				redirect('Dashboard/detailproduk/' . $produk);
-			
-			
 		}
 
 		private function _uploadImage()

@@ -139,11 +139,7 @@
      <?php endforeach; ?>
               </div>
             </div>
-            <?php
-            $id = $this->session->userdata('iduser');
-             $sudahbeli = $this->db->query("SELECT * FROM pesan WHERE id_kostumer_id='$id'")->num_rows(); 
-
-             if($sudahbeli != 0) { ?>
+            <?php  if($this->session->userdata('status') == "login") { ?>
             <div class="col-lg-6">
               <div class="review_box">
                 <h4>Post Testimoni</h4>
@@ -156,11 +152,9 @@
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-
                       <input type="file" name="gambar"  required="required" placeholder="Upload gambar" style="padding-right:1px; margin-bottom: 20px;">
                       <textarea class="form-control" name="keterangan" rows="8" 
                         placeholder="Message"></textarea>
-
                     </div>
                   </div>
                   <div class="col-md-12 text-right">
@@ -170,8 +164,6 @@
                   </div>
                 </form>
               </div>
-            <?php }else{ ?>
-              <h3>Anda tidak dapat memberikan testimoni<br>karena Anda Belum Pernah Melakukan Transaksi</h3>
             <?php }?>
           
           </h3>
