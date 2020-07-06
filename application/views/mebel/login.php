@@ -28,18 +28,18 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_text text-center">
                         <div class="login_part_text_iner">
-                            <h2>New to our Shop?</h2>
-                            <p>There are advances being made in science and technology
-                                everyday, and a good example of this is the</p>
-                            <a href="<?php echo base_url('Landing_controller/Login/regis') ?>" class="btn_3">Create an Account</a>
+                            <h2>Pelanggan Baru?</h2>
+                            <p>Jika belum mempunyai akun silahkan klik "Create new Account" untuk
+                            membuat akub baru</p>
+                            <a href="<?php echo base_url('Landing_controller/Login/regis') ?>" class="btn_3">Create New Account</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
-                            <h3>Welcome Back ! <br>
-                                Please Sign in now</h3>
+                            <h3>Selamat Datang ! <br>
+                                Punya akun, Silahkan Login disini</h3>
                             <form class="row contact_form" action="<?php echo base_url('Landing_controller/Login/login') ?>" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="name" name="email" placeholder="Email">
@@ -56,9 +56,9 @@
                                     <button type="submit" class="btn_3">
                                         log in
                                     </button>
-                                    <a class="lost_pass" href="#">forget password?</a>
+                                    <!-- <a class="lost_pass" href="#">forget password?</a> -->
                                 </div>
-                                <a class="lost_pass" href="<?php echo base_url('Owner_controller/A_login') ?>">Anda Admin?, klik disini</a>
+                                <a class="lost_pass" href="<?php echo base_url('Owner_controller/A_login') ?>">Anda Admin? klik disini</a>
                             </form>
                         </div>
                     </div>

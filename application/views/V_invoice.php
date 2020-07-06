@@ -132,7 +132,7 @@
         </div>
     </div>
 
-    <p style="color: orange;">*Terimakasih telah berbelanja di @bagbag.com.</p>
+    <p style="color: orange;">*Terimakasih telah Mempercayai Kami Lumintu Mebel.</p>
 
     <div class="pull-right btn-group btn-group-sm hidden-print">
         <a href="javascript:window.print()" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
