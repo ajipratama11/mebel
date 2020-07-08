@@ -29,9 +29,9 @@
                     <div class="login_part_text text-center">
                         <div class="login_part_text_iner">
                             <h2>Pelanggan Baru?</h2>
-                            <p>Jika belum mempunyai akun silahkan klik "Create new Account" untuk
-                            membuat akub baru</p>
-                            <a href="<?php echo base_url('Landing_controller/Login/regis') ?>" class="btn_3">Create New Account</a>
+                            <p>Jika belum mempunyai akun silahkan klik "Buat akun baru" untuk
+                            membuat akun baru</p>
+                            <a href="<?php echo base_url('Landing_controller/Login/regis') ?>" class="btn_3">Buat akun baru</a>
                         </div>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
                                         log in
                                     </button>
 
-                                    <a class="lost_pass" href="#" data-toggle="modal" data-target="#newMenuModal">forget password?</a>
+                                    <a class="lost_pass" href="#" data-toggle="modal" data-target="#newMenuModal">Lupa password?</a>
 
                                 </div>
                                 <a class="lost_pass" href="<?php echo base_url('Owner_controller/A_login') ?>">Anda Admin? klik disini</a>
