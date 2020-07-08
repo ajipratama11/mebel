@@ -74,7 +74,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="newMenuModalLabel">Perbarui Passwword</h5>
+                    <h5 class="modal-title" id="newMenuModalLabel">Perbarui Password</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -103,17 +103,17 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
-                        <button type="submit" class="btn btn-success">Ubah Password</button>
+                        <button type="submit" class="btn btn-warning">Ubah Password</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="newMenuModal" tabindex="-1" role="dialog" aria-labelledby="newMenuModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="newMenuModalLabel">Perbarui Passwword</h5>
+                <h5 class="modal-title" id="newMenuModalLabel">Perbarui Password</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -144,7 +144,7 @@
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Tutup</button>
                     <button type="submit" class="btn btn-success">Ubah Password</button>
                 </div>
-            </form>
+            </form> -->
         </div>
     </div>
 </div> 
