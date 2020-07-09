@@ -25,6 +25,9 @@
                           <th>
                             <center>Gambar</center>
                           </th>
+                          <th>
+                            <center> Aksi</center>
+                          </th>
                           
                         </tr>
                       </thead>
@@ -45,6 +48,9 @@
                           </td>
                           <td>
                             <center><a target="_blank" href="<?php echo base_url($a->bukti_pembayaran); ?>"><img src="<?php echo base_url('./assets/images/'.$a->bukti_pembayaran); ?>"></a></center>
+                          </td>
+                          <td>
+                               <a onclick="return confirm_alert(this);" href="<?php echo base_url('Owner_controller/MA_bukti/hapus_bukti/'.$a->id_bayar); ?>"><button type="button" class="btn btn-danger"><i class="menu-icon mdi mdi-delete"></i> Hapus</button></a>
                           </td>
                          
                            

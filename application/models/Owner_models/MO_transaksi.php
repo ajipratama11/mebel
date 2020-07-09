@@ -13,6 +13,11 @@ class MO_transaksi extends CI_Model{
 		$query = $this->db->query("SELECT * FROM pengiriman WHERE id_kirim='$idkirim'");
 		return $query->result();
 	}
+	function tampil_pesanan($idkirim){
+		$query = $this->db->query("SELECT * FROM keranjang WHERE id_kirim='$idkirim'");
+		return $query->result();
+	}
+
 
 	function totalPemasukan(){
 		$query = $this->db->query("SELECT SUM(total_pesan) AS totalMasuk FROM pesan");

@@ -70,17 +70,20 @@
                     <td><?php echo $a->desa; ?></td>
                   </tr>
                   <tr>
-                    <td>Jenis Layanan</td>
+                    <td>RT</td>
                     <td><?php echo $a->rt; ?></td>
                   </tr>
                   <tr>
-                    <td>Kurir</td>
+                    <td>RW</td>
                     <td><?php echo $a->rw; ?></td>
                   </tr>
                   <tr>
                     <td>Kodepos</td>
                     <td><?php echo $a->kodepos; ?></td>
                   </tr>
+                 
+                  
+                  
                   
                 </table>
                 <?php } ?>

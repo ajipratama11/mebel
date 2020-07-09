@@ -53,6 +53,11 @@ class Beranda extends CI_Controller{
 		$data['kirim'] = $this->MO_transaksi->tampil_pengiriman($idkirim);
 		$this->load->view('Owner_view/VO_datapengiriman',$data);
 	}
+	public function datapesanan(){
+		$idkirim = $this->uri->segment(4);
+		$data['kirim'] = $this->MO_transaksi->tampil_pengiriman($idkirim);
+		$this->load->view('Owner_view/VO_datapesanan',$data);
+	}
 
 	public function status(){
 		$idpesan = $this->uri->segment(4);

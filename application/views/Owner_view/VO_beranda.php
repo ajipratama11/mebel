@@ -161,9 +161,16 @@
                                 <input type="hidden" name="kode_pos" value="<?php echo $a->kodepos;?>">
                                 <input type="hidden" name="status" value="<?php echo $a->status; ?>">
                                 <button type="submit" class="btn btn-primary btn-block">Lihat detail transaksi</button>
-                            </form><br>
-                            <a class="btn btn-warning btn-block" target="_blank" href="<?php echo base_url('Owner_controller/Beranda/datapengiriman/'.$a->id_kirim); ?>">Lihat data pengiriman</a>
+                            </form>
                             <br>
+                            <a class="btn btn-warning btn-block" target="_blank" href="<?php echo base_url('Owner_controller/Beranda/datapengiriman/'.$a->id_kirim); ?>">Lihat data pengiriman</a>
+
+                            <br>
+                           
+                             <a class="btn btn-dark btn-block" href="<?php echo base_url('Owner_controller/A_pesanan/index/'.$a->id_pesan); ?>">Detail Pesanan</a>
+                              <br>
+                           
+
                             <?php echo '<a target="_blank" class="btn btn-success btn-block" href="https://api.whatsapp.com/send?phone='.$a->telp.'&text=SAUDARA%20'.$a->nama_pengirim.'%20dengan%20TOTAL%20PESANAN%20'.$format_indonesia = number_format ($a->total_pesan, 0, ',', '.').'%20dikirim%20ke%20alamat%20DESA%20'.$a->desa.'%20KECAMATAN%20'.$a->kecamatan.'%20KABUPATEN%20'.$a->kabupaten.'%20PROVINSI%20'.$a->provinsi.'">Beri Kabar barang dikirim</a>'; ?>
                              <a class="btn btn-danger btn-block" href="<?php echo base_url('Owner_controller/A_buktipembayaran/index/'.$a->id_pesan); ?>">Lihat Bukti Transfer</a>
                     

@@ -145,12 +145,12 @@
               <span class="menu-title">Testimonial</span>
             </a>
           </li>
-          <li class="nav-item">
+       <!--    <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Owner_controller/A_bukti'); ?>">
               <i class="menu-icon mdi mdi-file-document"></i>
               <span class="menu-title">Bukti pembayaran</span>
             </a>
-          </li>
+          </li> -->
 
             <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('Owner_controller/O_laporan'); ?>">

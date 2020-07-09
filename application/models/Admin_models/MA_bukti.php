@@ -10,8 +10,9 @@ class MA_bukti extends CI_Model {
       $query = $this->db->query("SELECT * FROM bayar JOIN pesan ON bayar.kode_pesan=pesan.id_pesan WHERE bayar.kode_pesan='$id_pesan'");
       return $query->result();
     }
-    function hapus_bukti($idbukti){
-      $query = $this->db->query("DELETE FROM `bayar` WHERE id_bayar='$idbukti'");
+    function hapus_bukti($id_bayar){
+      $query = $this->db->query("DELETE FROM `bayar` WHERE id_bayar='$id_bayar'");
     }
+    
 }
 ?>
