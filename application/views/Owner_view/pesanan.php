@@ -5,7 +5,7 @@
             <div class="col-lg-12 grid-margin">
               <div class="card">
                 <div class="card-body">
-                  <h2 style="color: #1E7BCB;">Detail Pesananr</h2><br>
+                  <h2 style="color: #1E7BCB;">Detail Pesanan</h2><br>
 
                 
                     
