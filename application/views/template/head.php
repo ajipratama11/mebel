@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Mebel TA Novita</title>
+    <title>Lumintu Mebel</title>
     <link rel="icon" href="<?= base_url() ?>vendor/mebel/img/favicon.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url() ?>vendor/mebel/css/bootstrap.min.css">
