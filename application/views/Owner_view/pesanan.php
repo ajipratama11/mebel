@@ -24,6 +24,12 @@
       <tr><th>Kode Produk</th>
         <td></td>
       </tr>
+       <tr><th>Jumlah</th>
+        <td></td>
+      </tr>
+      <tr><th>Total</th>
+        <td></td>
+      </tr>
        <tr><th>Gambar</th>
         <td></td>
       </tr>
