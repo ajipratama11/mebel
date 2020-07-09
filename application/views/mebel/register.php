@@ -57,7 +57,10 @@
                                         placeholder="Password">
                                 </div>
                                 <div class="col-md-12 form-group">
-                                    
+                                <div class="creat_account d-flex align-items-center">
+                                        <input type="checkbox" id="show-password" onclick="myFunction()" name="selector">
+                                        <label for="f-option">Show Password</label>
+                                    </div>
                                     <button type="submit"  class="btn_3">
                                         Daftar
                                     </button>
@@ -71,7 +74,21 @@
     </section>
 
 
-    
+     <script type="text/javascript">
+        function myFunction() {
+            // Get the checkbox
+            var checkBox = document.getElementById("show-password");
+            // Get the output text
+            var password = document.getElementById("password");
+
+            // If the checkbox is checked, display the output text
+            if (checkBox.checked == true) {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
+    </script>
     <!--================login_part end =================-->
     <!--::footer_part start::-->
   <?php $this->load->view('template/footer'); ?>
