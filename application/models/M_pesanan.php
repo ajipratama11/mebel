@@ -6,7 +6,11 @@ class M_pesanan extends CI_Model{
 		$query = $this->db->query("SELECT * FROM keranjang JOIN produk ON keranjang.produk_id_produk=produk.id_produk WHERE pesan_id_pesan='$idpesan' AND user_id_user='$user'");
 		return $query->result();
 	}
-
+	function getpesan($id_pesan){
+		$query = $this->db->query("SELECT * FROM pesan JOIN keranjang ON pesan.id_pesan=keranjang.pesan_id_pesan JOIN produk ON keranjang.produk_id_produk=produk.id_produk JOIN kategori ON produk.kategori_id_kategori=kategori.id_kategori WHERE pesan.id_pesan='$id_pesan'");
+		return $query->result();
+	}
+	
 	function total_berat($idpesan,$user){
 		$query = $this->db->query("SELECT SUM(berat_total) AS tberat FROM keranjang WHERE pesan_id_pesan='$idpesan' AND user_id_user='$user'");
 		return $query->result();
