@@ -203,8 +203,8 @@
                             <ul class="list list_2">
                                 <li>
                                     <a href="#">Ongkir
-                                        <?php $dalam = 40000;
-                                        $luar = 60000;
+                                        <?php $dalam = 500000;
+                                        $luar = 700000;
                                         $totalpesan = $this->cart->total();
                                         if ($origin == 160) {
                                             $ongkir = $dalam;
