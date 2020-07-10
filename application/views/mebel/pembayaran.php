@@ -203,15 +203,23 @@
                             <ul class="list list_2">
                                 <li>
                                     <a href="#">Ongkir
-                                        <?php $dalam = 500000;
-                                        $luar = 700000;
+                                        <?php $dalamkota = 200000;
+                                        $luarkota = 300000;
+                                        $luarjatim = 700000;
+                                        $luarjawa = 1000000;
                                         $totalpesan = $this->cart->total();
                                         if ($origin == 160) {
-                                            $ongkir = $dalam;
-                                            $totalbayar = $totalpesan + $dalam;
-                                        } else {
-                                            $ongkir = $luar;
-                                            $totalbayar = $totalpesan + $luar;
+                                            $ongkir = $dalamkota;
+                                            $totalbayar = $totalpesan + $dalamkota;
+                                        } else if($destination == 11 && $origin != 160) {
+                                            $ongkir = $luarkota;
+                                            $totalbayar = $totalpesan + $luarkota;
+                                        } else if($destination == 3 || $destination == 5 || $destination == 6 || $destination == 9 || $destination == 10 || $destination == 11 ) {
+                                            $ongkir = $luarjatim;
+                                            $totalbayar = $totalpesan + $luarjatim;
+                                        }else{
+                                            $ongkir = $luarjawa;
+                                            $totalbayar = $totalpesan + $luarjawa;
                                         }
                                         ?>
                                        
