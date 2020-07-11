@@ -80,19 +80,23 @@
                                         <span class="sr-only">unread messages</span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
-                                    <a class="dropdown-item" href="<?php echo base_url('Transaksi'); ?>">Kode Promo</a>
+                                        <?php $date = date('Y-m-d');
+                                        $tg = $this->db->query("SELECT * FROM voucher")->result(); ?>
+                                        <?php foreach($tg as $g) { ?>
+                                    <a class="dropdown-item" data-toggle="modal" data-target="#modal-edit<?= $g->id_voucher; ?>"><?php echo $g->nama_voucher ?></a>
                                     <!-- <a class="dropdown-item" href="tracking.html">tracking</a>
                                         <a class="dropdown-item" href="checkout.html">product checkout</a>
                                         <a class="dropdown-item" href="cart.html">shopping cart</a>
                                         <a class="dropdown-item" href="confirmation.html">confirmation</a>
                                         <a class="dropdown-item" href="elements.html">elements</a> -->
+                                        <?php }?>
                                 </div>
                             </li>
                             <?php } ?>
                         </ul>
                     </div>
                     <div class="hearer_icon d-flex">
-                       
+                  
                         <!-- <a href=""><i class="ti-heart"></i></a> -->
                         <div class="btn badge-pill btn-warning">
 
@@ -116,4 +120,44 @@
             </form>
         </div>
     </div>
+   
 </header>
+<?php $no=0; foreach($tg as $row): $no++; ?>
+                <div class="row">
+                 <div id="modal-edit<?=$row->id_voucher;?>" class="modal fade">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalCenterTitle">Voucher</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                           
+                            <div class="modal-body">
+                                
+                                   
+                                        <h4><?php echo $row->nama_voucher; ?></h4>
+                                        <h4><?php echo $row->minimum_belanja; ?></h4>
+                                        <h4><?php echo $row->total_voucher; ?></h4>
+                                        <h4><?php echo $row->keterangan; ?></h4>
+                                   
+                            </div>
+                            <div class="modal-footer">
+                                <?php
+                                $h = $row->id_voucher;
+                                $k = $this->session->userdata('iduser');
+                                $q = $this->db->query("SELECT * FROM kostumer_voucher WHERE id_voucher='$h' AND id_kostumer_id='$k'")->num_rows();
+                                ?>
+                                <?php if($q == 0) { ?>
+                                <a class="btn btn-primary" href="<?php echo base_url('Dashboard/detail_keranjang')  ?>">Save changes</a>
+                                <?php }else{ ?>
+                                <a class="btn btn-primary" href="#" disabled>Voucher telah terpakai</a>
+                                <?php } ?>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <?php endforeach; ?>
