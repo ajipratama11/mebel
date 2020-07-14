@@ -76,7 +76,7 @@
                             <?php if ($this->session->userdata('status') == "login") { ?>
                             <li class="nav-item dropdown">
                                     <a style="margin-top: 25px;" type="button" class="dropdown-toggle btn badge-pill btn-danger" id="navbarDropdown_1" data-toggle="dropdown" aria-haspopup="true">
-                                        <span class="badge badge-pill badge-light"></span> Notifications
+                                        <span class="badge badge-pill badge-light"></span> Voucher
                                         <span class="sr-only">unread messages</span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown_2">
@@ -138,10 +138,11 @@
                             <div class="modal-body">
                                 
                                    
-                                        <h4><?php echo $row->nama_voucher; ?></h4>
-                                        <h4><?php echo $row->minimum_belanja; ?></h4>
-                                        <h4><?php echo $row->total_voucher; ?></h4>
-                                        <h4><?php echo $row->keterangan; ?></h4>
+                                       <!--  <h4><?php echo $row->nama_voucher; ?></h4> -->
+                                       Total Voucher<h4><?php echo $row->total_voucher; ?></h4> <br>
+                                       Minimum Belanja : <h4><?php echo $row->minimum_belanja; ?></h4><br>
+                                        
+                                       Kode : <h3><?php echo $row->keterangan; ?></h3>
                                    
                             </div>
                             <div class="modal-footer">
