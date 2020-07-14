@@ -122,6 +122,7 @@
     </div>
    
 </header>
+<?php if ($this->session->userdata('status') == "login") { ?>
 <?php $no=0; foreach($tg as $row): $no++; ?>
                 <div class="row">
                  <div id="modal-edit<?=$row->id_voucher;?>" class="modal fade">
@@ -161,3 +162,4 @@
                 </div>
                 </div>
                 <?php endforeach; ?>
+                                <?php } ?>

@@ -93,9 +93,14 @@
 			$this->load->view('mebel/detailproduk', $data);
 		}
 
+		public function jobs(){
+			$this->load->view('mebel/coba');
+		}
+
 		public function tambah_ke_keranjang()
 		{
 			// $produk = $this->M_produk->find($id_produk);
+
 
 			$data = array(
 				'id'      => $this->input->post('id_produk'),
