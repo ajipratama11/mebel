@@ -120,7 +120,7 @@
       foreach ($this->cart->contents() as $items) {
 				$idpesan = $items['idpesan'];
       }
-      $cek2 = $this->db->query("SELECT * FROM kostumer_voucher JOIN voucher ON kostumer_voucher.id_voucher=voucher.id_voucher WHERE kostumer_voucher.id_voucher='1' AND kostumer_voucher.id_kostumer_id=5")->num_rows(); echo $cek2 ?>
+       ?>
       <h3><input type="checkbox" id="myCheck" onclick="myFunction()"> Masukkan Kode Voucher (Jika ada)</h3>
       <div style="display: none; margin-left: 4px;" id="text" class="row contact_form">
         <input type="text" class="form-group" id="kodevoucher" name="kodevoucher">

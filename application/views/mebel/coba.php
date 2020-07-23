@@ -4,7 +4,7 @@ $panjang = 1;
 $lebar = -1;
 $tinggi = -1;
 $harga = 100000;
-$produk = $this->db->query("SELECT * FROM produk WHERE id_produk='$id'")->result();
+$produk = $this->db->query("SELECT * FROM produk WHERE id_produk='PR0002'")->result();
 foreach($produk as $g) {
     $panjang1 = $g->panjang;
     $lebar2 = $g->lebar;

@@ -109,7 +109,7 @@
                 <div class="col-lg-8">
                     <div class="breadcrumb_iner">
                         <div class="breadcrumb_iner_item">
-                            <h2>Producta Checkout</h2>
+                            <h2>Product Checkout</h2>
                             <p>Home <span>-</span> Shop Single</p>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
 
                     <div class="col-lg-8">
                         <div class="order_box">
-                            <h2>Your Order</h2>
+                            <h2>Pesanan Kamu</h2>
                             <ul class="list">
                                 <li>
                                     <table class="table">
@@ -203,10 +203,10 @@
                             <ul class="list list_2">
                                 <li>
                                     <a href="#">Ongkir
-                                        <?php $dalamkota = 200000;
-                                        $luarkota = 300000;
-                                        $luarjatim = 700000;
-                                        $luarjawa = 1000000;
+                                        <?php $dalamkota = 300000;
+                                        $luarkota = 500000;
+                                        $luarjatim = 1000000;
+                                        $luarjawa = 1500000;
                                         $totalpesan = $this->cart->total();
                                         if ($origin == 160) {
                                             $ongkir = $dalamkota;
@@ -279,7 +279,7 @@
                                 <input type="hidden" name="total_pesan" value="<?php echo $finalbayar; ?>">
                                 <!-- <input type="hidden" name="idpesanx" value="<?php echo $idpesanx; ?>"> -->
 
-                                <button type="submit" class="btn_3" href="#">Proceed to Paypal</button>
+                                <button type="submit" class="btn_3" href="#">Lanjut Pembayaran</button>
                             </form>
                         </div>
                     </div>
