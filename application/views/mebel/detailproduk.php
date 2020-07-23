@@ -71,11 +71,11 @@
               <input name="id_produk" value="<?php echo $a->id_produk ?>" readonly style="margin-left: 10px; margin-right: 10px" class="form-control" type="hidden" >
               <input name="nama_produk" value="<?php echo $a->nama_produk ?>" readonly style="margin-left: 10px; margin-right: 10px" class="form-control" type="hidden" >
               <input name="harga" value="<?php echo $a->harga ?>" readonly style="margin-left: 10px; margin-right: 10px" class="form-control" type="hidden" >
-              <input id="text" name="panjang" value="<?php echo $a->panjang ?>"  style="margin-left: 10px; margin-right: 10px; display: none" class="form-control" type="text" >
+              <input id="text" name="panjang" value="0"  style="margin-left: 10px; margin-right: 10px; display: none" class="form-control" type="text" >
               <span id="text5" style="display: none">Lebar</span>
-              <input id="text2" name="tinggi" value="<?php echo $a->tinggi ?>"  style="margin-left: 10px; margin-right: 10px; display: none" class="form-control" type="text" >
+              <input id="text2" name="tinggi" value="0"  style="margin-left: 10px; margin-right: 10px; display: none" class="form-control" type="text" >
               <span id="text6" style="display: none">Tinggi</span>
-              <input id="text3" name="lebar" value="<?php echo $a->lebar ?>"  style="margin-left: 10px; display: none" class="form-control" type="text" >
+              <input id="text3" name="lebar" value="0"  style="margin-left: 10px; display: none" class="form-control" type="text" >
             </div>
             <div class="card_area d-flex justify-content-between align-items-center">
               <div class="product_count"> 

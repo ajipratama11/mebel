@@ -47,7 +47,6 @@
 		<div class="col-sm-12 col-sm-offset-1" style="background-color: white;padding:20px;">
             <h2 class="text-gray">Tambah Produk</h2><br><br>
             <?= form_open_multipart('Produk/insert_produk'); ?>
-			
 				<div class="form-group col-md-12">
 					Nama produk :
 					<input type="text" name="nama_produk" class="form-control" required="required" placeholder="Nama produk anda">
@@ -55,7 +54,7 @@
 				<?php foreach($kategori as $a){?> 
 				<input type="hidden" name="id_kategori" value="<?php echo $a->id_kategori; ?>">
 				<?php } ?>
-				<div class="form-group col-md-12">
+				<div class="form-group col-md-6">
 					Kategori :
 					<select name="kategori" class="form-control">
 						<?php foreach($kategori as $a){?>

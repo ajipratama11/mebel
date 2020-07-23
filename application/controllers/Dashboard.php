@@ -100,16 +100,84 @@
 		public function tambah_ke_keranjang()
 		{
 			// $produk = $this->M_produk->find($id_produk);
-
+			$id = 'PR0001';
+			$panjang = $this->input->post('panjang');
+			$lebar = $this->input->post('lebar');
+			$tinggi = $this->input->post('tinggi');
+			$harga = $this->input->post('harga');
+			$produk = $this->db->query("SELECT * FROM produk WHERE id_produk='$id'")->result();
+			foreach($produk as $g) {
+				$panjang1 = $g->panjang;
+				$lebar2 = $g->lebar;
+				$tinggi3 = $g->tinggi;
+			}
+			if($panjang == 0 && $lebar > 0 && $tinggi > 0) {
+				$pjg = $panjang1;
+				$lbr = $lebar2+$lebar;
+				$tng = $tinggi3+$tinggi;
+				
+				$tambahan2 = $lebar*20000;
+				$tambahan3 = $tinggi*20000;
+				$hargafix = $harga+$tambahan2+$tambahan3;
+			}else if($lebar == 0 && $panjang > 0 && $tinggi > 0) {
+				$pjg = $panjang1+$panjang;
+				$lbr = $lebar2;
+				$tng = $tinggi3+$tinggi3;
+				
+				$tambahan1 = $panjang*20000;
+				$tambahan3 = $tinggi*20000;
+				$hargafix = $harga+$tambahan1+$tambahan3;
+			}else if($tinggi == 0 && $lebar > 0 && $panjang > 0) {
+				$pjg = $panjang1+$panjang;
+				$lbr = $lebar2+$lebar;
+				$tng = $tinggi3;
+				$tambahan1 = $panjang*20000;
+				$tambahan2 = $lebar*20000;
+				$hargafix = $harga+$tambahan1+$tambahan2;
+			}else if($panjang == 0 && $lebar == 0 && $tinggi == 0){
+				$pjg = $panjang1;
+				$lbr = $lebar2;
+				$tng = $tinggi3;
+				$hargafix = $harga;
+			}else if($panjang == 0 && $lebar == 0 && $tinggi > 0){
+				$pjg = $panjang1;
+				$lbr = $lebar2;
+				$tng = $tinggi3+$tinggi;
+				
+				$tambahan3 = $tinggi*20000;
+				$hargafix = $harga+$tambahan3;
+			}else if($panjang == 0 && $lebar > 0 && $tinggi == 0){
+				$pjg = $panjang1;
+				$lbr = $lebar2+$lebar;
+				$tng = $tinggi3;
+				$tambahan2 = $lebar*20000;
+				$tng = $tinggi3;
+				$hargafix = $harga+$tambahan2;
+			}else if($panjang > 0 && $lebar == 0 && $tinggi == 0){
+				$pjg = $panjang1+$panjang;
+				$lbr = $lebar2;
+				$tng = $tinggi3;
+				
+				$tambahan1 = $panjang*20000;
+				$hargafix = $harga+$tambahan1;
+			}else{
+				$pjg = $panjang1+$panjang;
+				$lbr = $lebar2+$lebar;
+				$tng = $tinggi3+$tinggi;
+				$tambahan1 = $panjang*20000;
+				$tambahan2 = $lebar*20000;
+				$tambahan3 = $tinggi*20000;
+				$hargafix = $harga+$tambahan1+$tambahan2+$tambahan3;
+			}
 
 			$data = array(
 				'id'      => $this->input->post('id_produk'),
 				'qty'     => $this->input->post('stok'),
-				'price'   => $this->input->post('harga'),
+				'price'   => $hargafix,
 				'name'    => $this->input->post('nama_produk'),
-				'panjang'    => $this->input->post('panjang'),
-				'lebar'    => $this->input->post('lebar'),
-				'tinggi'    => $this->input->post('tinggi'),
+				'panjang'    => $pjg,
+				'lebar'    => $lbr,
+				'tinggi'    => $tng,
 				'idpesan' => $this->M_pesanan->get_idpesan()
 			);
 
@@ -177,16 +245,7 @@
 								Anda sudah pernah reedem voucher '.$nama.' 
 								   </div>';
 							}
-						// }else{
-						// 	echo '<div class="alert alert-success" role="alert">
-						// 	anda sudah menggunakan voucher ini yang ke 4'.$idpesan.'
-						// 	   </div>';
-						// }
-					// }else{
-					// 	echo '<div class="alert alert-success" role="alert">
-					// 	 anda sudah menggunakan voucher ini yang ke 2'.$idpesan.'
-					// 		</div>';
-					// }
+					
 				}else{
 					echo '<div class="alert alert-success" role="alert">
 						 belanja anda kurang, silahkan belanja lagi untuk mendapatkan potongan harga
