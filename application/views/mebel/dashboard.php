@@ -35,7 +35,8 @@
                                         <div class="banner_text_iner">
                                             <h1>Apapun Pilihan Furniturmu</h1>
                                             <p>Produk kami terbaik</p>
-                                            <a href="#section1" class="btn_2">buy now</a>
+                                            <h2><a  class="btn_2">Diskon hingga 20% </a></h2>
+                                                
                                         </div>
                                     </div>
                                 </div>
@@ -48,11 +49,9 @@
                                 <div class="col-lg-5 col-md-8">
                                     <div class="banner_text">
                                         <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#section1" class="btn_2">buy now</a>
+                                            <h1>Potongan Harga</h1>
+                                            <h2><p>Dengan Minimum Pembelanjaan</p></h2>
+                                            <a href="#section1" class="btn_2">Beli Sekarang</a>
                                         </div>
                                     </div>
                                 </div>
@@ -88,9 +87,9 @@
 
     <!-- feature_part start-->
 
-   <br>
+
       
-        <div class="container">
+     <!--    <div class="container">
             
            
                 <div class="col-lg-12">
@@ -126,7 +125,7 @@
                         
                     </div>
                 </div>
-            </div>
+            </div> -->
        
     <!-- upcoming_event part start-->
 

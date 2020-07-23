@@ -11,7 +11,7 @@
                       <thead>
                         <tr>
                           <th>
-                            ID FAQ
+                            ID Testimoni
                           </th>
                           <th>
                             <center>Nama Customer</center>

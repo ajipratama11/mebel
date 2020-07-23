@@ -137,11 +137,11 @@
                             <div class="modal-body">
                                 
                                    
-                                       <!--  <h4><?php echo $row->nama_voucher; ?></h4> -->
+                                    <h4>Kode: <?php echo $row->kode_voucher; ?></h4>
                                        Total Voucher<h4><?php echo $row->total_voucher; ?></h4> <br>
                                        Minimum Belanja : <h4><?php echo $row->minimum_belanja; ?></h4><br>
                                         
-                                       Kode : <h3><?php echo $row->keterangan; ?></h3>
+                                       Keterangan : <h5><?php echo $row->keterangan; ?></h5>
                                    
                             </div>
                             <div class="modal-footer">
