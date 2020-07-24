@@ -28,6 +28,16 @@
        <tr><th>Jumlah</th>
         <td><?= $a->jumlah ?></td>
       </tr>
+       <tr><th>P</th>
+        <td><?= $a->panjang ?></td>
+      </tr>
+      <tr><th>L</th>
+        <td><?= $a->lebar ?></td>
+      </tr>
+      <tr><th>T</th>
+        <td><?= $a->tinggi ?></td>
+      </tr>
+
       <tr><th>Total</th>
         <td><?= $a->total_pesan ?></td>
       </tr>

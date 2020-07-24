@@ -61,6 +61,13 @@
               <li>
                 <a href="#"> <span>Stok</span> : <?php echo $a->stok ?> Buah</a>
               </li>
+               <li>
+                <a href="#"> <span>P</span> : <?php echo $a->panjang ?> m</a>
+                <br>
+                <a href="#"> <span>L</span> : <?php echo $a->lebar ?> m</a>
+                <br>
+                <a href="#"> <span>T</span> : <?php echo $a->tinggi ?> m</a>
+              </li>
             </ul>
             <p>
             <?php echo $a->keterangan ?>

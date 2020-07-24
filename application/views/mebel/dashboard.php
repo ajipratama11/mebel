@@ -156,7 +156,7 @@
                                             <h4><?php echo $b->nama_produk ?></h4>
                                             <h3>Rp. <?php $format_indonesia = number_format ($b->harga, 0, ',', '.');
                                      echo $format_indonesia; ?>,00-</h3>
-                                            <a href="<?php echo base_url('Dashboard/detailproduk/'.$b->id_produk); ?>" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="<?php echo base_url('Dashboard/detailproduk/'.$b->id_produk); ?>" class="add_cart">DETAIL PRODUCT<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </div>
