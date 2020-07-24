@@ -2,7 +2,7 @@
 $id = 'PR0001';
 $panjang = 1;
 $lebar = -1;
-$tinggi = -1;
+$tinggi = 1;
 $harga = 100000;
 $produk = $this->db->query("SELECT * FROM produk WHERE id_produk='PR0002'")->result();
 foreach($produk as $g) {
@@ -69,9 +69,9 @@ if($panjang == 0 && $lebar > 0 && $tinggi > 0) {
     $hargafix = $harga+$tambahan1+$tambahan2+$tambahan3;
 }
 
-echo $pjg; print "<br>";
-echo $lbr; print "<br>";
-echo $tng; print "<br>";
+echo $pjg-$panjang1; print "<br>";
+echo $lbr-$lebar2; print "<br>";
+echo $tng-$tinggi3; print "<br>";
 echo $hargafix;
 
 

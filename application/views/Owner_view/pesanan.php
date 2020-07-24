@@ -31,6 +31,25 @@
       <tr><th>Total</th>
         <td><?= $a->total_pesan ?></td>
       </tr>
+      <tr><th>Penambahan ukuran</th>
+      <?php foreach($produk as $c) { ?>
+        <?php 
+        $p = $c->panjang1;
+        $l = $c->lebar1;
+        $t = $c->tinggi1;
+
+        $p2 = $c->panjang2;
+        $l2 = $c->lebar2;
+        $t2 = $c->tinggi2;
+
+        $p3 = $p-$p2;
+        $l3 = $l-$l2;
+        $t3 = $t-$t2;
+
+        ?>
+        <td>Panjang= <?= $p3 ?>,lebar= <?= $l3 ?>, tinggi= <?= $t3 ?></td>
+      </tr>
+      <?php }?>
        <tr><th>Gambar</th>  </tr>
        
        

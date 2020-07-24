@@ -50,6 +50,10 @@ class M_produk extends CI_Model{
 		$query = $this->db->query("SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.kategori_id_kategori ORDER BY id_produk DESC");
 		return $query->result();
 	}
+	function tampil_produk7($id_pesan){
+		$query = $this->db->query("SELECT produk.panjang AS panjang2, produk.lebar AS lebar2, produk.tinggi AS tinggi2, keranjang.panjang AS panjang1, keranjang.lebar AS lebar1, keranjang.tinggi AS tinggi1  FROM produk JOIN kategori ON kategori.id_kategori=produk.kategori_id_kategori JOIN keranjang ON produk.id_produk=keranjang.produk_id_produk WHERE pesan_id_pesan='$id_pesan'");
+		return $query->result();
+	}
 	function tampil_produk2($id_produk){
 		$query = $this->db->query("SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.kategori_id_kategori WHERE id_produk='$id_produk'");
 		return $query->result();
