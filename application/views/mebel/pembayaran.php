@@ -204,13 +204,14 @@
                                 <li>
                                     <a href="#">Ongkir
                                         <?php $dalamkota = 300000;
+                                        $ongkirkecamatan = 40000;
                                         $luarkota = 500000;
                                         $luarjatim = 1000000;
                                         $luarjawa = 1500000;
                                         $totalpesan = $this->cart->total();
                                         if ($kecamatan == 'Ambulu' || $kecamatan == 'ambulu' || $kecamatan == 'AMBULU') {
-                                            $ongkir = 0;
-                                            $totalbayar = $totalpesan;
+                                            $ongkir = $ongkirkecamatan;
+                                            $totalbayar = $totalpesan + $ongkirkecamatan;
                                         } else if ($origin == 160) {
                                             $ongkir = $dalamkota;
                                             $totalbayar = $totalpesan + $dalamkota;
