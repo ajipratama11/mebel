@@ -168,7 +168,7 @@
                                     </a>
                                 </li>
                                 <?php $provinsi = $data['rajaongkir']['results']['province'];
-                                    $kab = $data['rajaongkir']['results']['city_name']; ?>
+                                $kab = $data['rajaongkir']['results']['city_name']; ?>
                                 <li>
                                     <a href="#">Provinsi
                                         <span><?php echo $provinsi  ?></span>
@@ -208,79 +208,79 @@
                                         $luarjatim = 1000000;
                                         $luarjawa = 1500000;
                                         $totalpesan = $this->cart->total();
-                                        if ($origin == 160) {
+                                        if ($kecamatan == 'Ambulu' || $kecamatan == 'ambulu' || $kecamatan == 'AMBULU') {
+                                            $ongkir = 0;
+                                            $totalbayar = $totalpesan;
+                                        } else if ($origin == 160) {
                                             $ongkir = $dalamkota;
                                             $totalbayar = $totalpesan + $dalamkota;
-                                        } else if($destination == 11 && $origin != 160) {
+                                        } else if ($destination == 11 && $origin != 160) {
                                             $ongkir = $luarkota;
                                             $totalbayar = $totalpesan + $luarkota;
-                                        } else if($destination == 3 || $destination == 5 || $destination == 6 || $destination == 9 || $destination == 10 || $destination == 11 ) {
+                                        } else if ($destination == 3 || $destination == 5 || $destination == 6 || $destination == 9 || $destination == 10 || $destination == 11) {
                                             $ongkir = $luarjatim;
                                             $totalbayar = $totalpesan + $luarjatim;
-                                        }else{
+                                        } else {
                                             $ongkir = $luarjawa;
                                             $totalbayar = $totalpesan + $luarjawa;
                                         }
                                         ?>
-                                       
-                                            <span>Rp.<?php $format_indonesia = number_format($ongkir, 0, ',', '.');
-                                                        echo $format_indonesia;  ?>,00-</span>
-                                       
-                                            
-                                       
+
+                                        <span>Rp.<?php $format_indonesia = number_format($ongkir, 0, ',', '.');
+                                                    echo $format_indonesia;  ?>,00-</span>
+
+
+
                                     </a>
                                 </li>
                                 <li>
-                                <a href="#">Total Bayar
+                                    <a href="#">Total Bayar
 
-                                       
-                                            <span>Rp.<?php $format_indonesia = number_format($totalbayar, 0, ',', '.');
-                                                echo $format_indonesia;  ?>,00-</span>
-                                       
-                                            
-                                       
+
+                                        <span>Rp.<?php $format_indonesia = number_format($totalbayar, 0, ',', '.');
+                                                    echo $format_indonesia;  ?>,00-</span>
+
+
+
                                     </a>
                                 </li>
                                 <li>
-                                <a href="#">Diskon
+                                    <a href="#">Diskon
 
-                                       
-                                            <span>Rp.<?php $format_indonesia = number_format($diskon, 0, ',', '.');
-                                                echo $format_indonesia;  ?>,00-</span>
-                                       
-                                            
-                                       
+
+                                        <span>Rp.<?php $format_indonesia = number_format($diskon, 0, ',', '.');
+                                                    echo $format_indonesia;  ?>,00-</span>
+
+
+
                                     </a>
                                 </li>
                                 <li>
                                     <a href="#">
-                                        <?php $finalbayar = $totalbayar-$diskon; ?>
+                                        <?php $finalbayar = $totalbayar - $diskon; ?>
                                         <h2>Total Bayar</h2>
                                         <h2>Rp.<?php $format_indonesia = number_format($finalbayar, 0, ',', '.');
                                                 echo $format_indonesia;  ?>,00-</h2>
                                     </a>
                                 </li>
                                 <li>
-                                <li
-                                </li>
-                            </ul>
-                            <form action="<?php echo base_url('Pesanan/insert_pesan') ; ?>" method="post">
-                                <input type="hidden" name="namapengirim" value="<?php echo $namapengirim; ?>">
-                                <input type="hidden" name="provinsi" value="<?php echo $provinsi; ?>">
-                                <input type="hidden" name="kota" value="<?php echo $kab; ?>">
-                                <input type="hidden" name="kecamatan" value="<?php echo $kecamatan; ?>">
-                                <input type="hidden" name="desa" value="<?php echo $desa; ?>">
-                                <input type="hidden" name="rt" value="<?php echo $rt; ?>">
-                                <input type="hidden" name="rw" value="<?php echo $rw; ?>">
-                                <input type="hidden" name="kodepos" value="<?php echo $kodepos; ?>">
-                                <input type="hidden" name="telp" value="<?php echo $telp; ?>">
-                                <input type="hidden" name="idpesan" value="<?php echo $idpesan; ?>">
-                                <input type="hidden" name="harga_kirim" value="<?php echo $ongkir; ?>">
-                                <input type="hidden" name="total_pesan" value="<?php echo $finalbayar; ?>">
-                                <!-- <input type="hidden" name="idpesanx" value="<?php echo $idpesanx; ?>"> -->
+                                <li </li> </ul> <form action="<?php echo base_url('Pesanan/insert_pesan'); ?>" method="post">
+                                    <input type="hidden" name="namapengirim" value="<?php echo $namapengirim; ?>">
+                                    <input type="hidden" name="provinsi" value="<?php echo $provinsi; ?>">
+                                    <input type="hidden" name="kota" value="<?php echo $kab; ?>">
+                                    <input type="hidden" name="kecamatan" value="<?php echo $kecamatan; ?>">
+                                    <input type="hidden" name="desa" value="<?php echo $desa; ?>">
+                                    <input type="hidden" name="rt" value="<?php echo $rt; ?>">
+                                    <input type="hidden" name="rw" value="<?php echo $rw; ?>">
+                                    <input type="hidden" name="kodepos" value="<?php echo $kodepos; ?>">
+                                    <input type="hidden" name="telp" value="<?php echo $telp; ?>">
+                                    <input type="hidden" name="idpesan" value="<?php echo $idpesan; ?>">
+                                    <input type="hidden" name="harga_kirim" value="<?php echo $ongkir; ?>">
+                                    <input type="hidden" name="total_pesan" value="<?php echo $finalbayar; ?>">
+                                    <!-- <input type="hidden" name="idpesanx" value="<?php echo $idpesanx; ?>"> -->
 
-                                <button type="submit" class="btn_3" href="#">Lanjut Pembayaran</button>
-                            </form>
+                                    <button type="submit" class="btn_3" href="#">Lanjut Pembayaran</button>
+                                    </form>
                         </div>
                     </div>
                 </div>
