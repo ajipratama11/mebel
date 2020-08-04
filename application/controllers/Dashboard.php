@@ -22,7 +22,7 @@
 			}
 			public function index()
 			{
-
+				$data['best'] = $this->db->query("SELECT *,COUNT(keranjang.produk_id_produk) AS jumlah_produk FROM produk JOIN kategori ON produk.kategori_id_kategori=kategori.id_kategori JOIN keranjang ON produk.id_produk=keranjang.produk_id_produk GROUP BY keranjang.produk_id_produk ASC LIMIT 3")->result();
 				$data['kategori'] = $this->M_produk->tampil_kategori();
 				// $data['produk'] = $this->M_produk->tampil_produk3();
 				// $data['produk2'] = $this->M_produk->tampil_produk4();
