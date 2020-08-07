@@ -157,23 +157,23 @@
                 </div>
                 <div id="kota" class="col-md-12 form-group p_star">
                   <h5>Kecamatan : </h5>
-                  <select class="form-control" name="kecamatan" id="kecamatan">
-                    <option value="" selected="" disabled="">Pilih Kota</option>
+                  <select class="form-control" name="kecamatan2" id="kecamatan">
+                    <option value="" selected="" disabled="">Pilih Kecamatan</option>
                   </select>
                 </div>
                 <div id="desa" class="col-md-12 form-group p_star">
                   <h5>Desa : </h5>
-                  <select class="form-control" name="desa" id="desakan">
-                    <option value="" selected="" disabled="">Pilih Kota</option>
+                  <select class="form-control" name="desa2" id="desakan">
+                    <option value="" selected="" disabled="">Pilih Desa</option>
                   </select>
                 </div>
                 <div id="lain" class="col-md-6 form-group p_star">
                   <h5>Kecamatan : </h5>
-                  <input type="text" class="form-control" id="number" name="kecamatan" />
+                  <input type="text" class="form-control" id="number" value="" name="kecamatan" />
                 </div>
                 <div id="laindesa" class="col-md-6 form-group p_star">
                   <h5>Desa/Dusun : </h5>
-                  <input type="text" class="form-control" id="email" name="desa" />
+                  <input type="text" class="form-control" id="email" value="" name="desa" />
                 </div>
                 <div class="col-md-6 form-group p_star">
                   <h5>Rt : </h5>

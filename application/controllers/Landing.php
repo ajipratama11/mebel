@@ -134,9 +134,9 @@ class Landing extends CI_Controller{
 			
 		}else if($kecamatan == 'Jombang'){
 			
-			echo "<option value='Ambulu'>Keting</option>";
-			echo "<option value='Kencong'>Padomasan</option>";
-			echo "<option value='Jombang'>Paseban</option>";
+			echo "<option value='Keting'>Keting</option>";
+			echo "<option value='Padomasan'>Padomasan</option>";
+			echo "<option value='Paseban'>Paseban</option>";
 		}
 
 	}

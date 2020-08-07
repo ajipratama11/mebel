@@ -36,12 +36,22 @@ class Pesanan extends CI_Controller {
 		}else{
 			$diskon = 0;
 		}
+		
 		$idvoucher = $this->input->post('idvoucher');
 		$destination = $this->input->post('propinsi_tujuan');
 		$origin = $this->input->post('destination');
 		$namapengirim = $this->input->post('namapengirim');
 		$kecamatan = $this->input->post('kecamatan');
+		$kecamatan2 = $this->input->post('kecamatan2');
 		$desa = $this->input->post('desa');
+		$desa2 = $this->input->post('desa2');
+		if($origin == 160){
+			$kecamatanfix = $kecamatan2;
+			$desafix = $desa2;
+		}else{
+			$kecamatanfix = $kecamatan;
+			$desafix = $desa;
+		}
 		$kodepos = $this->input->post('kodepos');
 		$telp = $this->input->post('no_telp');
 		$rt = $this->input->post('rt');
@@ -49,8 +59,8 @@ class Pesanan extends CI_Controller {
 		$data = array('destination' => $destination,
 								'origin' => $origin,	 
 								'namapengirim' => $namapengirim,
-								'kecamatan' => $kecamatan,
-								'desa' => $desa,
+								'kecamatan' => $kecamatanfix,
+								'desa' => $desafix,
 								'kodepos' => $kodepos,
 								'telp' => $telp,
 								'rt' => $rt,
