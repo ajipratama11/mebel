@@ -104,6 +104,43 @@ class Landing extends CI_Controller{
 		}
 	}
 
+	function getKecamatan($destination){
+		
+		
+		if($destination == 160){
+				
+			
+			echo "<option value='Ambulu'>Ambulu</option>";
+			echo "<option value='Kencong'>Kencong</option>";
+			echo "<option value='Jombang'>Jombang</option>";
+		
+			
+		}else{
+			
+			echo "<input></input>";
+		}
+
+	}
+	function getDesa($kecamatan){
+		
+		
+		if($kecamatan == 'Ambulu'){
+				
+			
+			echo "<option value='Ambulu'>Wuluhan</option>";
+			echo "<option value='Kencong'>Jenggawah</option>";
+			echo "<option value='Jombang'>Jombang</option>";
+		
+			
+		}else if($kecamatan == 'Jombang'){
+			
+			echo "<option value='Ambulu'>Keting</option>";
+			echo "<option value='Kencong'>Padomasan</option>";
+			echo "<option value='Jombang'>Paseban</option>";
+		}
+
+	}
+
 	function getCost()
 	{
 		$idpsn = $this->input->get('idpsn');

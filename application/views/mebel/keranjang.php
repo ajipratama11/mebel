@@ -155,11 +155,23 @@
                     <option value="" selected="" disabled="">Pilih Kota</option>
                   </select>
                 </div>
-                <div class="col-md-6 form-group p_star">
+                <div id="kota" class="col-md-12 form-group p_star">
+                  <h5>Kecamatan : </h5>
+                  <select class="form-control" name="kecamatan" id="kecamatan">
+                    <option value="" selected="" disabled="">Pilih Kota</option>
+                  </select>
+                </div>
+                <div id="desa" class="col-md-12 form-group p_star">
+                  <h5>Desa : </h5>
+                  <select class="form-control" name="desa" id="desakan">
+                    <option value="" selected="" disabled="">Pilih Kota</option>
+                  </select>
+                </div>
+                <div id="lain" class="col-md-6 form-group p_star">
                   <h5>Kecamatan : </h5>
                   <input type="text" class="form-control" id="number" name="kecamatan" />
                 </div>
-                <div class="col-md-6 form-group p_star">
+                <div id="laindesa" class="col-md-6 form-group p_star">
                   <h5>Desa/Dusun : </h5>
                   <input type="text" class="form-control" id="email" name="desa" />
                 </div>
@@ -251,15 +263,44 @@
       $.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_asal').val(), function(obj) {
         $('#origin').html(obj);
       });
-
     });
 
     $("#propinsi_tujuan").click(function() {
       $.post("<?php echo base_url(); ?>index.php/Landing/getCity/" + $('#propinsi_tujuan').val(), function(obj) {
         $('#destination').html(obj);
       });
-
     });
+
+    $("#destination").click(function() {
+      if($("#destination option:selected").val() == 160){
+        $('#lain').prop('hidden', 'true');
+        $('#laindesa').prop('hidden', 'true');
+        $('#kota').prop('hidden', false);
+        $('#desa').prop('hidden', false);
+      }else{
+        $('#desa').prop('hidden', 'true');
+        $('#kota').prop('hidden', 'true');
+        $('#lain').prop('hidden', false);
+        $('#laindesa').prop('hidden', false);
+      }
+      $.post("<?php echo base_url(); ?>index.php/Landing/getKecamatan/" + $('#destination').val(), function(obj) {
+        $('#kecamatan').html(obj);
+        
+      });
+    });
+    $("#kecamatan").click(function() {
+      $.post("<?php echo base_url(); ?>index.php/Landing/getDesa/" + $('#kecamatan').val(), function(obj) {
+        $('#desakan').html(obj);
+        
+      });
+    });
+
+    
+        
+      
+    
+
+    
 
     /*
     $("#cari").click(function(){
