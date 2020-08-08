@@ -51,7 +51,7 @@
                                         <div class="banner_text_iner">
                                             <h1>Potongan Harga</h1>
                                             <h2><p>Dengan Minimum Pembelanjaan</p></h2>
-                                            <a href="#section1" class="btn_2">Beli Sekarang</a>
+                                            <a href="#section1" class="btn_2">Diskon hingga 20% </a>
                                         </div>
                                     </div>
                                 </div>
