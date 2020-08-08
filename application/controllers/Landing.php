@@ -172,7 +172,7 @@ class Landing extends CI_Controller{
 			echo "<option value='Pontang'>Pontang</option>";
 			echo "<option value='Sabrang'>Sabrang</option>";
 			echo "<option value='Sumberejo'>Sumberejo</option>";
-			echo "<option value=''></option>";
+			echo "<option value='Tegalsari'>Tegalsari</option>";
 			
 		}else if($kecamatan == 'Arjasa'){
 
